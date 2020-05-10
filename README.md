@@ -7,6 +7,7 @@ O projeto foi criado com o intuito de apresentar o desenvolvimento web aos estud
 Seguindo tal temática, nosso grupo, optou por definir que o tema do comércio é de Jogos de Tabuleiro.
 
 ## Tecnologias utilizadas:
+- Glassfish Server
 - Java
 - JSP
 - Servlets
