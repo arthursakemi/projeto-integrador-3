@@ -17,7 +17,7 @@ public class CadastroClienteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-
+        dao.teste.salvar("Arthur", 29);
     }
 
     @Override
