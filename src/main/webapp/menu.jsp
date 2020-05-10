@@ -10,12 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Menu - TableTop</title>
+        <link rel="stylesheet" type="text/css" href="./CSS/base-style.css" />
     </head>
     <body>
-        <div id="header">
-            <h1>TableTop</h1>
+        <header>
+            <h1><a href="menu.jsp">TableTop</a></h1>
             <p id="user-name">Nome do Usuário</p>
-        </div>
+        </header>
         <div id="lista-menu">
             <a href="produtos.jsp" id="produtos-menu">Produtos</a>
             <a href="clientes.jsp" id="clientes-menu">Clientes</a>

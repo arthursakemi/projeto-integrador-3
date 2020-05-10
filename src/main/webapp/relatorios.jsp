@@ -13,7 +13,7 @@
     </head>
     <body>
         <div id="header">
-            <h1>TableTop</h1>
+            <h1><a href="menu.jsp">TableTop</a></h1>
             <p id="user-name">Nome do Usuário</p>
         </div>
     </body>
