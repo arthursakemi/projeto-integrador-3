@@ -17,5 +17,5 @@ Seguindo tal temática, nosso grupo, optou por definir que o tema do comércio �
 
 ## Contributors
 <a href="https://github.com/arthursakemi/projeto-integrador-3/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=arthursakemi/projeto-integrador-3" />
+  <img src="https://github.com/arthursakemi/projeto-integrador-3/blob/master/src/main/webapp/IMG/contributors-source.png" />
 </a>
