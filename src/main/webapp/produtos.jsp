@@ -30,16 +30,7 @@
             <button id="buscar">Buscar</button>
             <!-- Divs que serão renderizadas ou não (categorias - produtos) -->
             <div id="categorias">
-                <!-- esperar servlet para renderizar categorias do banco
                 
-                <button id="todos">Todos</button>
-                <button id="cartas">Cartas</button>
-                <button id="infantis">Infantis</button>
-                <button id="logica">Logica</button>
-                <button id="rpg">RPG</button>
-                <button id="coop">Cooperativo</button>
-                
-                -->
             </div>
             <div id="produtos-categoria">
                 <!-- esperar servlet pra renderizar produtos disponíveis no banco -->

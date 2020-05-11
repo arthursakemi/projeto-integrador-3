@@ -34,5 +34,14 @@
             </aside>
             <div id="content"></div>
         </div>
+        <div id="lista-menu">
+            <a href="produtos.jsp" id="produtos-menu">Produtos</a>
+            <a href="clientes.jsp" id="clientes-menu">Clientes</a>
+            <a href="funcionarios.jsp" id="funcionarios-menu">Funcionários</a>
+            <a href="unidades.jsp" id="unidades-menu">Unidades</a>
+            <a href="vendas.jsp" id="vendas-menu">Vendas</a>
+            <a href="relatorios.jsp" id="relatorios-menu">Relatorios</a>
+        </div>
+        <div id="body"
     </body>
 </html>
