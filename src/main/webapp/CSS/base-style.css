@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : Marcelo
 */
 header {
-    background-color: #d1e3ff;
+    background-color: #8f949c;
 }
 
 header h1 {
@@ -16,7 +16,7 @@ header h1 {
 }
 
 #lista-menu {
-    background-color: #d1e3ff;
+    background-color: #8f949c;
     display: flex;
     flex-direction: column;
     text-align: center;
