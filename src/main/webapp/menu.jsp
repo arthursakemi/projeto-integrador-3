@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./styles/home.css" />
+        <link rel="stylesheet" href="./CSS/base-style.css" />
         <script src="./js/home.js" defer></script>
         <title>Home</title>
     </head>
@@ -22,7 +22,6 @@
                 <p id="username"></p>
                 <img id="profile-picture" src="" alt="" />
             </div>
-<<<<<<< HEAD
         </header>
         <div id="body">
             <aside id="menu">
@@ -33,10 +32,7 @@
                 <div class="button">Vendas</div>
                 <div class="button">Relatorios</div>
             </aside>
-            <div id="content"></div>
-=======
-            <button id="nova-venda"><a href="vendas.jsp">Nova Venda</a></button>
->>>>>>> 120dc7843396f368c103687a8a0762b0b2b5fa09
+            <div id="content"><button id="nova-venda"><a href="vendas.jsp">Nova Venda</a></button></div>
         </div>
     </body>
 </html>
