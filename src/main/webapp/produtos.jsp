@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : produtos
     Created on : 09/05/2020, 22:19:03
     Author     : Marcelo
@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./CSS/base-style.css" />
         <title>Produtos - TableTop</title>
     </head>
     <body>
@@ -30,7 +31,7 @@
             <button id="buscar">Buscar</button>
             <!-- Divs que serão renderizadas ou não (categorias - produtos) -->
             <div id="categorias">
-                
+
             </div>
             <div id="produtos-categoria">
                 <!-- esperar servlet pra renderizar produtos disponíveis no banco -->
