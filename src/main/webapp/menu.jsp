@@ -28,6 +28,7 @@
                 <a href="vendas.jsp" id="vendas-menu">Vendas</a>
                 <a href="relatorios.jsp" id="relatorios-menu">Relatorios</a>
             </div>
+            <button id="nova-venda"><a href="vendas.jsp">Nova Venda</a></button>
         </div>
     </body>
 </html>
