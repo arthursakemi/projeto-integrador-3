@@ -3,8 +3,36 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 10/05/2020, 11:36:07
     Author     : Marcelo
 */
+
+#home-background {
+    background-color: darkgray;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-text-box {
+    height: 100px;
+    width: 200px;
+    border: 2px solid #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+
+}
+
+.card-text-box:hover {
+    background-color: #f5f5f550;
+    font-size: 30px;
+    transition: 6s;
+}
 

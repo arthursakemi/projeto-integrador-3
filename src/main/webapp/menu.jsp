@@ -11,6 +11,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
+        <link rel="stylesheet" href="./CSS/menu.css" />
         <script src="./js/home.js" defer></script>
         <title>Home</title>
     </head>
@@ -32,7 +33,13 @@
                 <div class="button">Vendas</div>
                 <div class="button">Relatorios</div>
             </aside>
-            <div id="content"><button id="nova-venda"><a href="vendas.jsp">Nova Venda</a></button></div>
+            <div id="content">
+                <div id="home-background">
+                    <div class="card-text-box">
+                        <p class="card-text">Nova Venda</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
