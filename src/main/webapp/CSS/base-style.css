@@ -33,7 +33,7 @@ body {
 }
 
 #menu {
-    background-color: #b3bac5;
+    background-color: #b3bac5;;
     font-size: 25px;
     padding-top: 25px;
     height: 100%;
@@ -46,12 +46,18 @@ body {
 .button {
     display: flex;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: darkgray;
+    background-color: #b3bac5;;
     margin: 10px 0;
     height: 70px;
     width: 100%;
     justify-content: center;
     align-items: center;
+    z-index: 5;
+}
+
+.button:hover {
+    margin-left: 25px;
+    box-shadow: 4px 4px 8px #000000;
 }
 
 #content {

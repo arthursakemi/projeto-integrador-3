@@ -27,11 +27,12 @@ and open the template in the editor.
     color: #f5f5f5;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
+    cursor: pointer;
 
 }
 
 .card-text-box:hover {
-    background-color: #f5f5f550;
+    background-color: #f5f5f5;
     font-size: 30px;
     transition: 6s;
 }
