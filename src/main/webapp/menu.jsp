@@ -13,17 +13,21 @@
         <link rel="stylesheet" type="text/css" href="./CSS/base-style.css" />
     </head>
     <body>
-        <header>
-            <h1><a href="menu.jsp">TableTop</a></h1>
-            <p id="user-name">Nome do Usuário</p>
-        </header>
-        <div id="lista-menu">
-            <a href="produtos.jsp" id="produtos-menu">Produtos</a>
-            <a href="clientes.jsp" id="clientes-menu">Clientes</a>
-            <a href="funcionarios.jsp" id="funcionarios-menu">Funcionários</a>
-            <a href="unidades.jsp" id="unidades-menu">Unidades</a>
-            <a href="vendas.jsp" id="vendas-menu">Vendas</a>
-            <a href="relatorios.jsp" id="relatorios-menu">Relatorios</a>
+        <div id="main">
+            <header>
+                <h1><a href="menu.jsp">TableTop</a></h1>
+                <div id="user-info">
+                    <p id="user-name">Nome do Usuário</p>
+                </div>
+            </header>
+            <div id="lista-menu">
+                <a href="produtos.jsp" id="produtos-menu">Produtos</a>
+                <a href="clientes.jsp" id="clientes-menu">Clientes</a>
+                <a href="funcionarios.jsp" id="funcionarios-menu">Funcionários</a>
+                <a href="unidades.jsp" id="unidades-menu">Unidades</a>
+                <a href="vendas.jsp" id="vendas-menu">Vendas</a>
+                <a href="relatorios.jsp" id="relatorios-menu">Relatorios</a>
+            </div>
         </div>
     </body>
 </html>
