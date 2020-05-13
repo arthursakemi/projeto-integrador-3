@@ -17,21 +17,25 @@
     </head>
     <body>
         <header id="header">
-            <div id="logo"></div>
-            <div id="title"></div>
+            <div id="logo-container">
+                <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
+            </div>
+            <div id="title-container">
+                <img id="title" src="./images/title.svg" />
+            </div>
             <div id="user-container">
-                <p id="username"></p>
-                <img id="profile-picture" src="" alt="" />
+                <p id="username">username</p>
+                <img id="avatar" src="./images/avatar.svg" alt="" />
             </div>
         </header>
         <div id="body">
             <aside id="menu">
-                <div class="button">Produtos</div>
-                <div class="button">Clientes</div>
-                <div class="button">Funcionarios</div>
-                <div class="button">Unidades</div>
-                <div class="button">Vendas</div>
-                <div class="button">Relatorios</div>
+                <a class="button" href="./produtos.html">Produtos</a>
+                <a class="button" href="./clientes.html">Clientes</a>
+                <a class="button" href="./funcionarios.html">Funcionarios</a>
+                <a class="button" href="./unidades.html">Unidades</a>
+                <a class="button" href="./vendas.html">Vendas</a>
+                <a class="button" href="./relatorios.html">Relatorios</a>
             </aside>
             <div id="content">
                 <div id="home-background">

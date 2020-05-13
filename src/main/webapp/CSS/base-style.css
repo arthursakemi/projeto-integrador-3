@@ -11,6 +11,14 @@ and open the template in the editor.
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: black;
 }
 
 body {
@@ -24,6 +32,9 @@ body {
     background-color: #a5adbb;
     height: 150px;
     min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #body {
@@ -33,7 +44,8 @@ body {
 }
 
 #menu {
-    background-color: #b3bac5;;
+    color: black;
+    background-color: #b3bac5;
     font-size: 25px;
     padding-top: 25px;
     height: 100%;
@@ -41,12 +53,13 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     width: 250px;
+    overflow: visible;
 }
 
 .button {
     display: flex;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #b3bac5;;
+    background-color: #b3bac5;
     margin: 10px 0;
     height: 70px;
     width: 100%;
@@ -60,11 +73,46 @@ body {
     box-shadow: 4px 4px 8px #000000;
 }
 
-#content {
-    background-color: #f5f5f5;
+#logo-container {
+    height: 100%;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    height: 80%;
+}
+
+#user-container {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#avatar {
+    height: 100%;
+    margin: 0 30px;
+}
+
+#username {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: #f5f5f5;
+}
+
+#title {
+    font-family: Copp;
+}
+
+#title-container {
     height: 100%;
     display: flex;
-    flex-grow: 1;
-    justify-content: center;
     align-items: center;
+}
+
+#title {
+    height: 50%;
 }

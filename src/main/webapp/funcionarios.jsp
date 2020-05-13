@@ -16,11 +16,15 @@
     </head>
     <body>
         <header id="header">
-            <div id="logo"></div>
-            <div id="title"></div>
+            <div id="logo-container">
+                <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
+            </div>
+            <div id="title-container">
+                <img id="title" src="./images/title.svg" />
+            </div>
             <div id="user-container">
-                <p id="username"></p>
-                <img id="profile-picture" src="" alt="" />
+                <p id="username">username</p>
+                <img id="avatar" src="./images/avatar.svg" alt="" />
             </div>
         </header>
         <div id="body">
