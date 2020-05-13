@@ -29,23 +29,14 @@
         </header>
         <div id="body">
             <aside id="menu">
-                <div class="button">Produtos</div>
-                <div class="button">Clientes</div>
-                <div class="button">Funcionarios</div>
-                <div class="button">Unidades</div>
-                <div class="button">Vendas</div>
-                <div class="button">Relatorios</div>
+                <a href="produtos.jsp" id="produtos-menu">Produtos</a>
+                <a href="clientes.jsp" id="clientes-menu">Clientes</a>
+                <a href="funcionarios.jsp" id="funcionarios-menu">Funcionários</a>
+                <a href="unidades.jsp" id="unidades-menu">Unidades</a>
+                <a href="vendas.jsp" id="vendas-menu">Vendas</a>
+                <a href="relatorios.jsp" id="relatorios-menu">Relatorios</a>
             </aside>
             <div id="content"></div>
         </div>
-        <div id="lista-menu">
-            <a href="produtos.jsp" id="produtos-menu">Produtos</a>
-            <a href="clientes.jsp" id="clientes-menu">Clientes</a>
-            <a href="funcionarios.jsp" id="funcionarios-menu">Funcionários</a>
-            <a href="unidades.jsp" id="unidades-menu">Unidades</a>
-            <a href="vendas.jsp" id="vendas-menu">Vendas</a>
-            <a href="relatorios.jsp" id="relatorios-menu">Relatorios</a>
-        </div>
-        <div id="body"
 </body>
 </html>

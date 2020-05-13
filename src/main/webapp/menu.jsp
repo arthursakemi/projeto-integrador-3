@@ -30,12 +30,12 @@
         </header>
         <div id="body">
             <aside id="menu">
-                <a class="button" href="./produtos.html">Produtos</a>
-                <a class="button" href="./clientes.html">Clientes</a>
-                <a class="button" href="./funcionarios.html">Funcionarios</a>
-                <a class="button" href="./unidades.html">Unidades</a>
-                <a class="button" href="./vendas.html">Vendas</a>
-                <a class="button" href="./relatorios.html">Relatorios</a>
+                <a class="button" href="./produtos.jsp">Produtos</a>
+                <a class="button" href="./clientes.jsp">Clientes</a>
+                <a class="button" href="./funcionarios.jsp">Funcionarios</a>
+                <a class="button" href="./unidades.jsp">Unidades</a>
+                <a class="button" href="./vendas.jsp">Vendas</a>
+                <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
             <div id="content">
                 <div id="home-background">
