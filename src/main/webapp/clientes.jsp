@@ -11,7 +11,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
-        <script src="./js/home.js" defer></script>
+        <link rel="stylesheet" href="./CSS/clientes.css" />
+        <script src="./JS/clientes.js" defer></script>
         <title>Home</title>
     </head>
     <body>
@@ -37,7 +38,12 @@
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
             <div id="content">
-                
+                <div id="search-bar">
+                    <button id="new-customer">+ Cadastrar Cliente</button>
+                    <input id="search-field" type="text" placeholder="buscar..." />
+                    <button id="search-button">Buscar</button>
+                </div>
+                <div id="client-table"></div>
             </div>
         </div>
     </body>
