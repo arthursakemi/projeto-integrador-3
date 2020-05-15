@@ -4,6 +4,34 @@
 	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	 version="3.1">
+    <servlet>
+        <servlet-name>CadastroClienteServlet</servlet-name>
+        <servlet-class>servlet.CadastroClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastroProdutoServlet</servlet-name>
+        <servlet-class>servlet.ListarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarProdutoServlet</servlet-name>
+        <servlet-class>servlet.ListarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroClienteServlet</servlet-name>
+        <url-pattern>/CadastroClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarClientes</servlet-name>
+        <url-pattern>/ListarClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroProdutoServlet</servlet-name>
+        <url-pattern>/CadastroProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarProdutoServlet</servlet-name>
+        <url-pattern>/ListarProdutoServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

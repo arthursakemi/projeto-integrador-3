@@ -36,7 +36,9 @@
                 <a class="button" href="./vendas.jsp">Vendas</a>
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
-            <div id="content"></div>
+            <div id="content">
+                
+            </div>
         </div>
     </body>
 </html>
