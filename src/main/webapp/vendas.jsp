@@ -29,12 +29,12 @@
         </header>
         <div id="body">
             <aside id="menu">
-                <div class="button">Produtos</div>
-                <div class="button">Clientes</div>
-                <div class="button">Funcionarios</div>
-                <div class="button">Unidades</div>
-                <div class="button">Vendas</div>
-                <div class="button">Relatorios</div>
+                <a class="button" href="./produtos.jsp">Produtos</a>
+                <a class="button" href="./clientes.jsp">Clientes</a>
+                <a class="button" href="./funcionarios.jsp">Funcionarios</a>
+                <a class="button" href="./unidades.jsp">Unidades</a>
+                <a class="button" href="./vendas.jsp">Vendas</a>
+                <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
             <div id="content"></div>
         </div>

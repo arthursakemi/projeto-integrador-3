@@ -10,6 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="./CSS/base-style.css" />
+        <link rel="stylesheet" href="./CSS/produtos.css" />
+        <script src="./JS/produtos.js" defer></script>
         <title>Produtos - TableTop</title>
     </head>
     <body>
@@ -25,24 +27,22 @@
                 <img id="avatar" src="./images/avatar.svg" alt="" />
             </div>
         </header>
-        <div id="lista-menu">
-            <a href="produtos.jsp" id="produtos-menu">Produtos</a>
-            <a href="clientes.jsp" id="clientes-menu">Clientes</a>
-            <a href="funcionarios.jsp" id="funcionarios-menu">Funcionários</a>
-            <a href="unidades.jsp" id="unidades-menu">Unidades</a>
-            <a href="vendas.jsp" id="vendas-menu">Vendas</a>
-            <a href="relatorios.jsp" id="relatorios-menu">Relatorios</a>
-        </div>
-        <div id="content">
-            <a href="">+ Cadastrar Produto</a>
-            <input type="text" placeholder="Buscar Produto">
-            <button id="buscar">Buscar</button>
-            <!-- Divs que serão renderizadas ou não (categorias - produtos) -->
-            <div id="categorias">
-
-            </div>
-            <div id="produtos-categoria">
-                <!-- esperar servlet pra renderizar produtos disponíveis no banco -->
+        <div id="body">
+            <aside id="menu">
+                <a class="button" href="./produtos.jsp">Produtos</a>
+                <a class="button" href="./clientes.jsp">Clientes</a>
+                <a class="button" href="./funcionarios.jsp">Funcionarios</a>
+                <a class="button" href="./unidades.jsp">Unidades</a>
+                <a class="button" href="./vendas.jsp">Vendas</a>
+                <a class="button" href="./relatorios.jsp">Relatorios</a>
+            </aside>
+            <div id="content">
+                <div id="search-bar">
+                    <button id="new-product">+ Cadastrar Produto</button>
+                    <input id="search-field" type="text" placeholder="buscar..." />
+                    <button id="search-button">Buscar</button>
+                </div>
+                <div id="card-galery"></div>
             </div>
         </div>
     </body>
