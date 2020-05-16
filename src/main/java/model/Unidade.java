@@ -16,11 +16,13 @@ public class Unidade {
     private String nome;
     private String cidade;
     private String estado;
+    private boolean ativo;
     
-    public Unidade(String nome, String cidade, String estado) {
+    public Unidade(String nome, String cidade, String estado, boolean ativo) {
         this.nome = nome;
         this.cidade = cidade;
         this.estado = estado;
+        this.ativo = ativo;
     }
     
     public String getNome() {

@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import static dao.ClienteDAO.salvar;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 public class CadastroClienteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        utils.teste.salvar("Arthur", 29);
+        salvar("Marcelo", 29);
     }
-
 }
