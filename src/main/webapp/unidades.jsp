@@ -52,15 +52,15 @@
                 <form action="/CadastroUnidadeServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
-                        <input class="input-field" id="unity-name" type="text" />
+                        <input class="input-field" id="unity-name" name="nome" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-city">Cidade: *</label>
-                        <input class="input-field" id="unity-city" type="text" />
+                        <input class="input-field" id="unity-city" name="cidade" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Estado: *</label>
-                        <input class="input-field" id="unity-estate" type="text" />
+                        <input class="input-field" id="unity-estate" name="estado" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="cancel-button">Cancelar</button>
