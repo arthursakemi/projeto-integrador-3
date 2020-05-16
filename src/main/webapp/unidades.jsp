@@ -49,7 +49,7 @@
         <div id="overlay">
             <div id="unity-modal">
                 <h1 id="modal-title">Cadastro de Unidade</h1>
-                <form action="">
+                <form action="/CadastroUnidadeServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
                         <input class="input-field" id="unity-name" type="text" />
