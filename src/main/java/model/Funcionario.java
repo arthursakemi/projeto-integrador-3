@@ -11,12 +11,12 @@ package model;
  */
 public class Funcionario extends Pessoa {
 
-    private String unidade;
+    private int unidade;
     private String area;
     private String cargo;
     private double salario;
 
-    public Funcionario(String unidade, String area, String cargo, double salario, int id, String nome, String email, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+    public Funcionario(int unidade, String area, String cargo, double salario, int id, String nome, String email, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
         super(id, nome, email, cpf, uf, cidade, telefone, celular, cep, endereco, complemento, ativo);
         this.unidade = unidade;
         this.area = area;
@@ -24,11 +24,18 @@ public class Funcionario extends Pessoa {
         this.salario = salario;
     }
 
-    public String getUnidade() {
+    public Funcionario(int unidade, String area, String cargo, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+        super(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo);
+        this.unidade = unidade;
+        this.area = area;
+        this.cargo = cargo;
+    }
+
+    public int getUnidade() {
         return unidade;
     }
 
-    public void setUnidade(String unidade) {
+    public void setUnidade(int unidade) {
         this.unidade = unidade;
     }
 

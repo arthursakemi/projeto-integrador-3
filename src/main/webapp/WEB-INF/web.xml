@@ -13,12 +13,20 @@
         <servlet-class>servlet.ListarProdutoServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListarProdutoServlet</servlet-name>
-        <servlet-class>servlet.ListarProdutoServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>CadastroUnidadeServlet</servlet-name>
         <servlet-class>servlet.CadastroUnidadeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastroFuncionarioServlet</servlet-name>
+        <servlet-class>servlet.CadastroFuncionarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CadastroVendaServlet</servlet-name>
+        <servlet-class>servlet.CadastroVendaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarProdutoServlet</servlet-name>
+        <servlet-class>servlet.ListarProdutoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
@@ -29,12 +37,20 @@
         <url-pattern>/CadastroProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ListarProdutoServlet</servlet-name>
-        <url-pattern>/ListarProdutoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>CadastroUnidadeServlet</servlet-name>
         <url-pattern>/CadastroUnidadeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroFuncionarioServlet</servlet-name>
+        <url-pattern>/CadastroFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroVendaServlet</servlet-name>
+        <url-pattern>/CadastroVendaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarProdutoServlet</servlet-name>
+        <url-pattern>/ListarProdutoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -11,12 +11,12 @@ import java.util.ArrayList;
  *
  * @author Sakemi
  */
-public class Vendedor extends Funcionario {
+public class Venda extends Funcionario {
 
     private double comissao;
     private ArrayList<String> vendas;
 
-    public Vendedor(double comissao, ArrayList<String> vendas, String unidade, String area, String cargo, double salario, int id, String nome, String email, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+    public Venda(double comissao, ArrayList<String> vendas, int unidade, String area, String cargo, double salario, int id, String nome, String email, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
         super(unidade, area, cargo, salario, id, nome, email, cpf, uf, cidade, telefone, celular, cep, endereco, complemento, ativo);
         this.comissao = comissao;
         this.vendas = vendas;
