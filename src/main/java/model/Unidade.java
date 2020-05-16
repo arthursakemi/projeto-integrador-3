@@ -16,15 +16,11 @@ public class Unidade {
     private String nome;
     private String cidade;
     private String estado;
-    private ArrayList funcionarios;
-    private ArrayList produtos;
     
     public Unidade(String nome, String cidade, String estado, ArrayList funcionarios, ArrayList produtos) {
         this.nome = nome;
         this.cidade = cidade;
         this.estado = estado;
-        this.funcionarios = funcionarios;
-        this.produtos = produtos;
     }
     
     public String getNome() {
@@ -49,21 +45,5 @@ public class Unidade {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public ArrayList getFuncionarios() {
-        return funcionarios;
-    }
-
-    public void setFuncionarios(ArrayList funcionarios) {
-        this.funcionarios = funcionarios;
-    }
-
-    public ArrayList getProdutos() {
-        return produtos;
-    }
-
-    public void setProdutos(ArrayList produtos) {
-        this.produtos = produtos;
     }
 }
