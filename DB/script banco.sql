@@ -31,6 +31,7 @@ CREATE TABLE produtos(
 	id INT AUTO_INCREMENT,
     nome VARCHAR(30) NOT NULL,
     categoria VARCHAR(20) NOT NULL,
+    fabricante VARCHAR(30) NOT NULL,
     valor DOUBLE NOT NULL,
     descricao VARCHAR(255),
     ativo BOOLEAN NOT NULL,
@@ -109,7 +110,7 @@ CREATE TABLE venda_produto(
 CREATE TABLE teste_cliente(
 	id INT AUTO_INCREMENT,
     nome VARCHAR(30) NOT NULL,
-    udade INT,
+    idade INT,
     
     PRIMARY KEY(id)
 );

@@ -11,7 +11,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
-        <script src="./js/home.js" defer></script>
+        <link rel="stylesheet" href="./CSS/unidades.css" />
+        <script src="./JS/unidades.js" defer></script>
         <title>Home</title>
     </head>
     <body>
@@ -36,7 +37,37 @@
                 <a class="button" href="./vendas.jsp">Vendas</a>
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
-            <div id="content"></div>
+            <div id="content">
+                <div id="search-bar">
+                    <button id="new-unity">+ Cadastrar Unidade</button>
+                    <input id="search-field" type="text" placeholder="buscar..." />
+                    <button id="search-button">Buscar</button>
+                </div>
+                <div id="card-galery"></div>
+            </div>
+        </div>
+        <div id="overlay">
+            <div id="unity-modal">
+                <h1 id="modal-title">Cadastro de Unidade</h1>
+                <form action="">
+                    <div class="field-wrapper">
+                        <label for="unity-name">Nome: *</label>
+                        <input class="input-field" id="unity-name" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-city">Cidade: *</label>
+                        <input class="input-field" id="unity-city" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">Estado: *</label>
+                        <input class="input-field" id="unity-estate" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="cancel-button">Cancelar</button>
+                        <input class="form-button" id="submit-button " type="submit" value="Cadastrar" />
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
