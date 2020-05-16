@@ -32,7 +32,7 @@ public class UnidadesDAO {
             instrucaoSQL.setString(1, unidade.getNome());
             instrucaoSQL.setString(2, unidade.getCidade());
             instrucaoSQL.setString(3, unidade.getEstado());
-            instrucaoSQL.setString(4, true);
+            instrucaoSQL.setBoolean(4, true);
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
 
