@@ -32,6 +32,10 @@
         <servlet-name>ListarProdutoServlet</servlet-name>
         <url-pattern>/ListarProdutoServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroUnidadeServlet</servlet-name>
+        <url-pattern>/CadastroUnidadeServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
