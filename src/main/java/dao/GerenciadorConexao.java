@@ -12,7 +12,6 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import io.github.cdimascio.dotenv.Dotenv;
 
 public class GerenciadorConexao {
 
@@ -23,17 +22,18 @@ public class GerenciadorConexao {
     }
 
     public static Connection abrirConexao() throws ClassNotFoundException, SQLException {
-        Dotenv dotenv = Dotenv.load();
         String DRIVER = "com.mysql.cj.jdbc.Driver";
-        String USER = dotenv.get("USER");
-        String PASSWORD = dotenv.get("PASSWORD");
-        String URL = dotenv.get("CONNECTION_STRING");
+        String USER = "utrqwovgmcfjnxjq";
+        String PASSWORD = "QEkfcMqfA95LwnTD02NM";
+        String URL = "jdbc:mysql://utrqwovgmcfjnxjq:QEkfcMqfA95LwnTD02NM@bhtdf3tusbz6r8ua6rnp-mysql.services.clever-cloud.com:3306/bhtdf3tusbz6r8ua6rnp?useSSL=false";
 
         if (CONEXAO == null) {
             try {
                 //carrega o driver
                 Class.forName(DRIVER);
                 CONEXAO = DriverManager.getConnection(URL, USER, PASSWORD);
+
+                System.out.println("get connection");
 
                 if (CONEXAO != null) {
                     STATUS = "Conexão realizada com sucesso!";
@@ -43,6 +43,7 @@ public class GerenciadorConexao {
             } catch (ClassNotFoundException e) {
                 throw new ClassNotFoundException("O driver expecificado não foi encontrado");
             } catch (SQLException e) {
+                System.out.println(e);
                 throw new SQLException("Erro ao estabelecer conexão com o banco de dados.");
             }
         } else {

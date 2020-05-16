@@ -1,6 +1,4 @@
-CREATE DATABASE holandes_voador;
-
-USE holandes_voador;
+USE bhtdf3tusbz6r8ua6rnp;
 
 CREATE TABLE unidades(
 	id INT AUTO_INCREMENT,
@@ -103,8 +101,16 @@ CREATE TABLE venda_produto(
     id_produto INT NOT NULL,
     quantidade INT NOT NULL,
     
-    PRIMARY KEY (ID),
+    PRIMARY KEY (id),
     FOREIGN KEY (id_venda) REFERENCES vendas (id),
     FOREIGN KEY (id_produto) REFERENCES produtos (id)
+);
+
+CREATE TABLE teste_cliente(
+	id INT AUTO_INCREMENT,
+    nome VARCHAR(30) NOT NULL,
+    udade INT,
+    
+    PRIMARY KEY(id)
 );
 
