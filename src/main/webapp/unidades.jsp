@@ -49,7 +49,7 @@
         <div id="overlay">
             <div id="unity-modal">
                 <h1 id="modal-title">Cadastro de Unidade</h1>
-                <form action="/CadastroUnidadeServlet" method="POST">
+                <form action="CadastroUnidadeServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
                         <input class="input-field" id="unity-name" type="text" />
@@ -64,7 +64,7 @@
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="cancel-button">Cancelar</button>
-                        <input class="form-button" id="submit-button " type="submit" value="Cadastrar" />
+                        <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
                     </div>
                 </form>
             </div>
