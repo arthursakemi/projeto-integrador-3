@@ -17,7 +17,7 @@ public class Unidade {
     private String cidade;
     private String estado;
     
-    public Unidade(String nome, String cidade, String estado, ArrayList funcionarios, ArrayList produtos) {
+    public Unidade(String nome, String cidade, String estado) {
         this.nome = nome;
         this.cidade = cidade;
         this.estado = estado;
