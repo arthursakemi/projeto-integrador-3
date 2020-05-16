@@ -19,9 +19,11 @@ public class CadastroUnidadeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println(request);
+        String nome = request.getParameter("nome");
+        String cidade = request.getParameter("cidade");
+        String estado = request.getParameter("estado");
         
-        Unidade unidade = new Unidade("Grajau", "Sao Paulo", "SP", true);
+        Unidade unidade = new Unidade(nome, cidade, estado, true);
         UnidadesDAO.salvar(unidade);
     }
 }
