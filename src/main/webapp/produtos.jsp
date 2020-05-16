@@ -16,9 +16,9 @@
     </head>
     <body>
         <header id="header">
-            <div id="logo-container">
+            <a id="logo-container" href="./menu.jsp">
                 <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
-            </div>
+            </a>
             <div id="title-container">
                 <img id="title" src="./images/title.svg" />
             </div>
