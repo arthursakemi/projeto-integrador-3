@@ -11,7 +11,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
-        <script src="./js/home.js" defer></script>
+        <link rel="stylesheet" href="./CSS/funcionarios.css" />
+        <script src="./JS/funcionarios.js" defer></script>
         <title>Home</title>
     </head>
     <body>
@@ -36,7 +37,82 @@
                 <a class="button" href="./vendas.jsp">Vendas</a>
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
-            <div id="content"></div>
+            <div id="content">
+                <div id="search-bar">
+                    <button id="new-employee">+ Cadastrar Funcionario</button>
+                    <input id="search-field" type="text" placeholder="buscar..." />
+                    <button id="search-button">Buscar</button>
+                </div>
+                <div id="employee-table"></div>
+            </div>
+        </div>
+
+        <div id="overlay">
+            <div id="employee-modal">
+                <h1 id="modal-title">Cadastro de Funcionarios</h1>
+                <form action="">
+                    <div class="field-wrapper">
+                        <label>Nome: *</label>
+                        <input class="input-field" name="nome" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-name">Email *</label>
+                        <input class="input-field" name="email" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>CPF: *</label>
+                        <input class="input-field" name="cpf" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>CEP: *</label>
+                        <input class="input-field" name="cep" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Cidade: *</label>
+                        <input class="input-field" name="cidade" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Estado: *</label>
+                        <input class="input-field" name="estado" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Telefone: </label>
+                        <input class="input-field" name="telefone" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Celular: *</label>
+                        <input class="input-field" name="celular" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Endereço: *</label>
+                        <input class="input-field" name="endereco" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Complemento: *</label>
+                        <input class="input-field" name="complemento" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Unidade: *</label>
+                        <input class="input-field" name="unidade" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Area: *</label>
+                        <input class="input-field" name="area" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Cargo: *</label>
+                        <input class="input-field" name="cargo" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Salario: *</label>
+                        <input class="input-field" name="salario" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="cancel-button">Cancelar</button>
+                        <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
