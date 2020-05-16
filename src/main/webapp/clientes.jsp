@@ -51,7 +51,7 @@
         <div id="overlay">
             <div id="customer-modal">
                 <h1 id="modal-title">Cadastro de Cliente</h1>
-                <form action="">
+                <form action="CadastroClienteServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
                         <input class="input-field" id="customer-name" name="nome" type="text" />
