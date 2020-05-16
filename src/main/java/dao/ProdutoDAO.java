@@ -18,13 +18,11 @@ import utils.GerenciadorConexao;
  */
 public class ProdutoDAO {
     public static boolean salvar(Produto produto) {
-
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
 
         try {
-
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("INSERT INTO produtos "
                     + "(nome, categoria, valor, descricao, ativo) "
@@ -45,14 +43,11 @@ public class ProdutoDAO {
             System.out.println(ex.getMessage());
             retorno = false;
         } finally {
-
             try {
                 if (instrucaoSQL != null) {
                     instrucaoSQL.close();
                 }
-
                 GerenciadorConexao.fecharConexao();
-
             } catch (SQLException ex) {
             }
         }
