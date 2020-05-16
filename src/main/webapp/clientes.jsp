@@ -47,5 +47,53 @@
                 <div id="client-table"></div>
             </div>
         </div>
+
+        <div id="overlay">
+            <div id="customer-modal">
+                <h1 id="modal-title">Cadastro de Cliente</h1>
+                <form action="">
+                    <div class="field-wrapper">
+                        <label for="unity-name">Nome: *</label>
+                        <input class="input-field" id="unity-name" name="nome" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-city">CPF: *</label>
+                        <input class="input-field" id="unity-city" name="cpf" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">cep: *</label>
+                        <input class="input-field" id="unity-estate" name="cep" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">Cidade: *</label>
+                        <input class="input-field" id="unity-estate" name="cidade" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">Estado: *</label>
+                        <input class="input-field" id="unity-estate" name="estado" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">Telefone: </label>
+                        <input class="input-field" id="unity-estate" name="telefone" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">Celular: *</label>
+                        <input class="input-field" id="unity-estate" name="celular" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">Endereço: *</label>
+                        <input class="input-field" id="unity-estate" name="endereco" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">Complemento: *</label>
+                        <input class="input-field" id="unity-estate" name="complemento" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="cancel-button">Cancelar</button>
+                        <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

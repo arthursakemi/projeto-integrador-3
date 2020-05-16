@@ -14,8 +14,8 @@ public abstract class Pessoa {
     private int id;
     private String nome;
     private String cpf;
-    private String uf;
     private String cidade;
+    private String uf;
     private String telefone;
     private String celular;
     private String cep;
@@ -23,12 +23,12 @@ public abstract class Pessoa {
     private String complemento;
     private boolean ativo;
 
-    public Pessoa(int id, String nome, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+    public Pessoa(int id, String nome, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
-        this.uf = uf;
         this.cidade = cidade;
+        this.uf = uf;
         this.telefone = telefone;
         this.celular = celular;
         this.cep = cep;

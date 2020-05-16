@@ -20,4 +20,8 @@ public class Cliente extends Pessoa {
         this.compras = compras;
     }
 
+    public Cliente(int id, String nome, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+        super(id, nome, cpf, uf, cidade, telefone, celular, cep, endereco, complemento, ativo);
+    }
+
 }
