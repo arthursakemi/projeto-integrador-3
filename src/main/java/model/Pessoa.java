@@ -10,9 +10,9 @@ package model;
  * @author Sakemi
  */
 public abstract class Pessoa {
-
     private int id;
     private String nome;
+    private String email;
     private String cpf;
     private String cidade;
     private String uf;
@@ -23,9 +23,26 @@ public abstract class Pessoa {
     private String complemento;
     private boolean ativo;
 
-    public Pessoa(int id, String nome, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+    //Constructor including ID for the reading in DB
+    public Pessoa(int id, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
         this.id = id;
         this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.telefone = telefone;
+        this.celular = celular;
+        this.cep = cep;
+        this.endereco = endereco;
+        this.complemento = complemento;
+        this.ativo = ativo;
+    }
+    
+    //Constructor without ID for the writing in DB
+    public Pessoa(String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+        this.nome = nome;
+        this.email = email;
         this.cpf = cpf;
         this.cidade = cidade;
         this.uf = uf;
@@ -53,6 +70,15 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public String getCpf() {
         return cpf;
     }
