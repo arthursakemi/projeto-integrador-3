@@ -12,16 +12,18 @@ import java.util.ArrayList;
  * @author Sakemi
  */
 public class Cliente extends Pessoa {
-
     private ArrayList<String> compras;
 
-    public Cliente(ArrayList<String> compras, int id, String nome, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
-        super(id, nome, cpf, uf, cidade, telefone, celular, cep, endereco, complemento, ativo);
+    public Cliente(ArrayList<String> compras, int id, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+        super(id, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo);
         this.compras = compras;
     }
 
-    public Cliente(int id, String nome, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
-        super(id, nome, cpf, uf, cidade, telefone, celular, cep, endereco, complemento, ativo);
+    public Cliente(int id, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+        super(id, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo);
     }
 
+    public Cliente(String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+        super(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo);
+    }
 }
