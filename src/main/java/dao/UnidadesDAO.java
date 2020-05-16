@@ -25,13 +25,14 @@ public class UnidadesDAO {
         try {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("INSERT INTO unidades "
-                    + "(nome, cidade, uf) "
-                    + "VALUES(?, ?, ?);",
+                    + "(nome, cidade, uf, ativo) "
+                    + "VALUES(?, ?, ?, ?);",
                     Statement.RETURN_GENERATED_KEYS);
 
             instrucaoSQL.setString(1, unidade.getNome());
             instrucaoSQL.setString(2, unidade.getCidade());
             instrucaoSQL.setString(3, unidade.getEstado());
+            instrucaoSQL.setString(4, true);
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
 
