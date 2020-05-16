@@ -16,6 +16,10 @@
         <servlet-name>ListarProdutoServlet</servlet-name>
         <servlet-class>servlet.ListarProdutoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastroUnidadeServlet</servlet-name>
+        <servlet-class>servlet.CadastroUnidadeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
