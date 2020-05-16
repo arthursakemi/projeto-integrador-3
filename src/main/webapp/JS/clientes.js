@@ -54,3 +54,13 @@ const client = {
 for (let i = 0; i < 15; i++) {
     addClientRow(client);
 }
+
+// Ações dos botões
+const createCustomerButton = document.getElementById("new-customer");
+createCustomerButton.addEventListener('click', createCustomer);
+
+function createCustomer() {
+    axios.post("http://localhost:8080/projeto-integrador-3/CadastroClienteServlet").then(() => {
+        console.log('processou');
+    });
+}

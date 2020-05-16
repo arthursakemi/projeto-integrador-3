@@ -15,26 +15,22 @@ import java.sql.SQLException;
 import io.github.cdimascio.dotenv.Dotenv;
 
 public class GerenciadorConexao {
-
     public static String STATUS = "Não conectado";
-
     public static Connection CONEXAO;
-
     public GerenciadorConexao() {
-
     }
 
     public static Connection abrirConexao() throws ClassNotFoundException, SQLException {
-
-        Dotenv dotenv = Dotenv.load();
-
+/*        Dotenv dotenv = Dotenv.load();
         String DRIVER = "com.mysql.cj.jdbc.Driver";
-
         String USER = dotenv.get("USER");
         String PASSWORD = dotenv.get("PASSWORD");
-
         String URL = dotenv.get("CONNECTION_STRING");
-
+*/  
+        String DRIVER = "com.mysql.cj.jdbc.Driver";
+        String URL = "mysql://bdq8dby6p2s61smz:thxwiqequlgfbxax@o677vxfi8ok6exrd.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/i9vfjwzauoyk34wb";
+        String USER = "bdq8dby6p2s61smz";
+        String PASSWORD = "thxwiqequlgfbxax";
         if (CONEXAO == null) {
             try {
                 //carrega o driver
@@ -46,13 +42,9 @@ public class GerenciadorConexao {
                 } else {
                     STATUS = "Não foi possivel realizar a conexão!";
                 }
-
             } catch (ClassNotFoundException e) {
-
                 throw new ClassNotFoundException("O driver expecificado não foi encontrado");
-
             } catch (SQLException e) {
-
                 throw new SQLException("Erro ao estabelecer conexão com o banco de dados.");
             }
         } else {

@@ -12,8 +12,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/clientes.css" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./JS/clientes.js" defer></script>
-        <title>Home</title>
+        <title>Clientes - TableTop</title>
     </head>
     <body>
         <header id="header">
