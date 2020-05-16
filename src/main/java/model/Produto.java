@@ -28,6 +28,15 @@ public class Produto {
         this.ativo = ativo;
     }
 
+    public Produto(String nome, String categoria, String fabricante, String descricao, double valor, boolean ativo) {
+        this.nome = nome;
+        this.categoria = categoria;
+        this.fabricante = fabricante;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.ativo = ativo;
+    }
+    
     public int getId() {
         return id;
     }
