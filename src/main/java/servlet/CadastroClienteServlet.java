@@ -14,11 +14,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author Sakemi
  */
 public class CadastroClienteServlet extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-    }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         utils.teste.salvar("Arthur", 29);
