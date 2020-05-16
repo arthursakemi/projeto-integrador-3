@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.Cliente;
 import utils.GerenciadorConexao;
 
 /**
@@ -16,20 +17,30 @@ import utils.GerenciadorConexao;
  * @author Marcelo
  */
 public class ClienteDAO {
-        public static boolean salvar(String nome, int idade) {
+        public static boolean salvar(Cliente cliente) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
-            instrucaoSQL = conexao.prepareStatement("INSERT INTO teste_cliente "
-                    + "(nome,idade) "
-                    + "VALUES(?, ?);",
+            instrucaoSQL = conexao.prepareStatement("INSERT INTO clientes "
+                    + "(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo) "
+                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);",
                     Statement.RETURN_GENERATED_KEYS);
 
-            instrucaoSQL.setString(1, nome);
-            instrucaoSQL.setInt(2, idade);
+            instrucaoSQL.setString(1, cliente.getNome());
+            instrucaoSQL.setString(2, cliente.getEmail());
+            instrucaoSQL.setString(3, cliente.getCpf());
+            instrucaoSQL.setString(4, cliente.getCidade());
+            instrucaoSQL.setString(5, cliente.getUf());
+            instrucaoSQL.setString(6, cliente.getTelefone());
+            instrucaoSQL.setString(7, cliente.getCelular());
+            instrucaoSQL.setString(8, cliente.getCep());
+            instrucaoSQL.setString(9, cliente.getEndereco());
+            instrucaoSQL.setString(10, cliente.getComplemento());
+            instrucaoSQL.setBoolean(11, cliente.isAtivo());
+            
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;
         } catch (SQLException | ClassNotFoundException ex) {
