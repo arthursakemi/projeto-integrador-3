@@ -32,7 +32,6 @@ body {
 #header {
     background-color: #a5adbb;
     height: 150px;
-    min-height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,6 +41,7 @@ body {
     background-color: #f5f5f5;
     flex-grow: 1;
     display: flex;
+    overflow: auto;
 }
 
 #menu {
@@ -117,4 +117,17 @@ body {
 
 #title {
     height: 50%;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5f599;
+    z-index: 10;
+    display: none;
+    align-content: space-around;
+    justify-content: center;
 }
