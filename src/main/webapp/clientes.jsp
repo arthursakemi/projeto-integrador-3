@@ -53,20 +53,24 @@
                 <h1 id="modal-title">Cadastro de Cliente</h1>
                 <form action="">
                     <div class="field-wrapper">
-                        <label for="unity-name">Nome: *</label>
-                        <input class="input-field" id="unity-name" name="nome" type="text" />
+                        <label for="customer-name">Nome: *</label>
+                        <input class="input-field" id="customer-name" name="nome" type="text" />
                     </div>
                     <div class="field-wrapper">
-                        <label for="unity-city">CPF: *</label>
-                        <input class="input-field" id="unity-city" name="cpf" type="text" />
+                        <label for="unity-name">Email *</label>
+                        <input class="input-field" id="unity-name" name="email" type="text" />
                     </div>
                     <div class="field-wrapper">
-                        <label for="unity-estate">cep: *</label>
-                        <input class="input-field" id="unity-estate" name="cep" type="text" />
+                        <label for="cpf">CPF: *</label>
+                        <input class="input-field" id="cpf" name="cpf" type="text" />
                     </div>
                     <div class="field-wrapper">
-                        <label for="unity-estate">Cidade: *</label>
-                        <input class="input-field" id="unity-estate" name="cidade" type="text" />
+                        <label for="cep">CEP: *</label>
+                        <input class="input-field" id="cep" name="cep" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="city">Cidade: *</label>
+                        <input class="input-field" id="city" name="cidade" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Estado: *</label>
