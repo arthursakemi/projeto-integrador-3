@@ -65,13 +65,3 @@ for (let i = 0; i < 15; i++) {
 
 document.getElementById("new-customer").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
-
-// Ações dos botões
-const createCustomerButton = document.getElementById("new-customer");
-createCustomerButton.addEventListener('click', createCustomer);
-
-function createCustomer() {
-    axios.post("http://localhost:8080/projeto-integrador-3/CadastroClienteServlet").then(() => {
-        console.log('processou');
-    });
-}
