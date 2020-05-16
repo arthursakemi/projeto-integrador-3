@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
-import model.Produto;
+import model.Unidade;
 import utils.GerenciadorConexao;
 
 /**
@@ -17,23 +17,21 @@ import utils.GerenciadorConexao;
  * @author Marcelo
  */
 public class UnidadesDAO {
-    public static boolean salvar(Produto produto) {
+    public static boolean salvar(Unidade unidade) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
-            instrucaoSQL = conexao.prepareStatement("INSERT INTO produtos "
-                    + "(nome, categoria, valor, descricao, ativo) "
-                    + "VALUES(?, ?, ?, ?, ?);",
+            instrucaoSQL = conexao.prepareStatement("INSERT INTO unidades "
+                    + "(nome, cidade, uf) "
+                    + "VALUES(?, ?, ?);",
                     Statement.RETURN_GENERATED_KEYS);
 
-            instrucaoSQL.setString(1, produto.getNome());
-            instrucaoSQL.setString(2, produto.getCategoria());
-            instrucaoSQL.setDouble(3, produto.getValor());
-            instrucaoSQL.setString(4, produto.getDescricao());
-            instrucaoSQL.setBoolean(5, produto.isAtivo());
+            instrucaoSQL.setString(1, unidade.getNome());
+            instrucaoSQL.setString(2, unidade.getCidade());
+            instrucaoSQL.setString(3, unidade.getEstado());
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
 
