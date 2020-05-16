@@ -18,7 +18,7 @@ import model.Unidade;
 public class CadastroUnidadeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        Unidade unidade = new Unidade("Grajau", "Sao Paulo", "Sao Paulo");
+        Unidade unidade = new Unidade("Grajau", "Sao Paulo", "Sao Paulo", true);
         UnidadesDAO.salvar(unidade);
     }
 }
