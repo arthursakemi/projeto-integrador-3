@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package model;
-
 /**
  *
  * @author Sakemi
@@ -14,14 +13,16 @@ public class Produto {
     private int id;
     private String nome;
     private String categoria;
+    private String fabricante;
     private String descricao;
     private double valor;
     private boolean ativo;
 
-    public Produto(int id, String nome, String categoria, String descricao, double valor, boolean ativo) {
+    public Produto(int id, String nome, String categoria, String fabricante, String descricao, double valor, boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.categoria = categoria;
+        this.fabricante = fabricante;
         this.descricao = descricao;
         this.valor = valor;
         this.ativo = ativo;
@@ -50,6 +51,14 @@ public class Produto {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+    
+    public String getFabricante() {
+        return fabricante;
+    }
+    
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
+    }
 
     public String getDescricao() {
         return descricao;
@@ -74,5 +83,4 @@ public class Produto {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
-
 }
