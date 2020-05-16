@@ -50,7 +50,7 @@
         <div id="overlay">
             <div id="employee-modal">
                 <h1 id="modal-title">Cadastro de Funcionarios</h1>
-                <form action="">
+                <form action="CadastroFuncionarioServlet" method="POST">
                     <div class="field-wrapper">
                         <label>Nome: *</label>
                         <input class="input-field" name="nome" type="text" />
