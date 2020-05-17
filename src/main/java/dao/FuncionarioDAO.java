@@ -7,8 +7,13 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Funcionario;
 import utils.GerenciadorConexao;
 
@@ -60,5 +65,42 @@ public class FuncionarioDAO {
             }
         }
         return retorno;
+    }
+    
+        public static List<Funcionario> listarFuncionarios() {
+        List<Funcionario> funcionarios = new ArrayList<>();
+        Connection conexao;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM funcionarios;");
+            ResultSet rs = instrucaoSQL.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String email = rs.getString("email");
+                String cpf = rs.getString("cpf");
+                String uf = rs.getString("uf");
+                String cidade = rs.getString("cidade");
+                String telefone = rs.getString("telefone");
+                String celular = rs.getString("celular");
+                String cep = rs.getString("cep");
+                String endereco = rs.getString("endereco");
+                String complemento = rs.getString("complemento");
+                int unidade = rs.getInt("id_unidade");
+                String area = rs.getString("area");
+                String cargo = rs.getString("cargo");
+                double salario = rs.getDouble("salario");
+                boolean ativo = rs.getBoolean("ativo");
+
+                //int unidade, String area, String cargo, double salario, int id, String nome, String email, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo
+                funcionarios.add(new Funcionario(unidade, area, cargo, salario, id, nome, email, cpf, uf, cidade, telefone, celular, cep, endereco, complemento, ativo));
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return funcionarios;
     }
 }
