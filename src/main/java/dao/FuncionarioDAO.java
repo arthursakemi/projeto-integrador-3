@@ -31,8 +31,8 @@ public class FuncionarioDAO {
         try {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("INSERT INTO funcionarios "
-                    + "(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, id_unidade, area, cargo, ativo) "
-                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);",
+                    + "(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, id_unidade, area, cargo, salario, ativo) "
+                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);",
                     Statement.RETURN_GENERATED_KEYS);
 
             instrucaoSQL.setString(1, funcionario.getNome());
@@ -48,7 +48,8 @@ public class FuncionarioDAO {
             instrucaoSQL.setInt(11, funcionario.getUnidade());
             instrucaoSQL.setString(12, funcionario.getArea());
             instrucaoSQL.setString(13, funcionario.getCargo());
-            instrucaoSQL.setBoolean(14, funcionario.isAtivo());
+            instrucaoSQL.setDouble(14, funcionario.getSalario());
+            instrucaoSQL.setBoolean(15, funcionario.isAtivo());
             
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;

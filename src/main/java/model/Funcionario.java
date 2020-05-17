@@ -24,11 +24,12 @@ public class Funcionario extends Pessoa {
         this.salario = salario;
     }
 
-    public Funcionario(int unidade, String area, String cargo, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
+    public Funcionario(int unidade, String area, String cargo, double salario, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo) {
         super(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo);
         this.unidade = unidade;
         this.area = area;
         this.cargo = cargo;
+        this.salario = salario;
     }
 
     public int getUnidade() {

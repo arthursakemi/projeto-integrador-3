@@ -33,11 +33,15 @@ public class CadastroFuncionarioServlet extends HttpServlet{
         String unidadeString = request.getParameter("unidade");
         String area = request.getParameter("area");
         String cargo = request.getParameter("cargo");
+        String salarioString = request.getParameter("salario");
+        
+        double salario = Double.parseDouble(salarioString);
         
         //Casting unidadeString to int
         int unidade = Integer.parseInt(unidadeString);
-                
-        Funcionario funcionario = new Funcionario(unidade, area, cargo, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, true);
+        
+        //int unidade, String area, String cargo, double salario, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo
+        Funcionario funcionario = new Funcionario(unidade, area, cargo, salario, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, true);
         boolean cadastroDB = dao.FuncionarioDAO.salvar(funcionario);
         
         String url = "";
