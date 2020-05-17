@@ -28,7 +28,7 @@ public class Produto {
         this.ativo = ativo;
     }
 
-    public Produto(String nome, String categoria, String fabricante, String descricao, double valor, boolean ativo) {
+    public Produto(String nome, String categoria, String fabricante, double valor, String descricao, boolean ativo) {
         this.nome = nome;
         this.categoria = categoria;
         this.fabricante = fabricante;
