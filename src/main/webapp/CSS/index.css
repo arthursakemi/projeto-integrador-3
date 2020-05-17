@@ -3,8 +3,117 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 10/05/2020, 11:36:20
     Author     : Marcelo
 */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: black;
+}
+
+body {
+    background-color: #ebecf0;
+    display: flex;
+    flex-flow: column;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+#header {
+    background-color: #a5adbb;
+    height: 150px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 220px 1fr 220px;
+}
+
+#logo-container {
+    height: 150px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    height: 80%;
+    cursor: pointer;
+}
+
+#title-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    height: 50%;
+}
+
+#body {
+    height: 100%;
+    width: 100%;
+}
+
+#welcome {
+    margin: 30px auto;
+    text-align: center;
+}
+
+#login-title {
+    text-align: center;
+    color: #dfe1e5;
+}
+
+#login-form {
+    padding: 30px 50px;
+    background-color: #7f8897;
+    margin: auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-input {
+    background-color: #7f8897;
+    height: 50px;
+    margin: 20px 0;
+    border: none;
+    border-bottom: 2px solid #ebecf0;
+    text-align: center;
+    color: #ebecf0;
+    font-size: 25px;
+}
+
+::placeholder {
+    color: #ebecf0;
+}
+
+#login-button {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dfe1e5;
+    box-shadow: 2px 2px 4px black;
+}
+
+#login-button:active {
+    box-shadow: none;
+}

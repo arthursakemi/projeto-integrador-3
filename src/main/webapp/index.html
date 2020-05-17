@@ -4,23 +4,33 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="pt-br">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login - TableTop</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./CSS/index.css" />
+        <title>Home</title>
     </head>
     <body>
-        <div id="header">
-            <h1>TableTop</h1>
-        </div>
-        <div id="login">
-            <form action="XXXXXX" method="POST">
-                <h2>Bem vindo de volta</h2><br>
-                Usuário:<input type="text" name="usuario"/><br>
-                Senha:<input type="password" name="senha"/><br>
-                <a href="menu.jsp">Enviar</a>
-                <!--<button type="submit">Enviar</button>-->
-            </form>
+        <header id="header">
+            <div id="logo-container">
+                <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
+            </div>
+            <div id="title-container">
+                <img id="title" src="./images/title.svg" />
+            </div>
+        </header>
+        <div id="body">
+            <h1 id="welcome">Bem Vindo de volta!</h1>
+
+            <div id="login-card">
+                <form id="login-form" action="">
+                    <h1 id="login-title">Login</h1>
+                    <input class="login-input" type="text" placeholder="usuário" />
+                    <input class="login-input" type="text" placeholder="senha" />
+                    <a id="login-button" href="./menu.jsp">Login</a>
+                </form>
+            </div>
         </div>
     </body>
 </html>
