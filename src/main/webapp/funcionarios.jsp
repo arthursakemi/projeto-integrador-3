@@ -49,7 +49,7 @@
                             <span>${c.nome}</span>
                             <span>${c.cidade} - ${c.uf}</span>
                             <span>${c.cpf}</span>
-                            <span>${c.cel}</span>
+                            <span>${c.celular}</span>
                             <div class="options"></div>
                         </div>
                     </c:forEach>

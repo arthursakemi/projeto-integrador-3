@@ -48,6 +48,5 @@ const closeModal = () => {
     document.getElementById("overlay").style = "display: none";
 };
 
-
 document.getElementById("new-unity").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);

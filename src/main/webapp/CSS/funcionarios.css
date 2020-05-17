@@ -46,7 +46,7 @@ and open the template in the editor.
     overflow: auto;
 }
 
-.client-row {
+.employee-row {
     border-top: 1px solid darkgrey;
     border-bottom: 1px solid darkgrey;
     margin: 5px 0;
