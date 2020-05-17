@@ -7,8 +7,13 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Cliente;
 import utils.GerenciadorConexao;
 
@@ -56,5 +61,37 @@ public class ClienteDAO {
             }
         }
         return retorno;
+    }
+        
+            public static List<Cliente> listarClientes() {
+        List<Cliente> clientes = new ArrayList<>();
+        Connection conexao;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM clientes;");
+            ResultSet rs = instrucaoSQL.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String email = rs.getString("email");
+                String cpf = rs.getString("cpf");
+                String cidade = rs.getString("cidade");
+                String uf = rs.getString("uf");
+                String telefone = rs.getString("telefone");
+                String celular = rs.getString("celular");
+                String cep = rs.getString("cep");
+                String endereco = rs.getString("endereco");
+                String complemento = rs.getString("complemento");
+                boolean ativo = rs.getBoolean("ativo");
+
+                clientes.add(new Cliente(id, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo));
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return clientes;
     }
 }
