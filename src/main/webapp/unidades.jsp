@@ -46,7 +46,7 @@
                 </div>
                 <div id="card-galery">
                     <c:forEach var="c" items="${unidades}">
-                        <div class="unity-card">
+                        <div class="unity-card" key="${c.id}">
                             <div class="unity-img"></div>
                             <h1 class="unity-name">Unidade ${c.nome}</h1>
                             <span class="unity-location">Localização - ${c.cidade}-${c.estado}</span>
