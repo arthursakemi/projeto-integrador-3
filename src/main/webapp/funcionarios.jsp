@@ -3,7 +3,7 @@
     Created on : 09/05/2020, 22:19:26
     Author     : Marcelo
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,7 +43,17 @@
                     <input id="search-field" type="text" placeholder="buscar..." />
                     <button id="search-button">Buscar</button>
                 </div>
-                <div id="employee-table"></div>
+                <div id="employee-table">
+                    <c:forEach var="c" items="${funcionarios}">
+                        <div class="employee-row">
+                            <span>${c.nome}</span>
+                            <span>${c.cidade} - ${c.uf}</span>
+                            <span>${c.cpf}</span>
+                            <span>${c.cel}</span>
+                            <div class="options"></div>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
         </div>
 
