@@ -32,7 +32,7 @@ public class CadastroUnidadeServlet extends HttpServlet {
         String url = "";
         if (gravacaoDB) {
             request.setAttribute("cadastroOK", true);
-            url = "/unidades.jsp";
+            url = "/ListarUnidadesServlet";
         } else {
             url = "/erro.jsp";
         }
