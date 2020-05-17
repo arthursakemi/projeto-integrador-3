@@ -48,6 +48,17 @@ const product = {
     price: "xxx,xx",
 };
 
+const showModal = () => {
+    document.getElementById("overlay").style = "display: flex";
+};
+
+const closeModal = () => {
+    document.getElementById("overlay").style = "display: none";
+};
+
 for (let i = 0; i < 20; i++) {
     addProductCard(product);
 }
+
+document.getElementById("new-product").addEventListener("click", showModal);
+document.getElementById("cancel-button").addEventListener("click", closeModal);

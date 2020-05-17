@@ -44,6 +44,36 @@
                 </div>
                 <div id="card-galery"></div>
             </div>
+            <div id="overlay">
+            <div id="employee-modal">
+                <h1 id="modal-title">Cadastro de Produtos</h1>
+                <form action="CadastroProdutoServlet" method="POST">
+                    <div class="field-wrapper">
+                        <label>Nome: *</label>
+                        <input class="input-field" name="nome" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-name">Categoria *</label>
+                        <input class="input-field" name="categoria" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Fabricante *</label>
+                        <input class="input-field" name="fabricante" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Descrição *</label>
+                        <input class="input-field" name="descricao" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label>Valor *</label>
+                        <input class="input-field" name="valor" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
+                        <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
