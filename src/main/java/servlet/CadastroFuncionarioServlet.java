@@ -5,6 +5,9 @@
  */
 package servlet;
 
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +19,7 @@ import model.Funcionario;
  */
 public class CadastroFuncionarioServlet extends HttpServlet{
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String cpf = request.getParameter("cpf");
@@ -35,6 +38,15 @@ public class CadastroFuncionarioServlet extends HttpServlet{
         int unidade = Integer.parseInt(unidadeString);
                 
         Funcionario funcionario = new Funcionario(unidade, area, cargo, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, true);
-        dao.FuncionarioDAO.salvar(funcionario);
+        boolean cadastroDB = dao.FuncionarioDAO.salvar(funcionario);
+        
+        String url = "";
+        if(cadastroDB) {
+            url = "/funcionarios.jsp";
+        } else {
+            url = "/erro.jsp";
+        }
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+            dispatcher.forward(request, response);
     }
 }

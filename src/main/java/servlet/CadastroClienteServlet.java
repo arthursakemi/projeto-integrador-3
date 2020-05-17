@@ -33,7 +33,6 @@ public class CadastroClienteServlet extends HttpServlet {
         String complemento = request.getParameter("complemento");
 
         Cliente cliente = new Cliente(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, true);
-        
         boolean gravacaoDB = ClienteDAO.salvar(cliente);
         
         String url = "";

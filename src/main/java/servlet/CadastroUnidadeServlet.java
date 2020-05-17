@@ -6,6 +6,9 @@
 package servlet;
 
 import dao.UnidadesDAO;
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,12 +21,22 @@ import model.Unidade;
 public class CadastroUnidadeServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String cidade = request.getParameter("cidade");
         String estado = request.getParameter("estado");
         
         Unidade unidade = new Unidade(nome, cidade, estado, true);
-        UnidadesDAO.salvar(unidade);
+        boolean gravacaoDB = UnidadesDAO.salvar(unidade);
+        
+        String url = "";
+        if (gravacaoDB) {
+            request.setAttribute("cadastroOK", true);
+            url = "/unidades.jsp";
+        } else {
+            url = "/erro.jsp";
+        }
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+            dispatcher.forward(request, response);
     }
 }
