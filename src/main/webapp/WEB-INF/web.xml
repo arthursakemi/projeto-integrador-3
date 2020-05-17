@@ -28,6 +28,14 @@
         <servlet-name>ListarUnidadesServlet</servlet-name>
         <servlet-class>servlet.ListarUnidadesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarClienteServlet</servlet-name>
+        <servlet-class>servlet.ListarClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListarFuncionarioServlet</servlet-name>
+        <servlet-class>servlet.ListarFuncionarioServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>ListarUnidadesServlet</servlet-name>
         <url-pattern>/ListarUnidadesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarClienteServlet</servlet-name>
+        <url-pattern>/ListarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarFuncionarioServlet</servlet-name>
+        <url-pattern>/ListarFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
