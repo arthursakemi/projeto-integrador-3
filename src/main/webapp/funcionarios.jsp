@@ -45,7 +45,7 @@
                 </div>
                 <div id="employee-table">
                     <c:forEach var="c" items="${funcionarios}">
-                        <div class="employee-row">
+                        <div class="employee-row" key="${c.id}">
                             <span>${c.nome}</span>
                             <span>${c.cidade} - ${c.uf}</span>
                             <span>${c.cpf}</span>

@@ -47,7 +47,7 @@
                 </div>
                 <div id="client-table">
                     <c:forEach var="c" items="${clientes}">
-                        <div class="client-row">
+                        <div class="client-row" key="${c.id}">
                             <span>${c.nome}</span>
                             <span>${c.cidade} - ${c.uf}</span>
                             <span>${c.cpf}</span>
