@@ -25,15 +25,16 @@ public class ProdutoDAO {
         try {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("INSERT INTO produtos "
-                    + "(nome, categoria, valor, descricao, ativo) "
-                    + "VALUES(?, ?, ?, ?, ?);",
+                    + "(nome, categoria, fabricante, valor, descricao, ativo) "
+                    + "VALUES(?, ?, ?, ?, ?, ?);",
                     Statement.RETURN_GENERATED_KEYS);
 
             instrucaoSQL.setString(1, produto.getNome());
             instrucaoSQL.setString(2, produto.getCategoria());
-            instrucaoSQL.setDouble(3, produto.getValor());
-            instrucaoSQL.setString(4, produto.getDescricao());
-            instrucaoSQL.setBoolean(5, produto.isAtivo());
+            instrucaoSQL.setString(3, produto.getFabricante());
+            instrucaoSQL.setDouble(4, produto.getValor());
+            instrucaoSQL.setString(5, produto.getDescricao());
+            instrucaoSQL.setBoolean(6, produto.isAtivo());
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
 
