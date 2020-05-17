@@ -48,9 +48,6 @@ const closeModal = () => {
     document.getElementById("overlay").style = "display: none";
 };
 
-for (let i = 0; i < 3; i++) {
-    addUnityCard(unity);
-}
 
 document.getElementById("new-unity").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
