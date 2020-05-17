@@ -62,7 +62,6 @@ public class UnidadesDAO {
 
     public static List<Unidade> listarUnidades() {
         List<Unidade> unidades = new ArrayList<>();
-        boolean ok = false;
         Connection conexao;
         PreparedStatement instrucaoSQL = null;
 
