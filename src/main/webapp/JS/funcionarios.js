@@ -60,5 +60,6 @@ const closeModal = () => {
 };
 
 
+
 document.getElementById("new-employee").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
