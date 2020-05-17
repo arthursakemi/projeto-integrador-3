@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>CadastroProdutoServlet</servlet-name>
-        <servlet-class>servlet.ListarProdutoServlet</servlet-class>
+        <servlet-class>servlet.CadastroProdutoServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CadastroUnidadeServlet</servlet-name>
