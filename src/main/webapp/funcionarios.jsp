@@ -108,7 +108,7 @@
                         <input class="input-field" name="salario" type="text" />
                     </div>
                     <div class="field-wrapper">
-                        <button class="form-button" id="cancel-button">Cancelar</button>
+                        <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
                         <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
                     </div>
                 </form>

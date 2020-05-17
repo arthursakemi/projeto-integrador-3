@@ -59,11 +59,11 @@
                         <input class="input-field" id="unity-city" name="cidade" type="text" />
                     </div>
                     <div class="field-wrapper">
-                        <label for="unity-estate">Estado: *</label>
+                        <label for="unity-estate">UF: *</label>
                         <input class="input-field" id="unity-estate" name="estado" type="text" />
                     </div>
                     <div class="field-wrapper">
-                        <button class="form-button" id="cancel-button">Cancelar</button>
+                        <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
                         <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
                     </div>
                 </form>
