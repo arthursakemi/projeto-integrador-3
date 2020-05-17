@@ -7,8 +7,13 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Produto;
 import utils.GerenciadorConexao;
 
@@ -54,5 +59,32 @@ public class ProdutoDAO {
         }
 
         return retorno;
+    }
+    
+    public static List<Produto> listarProdutos() {
+        List<Produto> produtos = new ArrayList<>();
+        Connection conexao;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM produtos;");
+            ResultSet rs = instrucaoSQL.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String categoria = rs.getString("categoria");
+                String fabricante = rs.getString("fabricante");
+                String descricao = rs.getString("descricao");
+                double valor = rs.getDouble("valor");
+                boolean ativo = rs.getBoolean("ativo");
+
+                produtos.add(new Produto(id, nome, categoria, fabricante, descricao, valor, ativo));
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return produtos;
     }
 }
