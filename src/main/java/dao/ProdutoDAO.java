@@ -22,6 +22,7 @@ import utils.GerenciadorConexao;
  * @author Marcelo
  */
 public class ProdutoDAO {
+
     public static boolean salvar(Produto produto) {
         boolean retorno = false;
         Connection conexao = null;
@@ -60,7 +61,7 @@ public class ProdutoDAO {
 
         return retorno;
     }
-    
+
     public static List<Produto> listarProdutos() {
         List<Produto> produtos = new ArrayList<>();
         Connection conexao;
@@ -84,6 +85,14 @@ public class ProdutoDAO {
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
         }
         return produtos;
     }

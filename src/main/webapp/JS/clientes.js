@@ -59,9 +59,6 @@ const closeModal = () => {
     document.getElementById("overlay").style = "display: none";
 };
 
-for (let i = 0; i < 15; i++) {
-    addClientRow(client);
-}
 
 document.getElementById("new-customer").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);

@@ -22,7 +22,8 @@ import utils.GerenciadorConexao;
  * @author Marcelo
  */
 public class ClienteDAO {
-        public static boolean salvar(Cliente cliente) {
+
+    public static boolean salvar(Cliente cliente) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
@@ -45,7 +46,7 @@ public class ClienteDAO {
             instrucaoSQL.setString(9, cliente.getEndereco());
             instrucaoSQL.setString(10, cliente.getComplemento());
             instrucaoSQL.setBoolean(11, cliente.isAtivo());
-            
+
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;
         } catch (SQLException | ClassNotFoundException ex) {
@@ -62,8 +63,8 @@ public class ClienteDAO {
         }
         return retorno;
     }
-        
-            public static List<Cliente> listarClientes() {
+
+    public static List<Cliente> listarClientes() {
         List<Cliente> clientes = new ArrayList<>();
         Connection conexao;
         PreparedStatement instrucaoSQL = null;
@@ -91,6 +92,22 @@ public class ClienteDAO {
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            } finally {
+                try {
+                    if (instrucaoSQL != null) {
+                        instrucaoSQL.close();
+                    }
+                    GerenciadorConexao.fecharConexao();
+                } catch (SQLException ex) {
+                }
+            }
         }
         return clientes;
     }

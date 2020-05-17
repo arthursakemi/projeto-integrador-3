@@ -22,7 +22,7 @@ import utils.GerenciadorConexao;
  * @author Marcelo
  */
 public class FuncionarioDAO {
-        
+
     public static boolean salvar(Funcionario funcionario) {
         boolean retorno = false;
         Connection conexao = null;
@@ -50,7 +50,7 @@ public class FuncionarioDAO {
             instrucaoSQL.setString(13, funcionario.getCargo());
             instrucaoSQL.setDouble(14, funcionario.getSalario());
             instrucaoSQL.setBoolean(15, funcionario.isAtivo());
-            
+
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;
         } catch (SQLException | ClassNotFoundException ex) {
@@ -67,8 +67,8 @@ public class FuncionarioDAO {
         }
         return retorno;
     }
-    
-        public static List<Funcionario> listarFuncionarios() {
+
+    public static List<Funcionario> listarFuncionarios() {
         List<Funcionario> funcionarios = new ArrayList<>();
         Connection conexao;
         PreparedStatement instrucaoSQL = null;
@@ -101,6 +101,14 @@ public class FuncionarioDAO {
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
         }
         return funcionarios;
     }

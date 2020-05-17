@@ -3,7 +3,7 @@
     Created on : 09/05/2020, 22:19:13
     Author     : Marcelo
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,9 +32,9 @@
         </header>
         <div id="body">
             <aside id="menu">
-                <a class="button" href="./produtos.jsp">Produtos</a>
-                <a class="button" href="./clientes.jsp">Clientes</a>
-                <a class="button" href="./funcionarios.jsp">Funcionarios</a>
+                <a class="button" href="./ListarProdutoServlet">Produtos</a>
+                <a class="button" href="./ListarClienteServlet">Clientes</a>
+                <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
                 <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                 <a class="button" href="./vendas.jsp">Vendas</a>
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
@@ -45,7 +45,17 @@
                     <input id="search-field" type="text" placeholder="buscar..." />
                     <button id="search-button">Buscar</button>
                 </div>
-                <div id="client-table"></div>
+                <div id="client-table">
+                    <c:forEach var="c" items="${clientes}">
+                        <div class="client-row">
+                            <span>${c.nome}</span>
+                            <span>${c.cidade} - ${c.uf}</span>
+                            <span>${c.cpf}</span>
+                            <span>${c.celular}</span>
+                            <div class="options"></div>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
         </div>
 

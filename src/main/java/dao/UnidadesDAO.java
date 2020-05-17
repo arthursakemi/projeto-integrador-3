@@ -81,6 +81,14 @@ public class UnidadesDAO {
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
         }
         return unidades;
     }
