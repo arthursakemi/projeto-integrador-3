@@ -5,8 +5,8 @@ CREATE TABLE produtos(
     nome VARCHAR(30) NOT NULL,
     categoria VARCHAR(20) NOT NULL,
     fabricante VARCHAR(30) NOT NULL,
-    valor DOUBLE NOT NULL,
     descricao VARCHAR(255),
+    valor DOUBLE NOT NULL,
     ativo BOOLEAN NOT NULL,
     
     PRIMARY KEY (id)
