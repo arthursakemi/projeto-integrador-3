@@ -73,7 +73,7 @@
                     </div>
                     <div class="field-wrapper">
                         <label>Estado: *</label>
-                        <input class="input-field" name="estado" type="text" />
+                        <input class="input-field" name="uf" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label>Telefone: </label>

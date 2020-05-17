@@ -25,7 +25,7 @@ public class FuncionarioDAO {
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
-            instrucaoSQL = conexao.prepareStatement("INSERT INTO clientes "
+            instrucaoSQL = conexao.prepareStatement("INSERT INTO funcionarios "
                     + "(nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, id_unidade, area, cargo, ativo) "
                     + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);",
                     Statement.RETURN_GENERATED_KEYS);

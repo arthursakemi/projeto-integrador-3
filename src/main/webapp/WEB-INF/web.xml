@@ -12,8 +12,6 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
-
-
     <servlet>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <servlet-class>servlet.CadastroClienteServlet</servlet-class>
