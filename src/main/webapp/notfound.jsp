@@ -12,6 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/notfound.css" />
+        <script src="./JS/base.js" defer></script>
         <title>404 Page Not Found - TableTop</title>
     </head>
     <body>
@@ -24,7 +25,7 @@
             </div>
             <div id="user-container">
                 <p id="username">username</p>
-                <img id="avatar" src="./images/avatar.svg" alt="profile picture" />
+                <img id="avatar" alt="profile picture" />
             </div>
         </header>
         <div id="body">

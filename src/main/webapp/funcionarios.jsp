@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/funcionarios.css" />
         <script src="./JS/funcionarios.js" defer></script>
+        <script src="./JS/base.js" defer></script>
         <title>Home</title>
     </head>
     <body>

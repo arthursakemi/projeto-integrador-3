@@ -12,7 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/menu.css" />
-        <script src="./js/home.js" defer></script>
+        <script src="./JS/home.js" defer></script>
+        <script src="./JS/base.js" defer></script>
         <title>Home</title>
     </head>
     <body>

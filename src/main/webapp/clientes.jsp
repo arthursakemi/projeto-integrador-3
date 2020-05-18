@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="./CSS/clientes.css" />
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./JS/clientes.js" defer></script>
+        <script src="./JS/base.js" defer></script>
         <title>Clientes - TableTop</title>
     </head>
     <body>

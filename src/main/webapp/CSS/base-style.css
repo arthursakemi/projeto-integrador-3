@@ -85,6 +85,14 @@ body {
 #logo {
     height: 80%;
     cursor: pointer;
+    transition-duration: 1.5s;
+    transition-property: transform;
+}
+
+#logo:hover {
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg); 
+    -o-transform:rotate(360deg);
 }
 
 #user-container {
@@ -132,3 +140,5 @@ body {
     justify-content: center;
     overflow: auto;
 }
+
+

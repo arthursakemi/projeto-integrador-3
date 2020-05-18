@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/unidades.css" />
         <script src="./JS/unidades.js" defer></script>
+        <script src="./JS/base.js" defer></script>
         <title>Unidades - TableTop</title>
     </head>
     <body>

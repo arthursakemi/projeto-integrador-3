@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/produtos.css" />
         <script src="./JS/produtos.js" defer></script>
+        <script src="./JS/base.js" defer></script>
         <title>Produtos - TableTop</title>
     </head>
     <body>

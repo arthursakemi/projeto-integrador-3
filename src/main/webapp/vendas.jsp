@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="./CSS/produtos.css" />
         <link rel="stylesheet" href="./CSS/vendas.css" />
         <script src="./JS/produtos.js" defer></script>
+        <script src="./JS/base.js" defer></script>
         <title>Home</title>
     </head>
     <body>
