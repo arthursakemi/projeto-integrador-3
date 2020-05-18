@@ -88,7 +88,7 @@
 
                 <div class="modal" id="edit-product-modal">
                     <h1 class="modal-title">Editar Produto</h1>
-                    <form action="" method="POST">
+                    <form action="EditarProdutoServlet" method="POST">
                         <div class="field-wrapper" style="display:none">
                             <input class="input-field" id="edit-id" name="nome" type="text" />
                         </div>
@@ -114,7 +114,15 @@
                         </div>
                         <div class="field-wrapper">
                             <button class="form-button" id="edit-cancel-button" type="reset">Cancelar</button>
-                            <button class="form-button" id="edit-submit-button " type="submit">Cadastrar</button>
+                            <button class="form-button" id="edit-submit-button " type="submit">Atualizar</button>
+                        </div>
+                    </form>
+                    <form action="DeletarProdutoServlet" method="POST">
+                        <div class="field-wrapper" style="display:none">
+                            <input class="input-field" id="delete-id" name="id" type="text" />
+                        </div>
+                        <div class="field-wrapper">
+                            <button class="form-button" id="delete-submit-button " type="submit">Deletar</button>
                         </div>
                     </form>
                 </div>

@@ -65,6 +65,8 @@ const showEditModal = (id, nome, categoria, fabricante, descricao, preco) => {
     document.getElementById("edit-manufacturer").value = fabricante;
     document.getElementById("edit-description").value = descricao;
     document.getElementById("edit-price").value = preco;
+    
+    document.getElementById("delete-id").value = id;
 };
 
 const closeModal = () => {
