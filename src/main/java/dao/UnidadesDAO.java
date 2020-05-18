@@ -93,7 +93,7 @@ public class UnidadesDAO {
         return unidades;
     }
 
-        public static boolean alterar(Unidade unidade) {
+    public static boolean alterar(Unidade unidade) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
@@ -110,6 +110,40 @@ public class UnidadesDAO {
             instrucaoSQL.setString(3, unidade.getEstado());
             instrucaoSQL.setBoolean(4, true);
             instrucaoSQL.setInt(5, unidade.getId());
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+
+            retorno = linhasAfetadas > 0;
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+
+        return retorno;
+    }
+    
+    public static boolean deletar(Unidade unidade) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE unidades "
+                    + "SET ativo = false "
+                    + "WHERE id = ?;",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            instrucaoSQL.setInt(1, unidade.getId());
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
 

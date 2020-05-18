@@ -59,6 +59,11 @@ const showEditModal = (id, nome, cidade, estado) => {
     document.getElementById("edit-unity-name").value = nome;
     document.getElementById("edit-unity-city").value = cidade;
     document.getElementById("edit-unity-estate").value = estado;
+    
+    document.getElementById("delete-unity-id").value = id;
+    document.getElementById("delete-unity-name").value = nome;
+    document.getElementById("delete-unity-city").value = cidade;
+    document.getElementById("delete-unity-estate").value = estado;
 }
 
 document.getElementById("new-unity").addEventListener("click", showCreateModal);

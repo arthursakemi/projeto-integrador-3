@@ -62,6 +62,7 @@ const showEditModal = (id, nome, email, cpf, cep, cidade, uf, tel, cel, endereco
     document.getElementById("customer-modal").style = "display: none";
     document.getElementById("edit-modal").style = "display: flex";
 
+    //fill inputs on edit form
     document.getElementById("edit-id").value = id;
     document.getElementById("edit-name").value = nome;
     document.getElementById("edit-email").value = email;
@@ -73,6 +74,19 @@ const showEditModal = (id, nome, email, cpf, cep, cidade, uf, tel, cel, endereco
     document.getElementById("edit-cel").value = cel;
     document.getElementById("edit-address").value = endereco;
     document.getElementById("edit-complement").value = complemento;
+    
+    //fill inputs on delete form
+    document.getElementById("delete-id").value = id;
+    document.getElementById("delete-name").value = nome;
+    document.getElementById("delete-email").value = email;
+    document.getElementById("delete-cpf").value = cpf;
+    document.getElementById("delete-cep").value = cep;
+    document.getElementById("delete-city").value = cidade;
+    document.getElementById("delete-estate").value = uf;
+    document.getElementById("delete-tel").value = tel;
+    document.getElementById("delete-cel").value = cel;
+    document.getElementById("delete-address").value = endereco;
+    document.getElementById("delete-complement").value = complemento;
 };
 
 const closeModal = () => {

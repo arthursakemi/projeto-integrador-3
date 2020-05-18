@@ -40,6 +40,34 @@
         <servlet-name>EditarUnidadeServlet</servlet-name>
         <servlet-class>servlet.EditarUnidadeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarClienteServlet</servlet-name>
+        <servlet-class>servlet.EditarClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarUnidadeServlet</servlet-name>
+        <servlet-class>servlet.DeletarUnidadeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <servlet-class>servlet.DeletarClienteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarProdutoServlet</servlet-name>
+        <servlet-class>servlet.EditarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarFuncionarioServlet</servlet-name>
+        <servlet-class>servlet.EditarFuncionarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <servlet-class>servlet.DeletarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <servlet-class>servlet.DeletarFuncionarioServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
@@ -79,6 +107,34 @@
     <servlet-mapping>
         <servlet-name>EditarUnidadeServlet</servlet-name>
         <url-pattern>/EditarUnidadeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarClienteServlet</servlet-name>
+        <url-pattern>/EditarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarUnidadeServlet</servlet-name>
+        <url-pattern>/DeletarUnidadeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <url-pattern>/DeletarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarProdutoServlet</servlet-name>
+        <url-pattern>/EditarProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarFuncionarioServlet</servlet-name>
+        <url-pattern>/EditarFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <url-pattern>/DeletarProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <url-pattern>/DeletarFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

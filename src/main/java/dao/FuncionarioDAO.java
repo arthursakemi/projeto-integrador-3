@@ -112,4 +112,81 @@ public class FuncionarioDAO {
         }
         return funcionarios;
     }
+    
+    public static boolean alterar(Funcionario funcionario) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE funcionarios "
+                    + "SET nome = ?, email = ?, cpf = ?, cidade = ?, uf = ?, telefone = ?, celular = ?, "
+                    + "cep = ?, endereco = ?, complemento = ?, id_unidade = ?, area = ?, cargo = ?, salario = ? "
+                    + "WHERE id = ?;",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            instrucaoSQL.setString(1, funcionario.getNome());
+            instrucaoSQL.setString(2, funcionario.getEmail());
+            instrucaoSQL.setString(3, funcionario.getCpf());
+            instrucaoSQL.setString(4, funcionario.getCidade());
+            instrucaoSQL.setString(5, funcionario.getUf());
+            instrucaoSQL.setString(6, funcionario.getTelefone());
+            instrucaoSQL.setString(7, funcionario.getCelular());
+            instrucaoSQL.setString(8, funcionario.getCep());
+            instrucaoSQL.setString(9, funcionario.getEndereco());
+            instrucaoSQL.setString(10, funcionario.getComplemento());
+            instrucaoSQL.setInt(11, funcionario.getUnidade());
+            instrucaoSQL.setString(12, funcionario.getArea());
+            instrucaoSQL.setString(13, funcionario.getCargo());
+            instrucaoSQL.setDouble(14, funcionario.getSalario());
+            instrucaoSQL.setInt(15, funcionario.getId());
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+            retorno = linhasAfetadas > 0;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+        return retorno;
+    }
+    
+    public static boolean deletar(int id) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE funcionarios "
+                    + "SET ativo = false "
+                    + "WHERE id = ?; ",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            instrucaoSQL.setInt(1, id);
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+            retorno = linhasAfetadas > 0;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+        return retorno;
+    }
 }

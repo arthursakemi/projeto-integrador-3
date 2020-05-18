@@ -112,13 +112,13 @@
 
             <div class="modal" id="edit-modal">
                 <h1 class="modal-title">Editar Cliente</h1>
-                <form action="" method="POST">
+                <form action="EditarClienteServlet" method="POST">
                     <div class="field-wrapper" style="display:none">
                         <input class="input-field" id="edit-id" name="id" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
-                        <input class="input-field" id="edit-name" name="name" type="text" />
+                        <input class="input-field" id="edit-name" name="nome" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Email *</label>
@@ -159,6 +159,55 @@
                     <div class="field-wrapper">
                         <button class="form-button" id="edit-cancel-button" type="reset">Cancelar</button>
                         <button class="form-button" id="edit-submit-button " type="submit">Salvar</button>
+                    </div>
+                </form>
+                <!--Form created to submit data of the object to be deleted (updated to ativo false)-->
+                <form action="DeletarClienteServlet" method="POST">
+                    <div class="field-wrapper" style="display:none">
+                        <input class="input-field" id="delete-id" name="id" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="customer-name">Nome: *</label>
+                        <input class="input-field" id="delete-name" name="nome" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="unity-name">Email *</label>
+                        <input class="input-field" id="delete-email" name="email" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="cpf">CPF: *</label>
+                        <input class="input-field" id="delete-cpf" name="cpf" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="cep">CEP: *</label>
+                        <input class="input-field" id="delete-cep" name="cep" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="city">Cidade: *</label>
+                        <input class="input-field" id="delete-city" name="cidade" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="unity-estate">Estado: *</label>
+                        <input class="input-field" id="delete-estate" name="uf" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="unity-estate">Telefone: </label>
+                        <input class="input-field" id="delete-tel" name="telefone" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="unity-estate">Celular: *</label>
+                        <input class="input-field" id="delete-cel" name="celular" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="unity-estate">Endereço: *</label>
+                        <input class="input-field" id="delete-address" name="endereco" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display:none">
+                        <label for="unity-estate">Complemento: *</label>
+                        <input class="input-field" id="delete-complement" name="complemento" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="delete-submit-button " type="submit">Excluir</button>
                     </div>
                 </form>
             </div>
