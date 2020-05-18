@@ -37,7 +37,7 @@ public class CadastroProdutoServlet extends HttpServlet{
         
         String url = "";
         if(cadastroDB) {
-            url = "/produtos.jsp";
+            url = "/ListarProdutoServlet";
         } else {
             url = "/erro.jsp";
         }

@@ -96,4 +96,76 @@ public class ProdutoDAO {
         }
         return produtos;
     }
+    
+    public static boolean alterar(Produto produto) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE produtos "
+                    + "SET nome = ?, categoria = ?, fabricante = ?, valor = ?, descricao = ?, ativo = ? "
+                    + "WHERE id = ?);",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            instrucaoSQL.setString(1, produto.getNome());
+            instrucaoSQL.setString(2, produto.getCategoria());
+            instrucaoSQL.setString(3, produto.getFabricante());
+            instrucaoSQL.setDouble(4, produto.getValor());
+            instrucaoSQL.setString(5, produto.getDescricao());
+            instrucaoSQL.setBoolean(6, produto.isAtivo());
+            instrucaoSQL.setInt(6, produto.getId());
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+            retorno = linhasAfetadas > 0;
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+
+        return retorno;
+    }
+    
+    public static boolean deletar(int id) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE produtos "
+                    + "SET ativo = false "
+                    + "WHERE id = ?);",
+                    Statement.RETURN_GENERATED_KEYS);
+            
+            instrucaoSQL.setInt(6, id);
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+            retorno = linhasAfetadas > 0;
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+
+        return retorno;
+    }
 }
