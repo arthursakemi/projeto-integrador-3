@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/erro.css" />
-        <title>Internal Error - TableTop</title>
+        <title>500 Internal Error - TableTop</title>
     </head>
     <body>
         <header id="header">

@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/notfound.css" />
-        <title>Page Not Found - TableTop</title>
+        <title>404 Page Not Found - TableTop</title>
     </head>
     <body>
         <header id="header">
