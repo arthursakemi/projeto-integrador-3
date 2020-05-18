@@ -51,8 +51,16 @@ const employee = {
     cel: "(11)92222-2222",
 };
 
-const showModal = () => {
-    document.getElementById("overlay").style = "display: flex";
+const showCreateModal = () => {
+    document.getElementById("overlay").style = "display:flex";
+    document.getElementById("employee-modal").style = "display:flex";
+    document.getElementById("edit-modal").style = "display: none";
+};
+
+const showEditModal = () => {
+    document.getElementById("overlay").style = "display:flex";
+    document.getElementById("employee-modal").style = "display:none";
+    document.getElementById("edit-modal").style = "display: flex";
 };
 
 const closeModal = () => {
@@ -61,5 +69,6 @@ const closeModal = () => {
 
 
 
-document.getElementById("new-employee").addEventListener("click", showModal);
+document.getElementById("new-employee").addEventListener("click", showCreateModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
+document.getElementById("edit-cancel-button").addEventListener("click", closeModal);

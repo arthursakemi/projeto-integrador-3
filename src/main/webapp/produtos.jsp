@@ -43,8 +43,8 @@
                     <button id="search-button">Buscar</button>
                 </div>
                 <div id="card-galery">
-                    <c:forEach var="c" items="${produtos}">
-                        <div class="product-card" key="${c.id}">
+                    <c:forEach var="c" items="${produtos}" >
+                        <div class="product-card" key="${c.id}" onclick="showEditModal()">
                             <div class="product-img"></div>
                             <h1 class="product-name">${c.nome}</h1>
                             <div class="card-text">
@@ -86,9 +86,12 @@
                     </form>
                 </div>
 
-                <div class="modal" id="product-modal">
+                <div class="modal" id="edit-product-modal">
                     <h1 class="modal-title">Editar Produto</h1>
-                    <form action="CadastroProdutoServlet" method="POST">
+                    <form action="" method="POST">
+                        <div class="field-wrapper" style="display:none">
+                            <input class="input-field" id="edit-id" name="nome" type="text" />
+                        </div>
                         <div class="field-wrapper">
                             <label>Nome: *</label>
                             <input class="input-field" id="edit-name" name="nome" type="text" />
@@ -110,8 +113,8 @@
                             <input class="input-field" id="edit-price" name="valor" type="text" />
                         </div>
                         <div class="field-wrapper">
-                            <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
-                            <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
+                            <button class="form-button" id="edit-cancel-button" type="reset">Cancelar</button>
+                            <button class="form-button" id="edit-submit-button " type="submit">Cadastrar</button>
                         </div>
                     </form>
                 </div>
