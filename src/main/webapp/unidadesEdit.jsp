@@ -14,9 +14,11 @@
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/unidades.css" />
         <script src="./JS/unidades.js" defer></script>
+
         <title>Home</title>
     </head>
     <body>
+        <jsp:include page="/ListarFuncionarioServlet" flush="true" />
         <header id="header">
             <a id="logo-container" href="./menu.jsp">
                 <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
@@ -46,7 +48,7 @@
                 </div>
                 <div id="card-galery">
                     <c:forEach var="c" items="${unidades}">
-                        <div class="unity-card" key="${c.id}" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.cidade}`, `${c.estado}`)">
+                        <div class="unity-card" key="${c.id}">
                             <div class="unity-img"></div>
                             <h1 class="unity-name">Unidade ${c.nome}</h1>
                             <span class="unity-location">Localização - ${c.cidade}-${c.estado}</span>
@@ -55,49 +57,26 @@
                 </div>
             </div>
         </div>
-        <div id="overlay">
-            <div class="modal" id="unity-modal">
-                <h1 class="modal-title">Cadastro de Unidade</h1>
-                <form action="CadastroUnidadeServlet" method="POST">
+        <div id="overlay" style="display:flex">
+            <div id="unity-modal">
+                <h1 id="modal-title"> Unidade</h1>
+                <form action="" method="POST">
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
-                        <input class="input-field" id="unity-name" name="nome" type="text" />
+                        <input class="input-field" id="unity-name" name="nome" type="text" disabled/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-city">Cidade: *</label>
-                        <input class="input-field" id="unity-city" name="cidade" type="text" />
+                        <input class="input-field" id="unity-city" name="cidade" type="text" disabled/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">UF: *</label>
-                        <input class="input-field" id="unity-estate" name="estado" type="text" />
+                        <input class="input-field" id="unity-estate" name="estado" type="text" disabled/>
                     </div>
                     <div class="field-wrapper">
-                        <button class="form-button" id="cancel-button" type="reset">Cancelar </button>
-                        <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
-                    </div>
-                </form>
-            </div>
-            <div class="modal" id="edit-modal" style="display: none">
-                <h1 class="modal-title">Editar Unidade</h1>
-                <form action="" method="POST">
-                    <div class="field-wrapper" style="display: none">
-                        <input class="input-field" id="edit-unity-id" name="nome" type="text" />
-                    </div>
-                    <div class="field-wrapper">
-                        <label for="unity-name">Nome: *</label>
-                        <input class="input-field" id="edit-unity-name" name="nome" type="text" />
-                    </div>
-                    <div class="field-wrapper">
-                        <label for="edit-unity-city">Cidade: *</label>
-                        <input class="input-field" id="edit-unity-city" name="cidade" type="text" />
-                    </div>
-                    <div class="field-wrapper">
-                        <label for="edit-unity-estate">UF: *</label>
-                        <input class="input-field" id="edit-unity-estate" name="estado" type="text" />
-                    </div>
-                    <div class="field-wrapper">
-                        <button class="form-button" id="edit-cancel-button" type="reset">Cancelar </button>
-                        <button class="form-button" id="edit-submit-button " type="submit">Salvar</button>
+                        <button class="edit-form-button" id="cancel-button" type="reset">Cancelar</button>
+                        <button class="edit-form-button" id="edit-button" type="button">Editar</button>
+                        <button class="edit-form-button" id="submit-button " type="submit">Salavar</button>
                     </div>
                 </form>
             </div>
