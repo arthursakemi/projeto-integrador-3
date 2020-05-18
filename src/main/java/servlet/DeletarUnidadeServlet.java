@@ -31,7 +31,7 @@ public class DeletarUnidadeServlet extends HttpServlet {
         int id = Integer.parseInt(idString);
         
         Unidade unidade = new Unidade(id, nome, cidade, estado, true);
-        boolean gravacaoDB = UnidadesDAO.alterar(unidade);
+        boolean gravacaoDB = UnidadesDAO.deletar(unidade);
         
         String url = "";
         if (gravacaoDB) {

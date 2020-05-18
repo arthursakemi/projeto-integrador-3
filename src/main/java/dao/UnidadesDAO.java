@@ -139,7 +139,7 @@ public class UnidadesDAO {
         try {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("UPDATE unidades "
-                    + "ativo = false "
+                    + "SET ativo = false "
                     + "WHERE id = ?;",
                     Statement.RETURN_GENERATED_KEYS);
 

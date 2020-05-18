@@ -100,6 +100,30 @@
                         <button class="form-button" id="edit-submit-button " type="submit">Salvar</button>
                     </div>
                 </form>
+                <form action="DeletarUnidadeServlet" method="POST">
+                    <div class="field-wrapper" style="display: none">
+                        <input class="input-field" id="delete-unity-id" name="id" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display: none">
+                        <label for="unity-name">Nome: *</label>
+                        <input class="input-field" id="delete-unity-name" name="nome" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display: none">
+                        <label for="edit-unity-city">Cidade: *</label>
+                        <input class="input-field" id="delete-unity-city" name="cidade" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display: none">
+                        <label for="edit-unity-estate">UF: *</label>
+                        <input class="input-field" id="delete-unity-estate" name="estado" type="text" />
+                    </div>
+                    <div class="field-wrapper" style="display: none">
+                        <button class="form-button" id="delete-cancel-button" type="reset">Cancelar </button>
+                        <button class="form-button" id="delete-submit-button " type="submit">Salvar</button>
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="delete-submit-button" type="submit">Deletar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </body>
