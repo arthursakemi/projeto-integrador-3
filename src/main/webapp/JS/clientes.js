@@ -57,10 +57,22 @@ const showCreateModal = () => {
     document.getElementById("edit-modal").style = "display: none";
 };
 
-const showEditModal = () => {
+const showEditModal = (id, nome, email, cpf, cep, cidade, uf, tel, cel, endereco, complemento) => {
     document.getElementById("overlay").style = "display: flex";
     document.getElementById("customer-modal").style = "display: none";
     document.getElementById("edit-modal").style = "display: flex";
+
+    document.getElementById("edit-id").value = id;
+    document.getElementById("edit-name").value = nome;
+    document.getElementById("edit-email").value = email;
+    document.getElementById("edit-cpf").value = cpf;
+    document.getElementById("edit-cep").value = cep;
+    document.getElementById("edit-city").value = cidade;
+    document.getElementById("edit-estate").value = uf;
+    document.getElementById("edit-tel").value = tel;
+    document.getElementById("edit-cel").value = cel;
+    document.getElementById("edit-address").value = endereco;
+    document.getElementById("edit-complement").value = complemento;
 };
 
 const closeModal = () => {
