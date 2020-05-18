@@ -153,4 +153,35 @@ public class ClienteDAO {
         }
         return retorno;
     }
+    
+    public static boolean deletar(Cliente cliente) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE clientes "
+                    + "SET ativo = false "
+                    + "WHERE id = ?;",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            instrucaoSQL.setInt(1, cliente.getId());
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+            retorno = linhasAfetadas > 0;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+        return retorno;
+    }
 }

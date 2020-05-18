@@ -48,6 +48,10 @@
         <servlet-name>DeletarUnidadeServlet</servlet-name>
         <servlet-class>servlet.DeletarUnidadeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <servlet-class>servlet.DeletarClienteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>DeletarUnidadeServlet</servlet-name>
         <url-pattern>/DeletarUnidadeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarClienteServlet</servlet-name>
+        <url-pattern>/DeletarClienteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
