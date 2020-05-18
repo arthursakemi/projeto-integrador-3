@@ -51,19 +51,23 @@ const client = {
     cel: "(11)91111-1111",
 };
 
-const showModal = () => {
+const showCreateModal = () => {
     document.getElementById("overlay").style = "display: flex";
+    document.getElementById("customer-modal").style = "display: flex";
+    document.getElementById("edit-modal").style = "display: none";
+};
+
+const showEditModal = () => {
+    document.getElementById("overlay").style = "display: flex";
+    document.getElementById("customer-modal").style = "display: none";
+    document.getElementById("edit-modal").style = "display: flex";
 };
 
 const closeModal = () => {
     document.getElementById("overlay").style = "display: none";
 };
 
-const deleteClient = (key) => {
-    axios.get(`localhost:8080/projeto-integrador-3/DeleteUnidadeServlet?id=${key}`)
-}
 
-
-document.getElementById("new-customer").addEventListener("click", showModal);
+document.getElementById("new-customer").addEventListener("click", showCreateModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
-document.getElementById("opti")
+document.getElementById("edit-cancel-button").addEventListener("click", closeModal)

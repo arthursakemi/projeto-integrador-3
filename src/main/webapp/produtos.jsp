@@ -56,28 +56,58 @@
                 </div>
             </div>
             <div id="overlay">
-                <div id="employee-modal">
-                    <h1 id="modal-title">Cadastro de Produtos</h1>
+                <div class="modal" id="product-modal">
+                    <h1 class="modal-title">Cadastro de Produtos</h1>
                     <form action="CadastroProdutoServlet" method="POST">
                         <div class="field-wrapper">
                             <label>Nome: *</label>
-                            <input class="input-field" name="nome" type="text" />
+                            <input class="input-field" id="name" name="nome" type="text" />
                         </div>
                         <div class="field-wrapper">
-                            <label for="unity-name">Categoria *</label>
-                            <input class="input-field" name="categoria" type="text" />
+                            <label>Categoria *</label>
+                            <input class="input-field" id="category" name="categoria" type="text" />
                         </div>
                         <div class="field-wrapper">
                             <label>Fabricante *</label>
-                            <input class="input-field" name="fabricante" type="text" />
+                            <input class="input-field" id="manufacturer" name="fabricante" type="text" />
                         </div>
                         <div class="field-wrapper">
                             <label>Descrição *</label>
-                            <input class="input-field" name="descricao" type="text" />
+                            <input class="input-field" id="description" name="descricao" type="text" />
                         </div>
                         <div class="field-wrapper">
                             <label>Valor *</label>
-                            <input class="input-field" name="valor" type="text" />
+                            <input class="input-field" id="price" name="valor" type="text" />
+                        </div>
+                        <div class="field-wrapper">
+                            <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
+                            <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal" id="product-modal">
+                    <h1 class="modal-title">Editar Produto</h1>
+                    <form action="CadastroProdutoServlet" method="POST">
+                        <div class="field-wrapper">
+                            <label>Nome: *</label>
+                            <input class="input-field" id="edit-name" name="nome" type="text" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label>Categoria *</label>
+                            <input class="input-field" id="edit-category" name="categoria" type="text" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label>Fabricante *</label>
+                            <input class="input-field" id="edit-manufacturer" name="fabricante" type="text" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label>Descrição *</label>
+                            <input class="input-field" id="edit-description" name="descricao" type="text" />
+                        </div>
+                        <div class="field-wrapper">
+                            <label>Valor *</label>
+                            <input class="input-field" id="edit-price" name="valor" type="text" />
                         </div>
                         <div class="field-wrapper">
                             <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
