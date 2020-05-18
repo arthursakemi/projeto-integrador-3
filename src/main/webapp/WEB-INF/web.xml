@@ -36,6 +36,10 @@
         <servlet-name>ListarFuncionarioServlet</servlet-name>
         <servlet-class>servlet.ListarFuncionarioServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarUnidadeServlet</servlet-name>
+        <servlet-class>servlet.EditarUnidadeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>ListarFuncionarioServlet</servlet-name>
         <url-pattern>/ListarFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarUnidadeServlet</servlet-name>
+        <url-pattern>/EditarUnidadeServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

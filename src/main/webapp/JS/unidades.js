@@ -54,3 +54,10 @@ document.getElementById("cancel-button").addEventListener("click", closeModal);
 document.getElementById("card-galery").addEventListener("click", () => {
     console.log(event.target.parentNode.getAttribute("key"));
 })
+
+const editItemById = () => {
+    const id = event.target.parentNode.getAttribute("key");
+    if(id) {
+        
+    }
+}
