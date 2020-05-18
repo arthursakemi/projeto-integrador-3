@@ -36,7 +36,7 @@
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
                 <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
                 <a class="button" href="./ListarUnidadesServlet">Unidades</a>
-                <a class="button" href="./vendas.jsp">Vendas</a>
+                <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
             <div id="content">

@@ -36,7 +36,7 @@
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
                 <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
                 <a class="button" href="./ListarUnidadesServlet">Unidades</a>
-                <a class="button" href="./vendas.jsp">Vendas</a>
+                <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>
             <div id="content">
@@ -58,8 +58,20 @@
                 </div>
 
             </div>
-            <div id="shop-cart-container">
-
+            <div id="shop-cart-sidebar">
+                <h1>Cliente</h1>
+                <div id="shop-cart-container">
+                    <h2 id="shop-cart-title">Carrinho</h2>
+                    <div id="shop-cart"></div>
+                    <div id="sale-totals">
+                        <span>Total:</span>
+                        <span>R$ xxx,xx</span>
+                    </div>
+                    <div id="cart-buttons">
+                        <button class="sale-button" id="cancel-button">Cancelar</button>
+                        <button class="sale-button" id="submit-button">Concluir</button>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
