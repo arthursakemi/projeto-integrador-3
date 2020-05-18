@@ -90,7 +90,7 @@
                     <h1 class="modal-title">Editar Produto</h1>
                     <form action="EditarProdutoServlet" method="POST">
                         <div class="field-wrapper" style="display:none">
-                            <input class="input-field" id="edit-id" name="nome" type="text" />
+                            <input class="input-field" id="edit-id" name="id" type="text" />
                         </div>
                         <div class="field-wrapper">
                             <label>Nome: *</label>

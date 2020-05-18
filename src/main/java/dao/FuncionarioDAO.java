@@ -97,7 +97,7 @@ public class FuncionarioDAO {
                 boolean ativo = rs.getBoolean("ativo");
 
                 //int unidade, String area, String cargo, double salario, int id, String nome, String email, String cpf, String uf, String cidade, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo
-                funcionarios.add(new Funcionario(unidade, area, cargo, salario, id, nome, email, cpf, uf, cidade, telefone, celular, cep, endereco, complemento, ativo));
+                funcionarios.add(new Funcionario(unidade, area, cargo, salario, id, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, ativo));
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -112,7 +112,7 @@ public class FuncionarioDAO {
         }
         return funcionarios;
     }
-    
+
     public static boolean alterar(Funcionario funcionario) {
         boolean retorno = false;
         Connection conexao = null;
@@ -158,7 +158,7 @@ public class FuncionarioDAO {
         }
         return retorno;
     }
-    
+
     public static boolean deletar(int id) {
         boolean retorno = false;
         Connection conexao = null;

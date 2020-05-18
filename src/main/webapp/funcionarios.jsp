@@ -193,7 +193,7 @@
                 </form>
                 <form action="DeletarFuncionarioServlet" method="POST">
                     <div class="field-wrapper" style="display:none">
-                        <input class="input-field" id="edit-id" name="id" type="text" />
+                        <input class="input-field" id="delete-id" name="id" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="delete-submit-button " type="submit">Deletar</button>
