@@ -50,3 +50,7 @@ const closeModal = () => {
 
 document.getElementById("new-unity").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
+
+document.getElementById("card-galery").addEventListener("click", () => {
+    console.log(event.target.parentNode.getAttribute("key"));
+})
