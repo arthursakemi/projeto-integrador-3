@@ -55,13 +55,13 @@ const showEditModal = (id, nome, cidade, estado) => {
     document.getElementById("unity-modal").style = "display:none";
     document.getElementById("edit-modal").style = "display: flex";
 
-    document.getElementById("edit-unity-id").value = nome;
+    document.getElementById("edit-unity-id").value = id;
     document.getElementById("edit-unity-name").value = nome;
     document.getElementById("edit-unity-city").value = cidade;
     document.getElementById("edit-unity-estate").value = estado;
 }
 
-
 document.getElementById("new-unity").addEventListener("click", showCreateModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
-document.getElementById("edit-cancel-button").addEventListener("click", closeModal)
+document.getElementById("edit-cancel-button").addEventListener("click", closeModal);
+

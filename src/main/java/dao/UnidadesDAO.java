@@ -93,4 +93,41 @@ public class UnidadesDAO {
         return unidades;
     }
 
+        public static boolean alterar(Unidade unidade) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE unidades "
+                    + "SET nome = ?, cidade = ?, uf = ?, ativo = ? "
+                    + "WHERE id = ?",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            instrucaoSQL.setString(1, unidade.getNome());
+            instrucaoSQL.setString(2, unidade.getCidade());
+            instrucaoSQL.setString(3, unidade.getEstado());
+            instrucaoSQL.setBoolean(4, true);
+            instrucaoSQL.setInt(5, unidade.getId());
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+
+            retorno = linhasAfetadas > 0;
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+
+        return retorno;
+    }
 }

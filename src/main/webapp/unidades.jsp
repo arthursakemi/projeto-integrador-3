@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/unidades.css" />
         <script src="./JS/unidades.js" defer></script>
-        <title>Home</title>
+        <title>Unidades - TableTop</title>
     </head>
     <body>
         <header id="header">
@@ -79,9 +79,9 @@
             </div>
             <div class="modal" id="edit-modal" style="display: none">
                 <h1 class="modal-title">Editar Unidade</h1>
-                <form action="" method="POST">
+                <form action="EditarUnidadeServlet" method="POST">
                     <div class="field-wrapper" style="display: none">
-                        <input class="input-field" id="edit-unity-id" name="nome" type="text" />
+                        <input class="input-field" id="edit-unity-id" name="id" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
@@ -98,6 +98,29 @@
                     <div class="field-wrapper">
                         <button class="form-button" id="edit-cancel-button" type="reset">Cancelar </button>
                         <button class="form-button" id="edit-submit-button " type="submit">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="overlay-edition">
+            <div id="unity-modal">
+                <h1 id="modal-title">Cadastro de Unidade</h1>
+                <form action="CadastroUnidadeServlet" method="POST">
+                    <div class="field-wrapper">
+                        <label for="unity-name">Nome: *</label>
+                        <input class="input-field" id="unity-name" name="nome" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-city">Cidade: *</label>
+                        <input class="input-field" id="unity-city" name="cidade" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-estate">UF: *</label>
+                        <input class="input-field" id="unity-estate" name="estado" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
+                        <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
                     </div>
                 </form>
             </div>
