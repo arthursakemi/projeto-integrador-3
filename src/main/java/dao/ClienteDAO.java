@@ -111,4 +111,46 @@ public class ClienteDAO {
         }
         return clientes;
     }
+    
+    public static boolean alterar(Cliente cliente) {
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("UPDATE clientes "
+                    + "SET nome = ?, email = ?, cpf = ?, cidade = ?, uf = ?, telefone = ?, celular = ?, cep = ?, endereco = ?, complemento = ?, ativo = ? "
+                    + "WHERE id = ?;",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            instrucaoSQL.setString(1, cliente.getNome());
+            instrucaoSQL.setString(2, cliente.getEmail());
+            instrucaoSQL.setString(3, cliente.getCpf());
+            instrucaoSQL.setString(4, cliente.getCidade());
+            instrucaoSQL.setString(5, cliente.getUf());
+            instrucaoSQL.setString(6, cliente.getTelefone());
+            instrucaoSQL.setString(7, cliente.getCelular());
+            instrucaoSQL.setString(8, cliente.getCep());
+            instrucaoSQL.setString(9, cliente.getEndereco());
+            instrucaoSQL.setString(10, cliente.getComplemento());
+            instrucaoSQL.setBoolean(11, cliente.isAtivo());
+            instrucaoSQL.setInt(12, cliente.getId());
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+            retorno = linhasAfetadas > 0;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+        return retorno;
+    }
 }
