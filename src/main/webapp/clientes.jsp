@@ -47,7 +47,7 @@
                 </div>
                 <div id="client-table">
                     <c:forEach var="c" items="${clientes}">
-                        <div class="client-row" item=${c} onclick="showEditModal()">
+                        <div class="client-row" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`)">
                             <span>${c.nome}</span>
                             <span>${c.cidade} - ${c.uf}</span>
                             <span>${c.cpf}</span>

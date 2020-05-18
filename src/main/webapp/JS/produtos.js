@@ -54,10 +54,17 @@ const showModal = () => {
     document.getElementById("edit-product-modal").style = "display: none";
 };
 
-const showEditModal = () => {
+const showEditModal = (id, nome, categoria, fabricante, descricao, preco) => {
     document.getElementById("overlay").style = "display:flex";
     document.getElementById("product-modal").style = "display:none";
     document.getElementById("edit-product-modal").style = "display: flex";
+
+    document.getElementById("edit-id").value = id;
+    document.getElementById("edit-name").value = nome;
+    document.getElementById("edit-category").value = categoria;
+    document.getElementById("edit-manufacturer").value = fabricante;
+    document.getElementById("edit-description").value = descricao;
+    document.getElementById("edit-price").value = preco;
 };
 
 const closeModal = () => {

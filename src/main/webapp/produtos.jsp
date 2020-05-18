@@ -44,7 +44,7 @@
                 </div>
                 <div id="card-galery">
                     <c:forEach var="c" items="${produtos}" >
-                        <div class="product-card" key="${c.id}" onclick="showEditModal()">
+                        <div class="product-card" key="${c.id}" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.categoria}`, `${c.fabricante}`, `${c.descricao}`, `${c.valor}`)">
                             <div class="product-img"></div>
                             <h1 class="product-name">${c.nome}</h1>
                             <div class="card-text">
