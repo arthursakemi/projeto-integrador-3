@@ -35,11 +35,6 @@ const addUnityCard = (unity) => {
     card.appendChild(createUnityCard(unity));
 };
 
-const unity = {
-    name: "Matriz",
-    location: "São Paulo",
-};
-
 const showCreateModal = () => {
     document.getElementById("overlay").style = "display:flex";
     document.getElementById("unity-modal").style = "display:flex";

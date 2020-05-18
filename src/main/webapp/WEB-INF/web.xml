@@ -106,7 +106,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarUnidadesServlet</servlet-name>
-        <url-pattern>/ListarUnidadesServlet</url-pattern>
+        <url-pattern>/atualiza_unidades.jsp</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarClienteServlet</servlet-name>
