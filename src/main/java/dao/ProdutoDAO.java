@@ -69,7 +69,7 @@ public class ProdutoDAO {
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
-            instrucaoSQL = conexao.prepareStatement("SELECT * FROM produtos;");
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM produtos WHERE ativo = true;");
             ResultSet rs = instrucaoSQL.executeQuery();
 
             while (rs.next()) {

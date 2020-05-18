@@ -62,7 +62,7 @@ and open the template in the editor.
     height: 100%;
 }
 
-#employee-modal {
+.modal {
     width: 400px;
     height: auto;
     padding: 20px;
@@ -74,7 +74,7 @@ and open the template in the editor.
     justify-content: center;
 }
 
-#modal-title {
+.modal-title {
     text-align: center;
     margin-bottom: 30px;
 }

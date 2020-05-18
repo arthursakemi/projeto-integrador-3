@@ -75,7 +75,7 @@ public class FuncionarioDAO {
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
-            instrucaoSQL = conexao.prepareStatement("SELECT * FROM funcionarios;");
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM funcionarios WHERE ativo = true;");
             ResultSet rs = instrucaoSQL.executeQuery();
 
             while (rs.next()) {

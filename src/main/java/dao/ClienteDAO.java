@@ -71,7 +71,7 @@ public class ClienteDAO {
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
-            instrucaoSQL = conexao.prepareStatement("SELECT * FROM clientes;");
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM clientes WHERE ativo = true;");
             ResultSet rs = instrucaoSQL.executeQuery();
 
             while (rs.next()) {

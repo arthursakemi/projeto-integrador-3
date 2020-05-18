@@ -67,7 +67,7 @@ public class UnidadesDAO {
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
-            instrucaoSQL = conexao.prepareStatement("SELECT * FROM unidades;");
+            instrucaoSQL = conexao.prepareStatement("SELECT * FROM unidades WHERE ativo = true;");
             ResultSet rs = instrucaoSQL.executeQuery();
 
             while (rs.next()) {

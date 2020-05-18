@@ -49,7 +49,15 @@ const product = {
 };
 
 const showModal = () => {
-    document.getElementById("overlay").style = "display: flex";
+    document.getElementById("overlay").style = "display:flex";
+    document.getElementById("product-modal").style = "display:flex";
+    document.getElementById("edit-product-modal").style = "display: none";
+};
+
+const showEditModal = () => {
+    document.getElementById("overlay").style = "display:flex";
+    document.getElementById("product-modal").style = "display:none";
+    document.getElementById("edit-product-modal").style = "display: flex";
 };
 
 const closeModal = () => {
@@ -59,3 +67,4 @@ const closeModal = () => {
 
 document.getElementById("new-product").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
+document.getElementById("edit-cancel-button").addEventListener("click", closeModal);
