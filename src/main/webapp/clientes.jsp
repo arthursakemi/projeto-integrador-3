@@ -112,7 +112,7 @@
 
             <div class="modal" id="edit-modal">
                 <h1 class="modal-title">Editar Cliente</h1>
-                <form action="" method="POST">
+                <form action="EditarClienteServlet" method="POST">
                     <div class="field-wrapper" style="display:none">
                         <input class="input-field" id="edit-id" name="id" type="text" />
                     </div>

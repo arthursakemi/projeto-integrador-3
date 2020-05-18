@@ -102,28 +102,5 @@
                 </form>
             </div>
         </div>
-        <div id="overlay-edition">
-            <div id="unity-modal">
-                <h1 id="modal-title">Cadastro de Unidade</h1>
-                <form action="CadastroUnidadeServlet" method="POST">
-                    <div class="field-wrapper">
-                        <label for="unity-name">Nome: *</label>
-                        <input class="input-field" id="unity-name" name="nome" type="text" />
-                    </div>
-                    <div class="field-wrapper">
-                        <label for="unity-city">Cidade: *</label>
-                        <input class="input-field" id="unity-city" name="cidade" type="text" />
-                    </div>
-                    <div class="field-wrapper">
-                        <label for="unity-estate">UF: *</label>
-                        <input class="input-field" id="unity-estate" name="estado" type="text" />
-                    </div>
-                    <div class="field-wrapper">
-                        <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
-                        <button class="form-button" id="submit-button " type="submit">Cadastrar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </body>
 </html>
