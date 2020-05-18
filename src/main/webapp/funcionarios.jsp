@@ -45,7 +45,7 @@
                 </div>
                 <div id="employee-table">
                     <c:forEach var="c" items="${funcionarios}">
-                        <div class="employee-row" key="${c.id}" onclick="showEditModal()">
+                        <div class="employee-row" key="${c.id}" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`, `${c.unidade}`, `${c.area}`, `${c.cargo}`, `${c.salario}`)">
                             <span>${c.nome}</span>
                             <span>${c.cidade} - ${c.uf}</span>
                             <span>${c.cpf}</span>
@@ -58,13 +58,12 @@
         </div>
 
         <div id="overlay">
-
             <div class="modal" id="employee-modal">
                 <h1 class="modal-title">Cadastro de Funcionarios</h1>
                 <form action="CadastroFuncionarioServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
-                        <input class="input-field" id="name" name="name" type="text" />
+                        <input class="input-field" id="name" name="nome" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Email *</label>
@@ -127,10 +126,13 @@
 
             <div class="modal" id="edit-modal">
                 <h1 class="modal-title">Editar Funcionario</h1>
-                <form action="CadastroFuncionarioServlet" method="POST">
+                <form action="EditarFuncionarioServlet" method="POST">
+                    <div class="field-wrapper" style="display:none">
+                        <input class="input-field" id="edit-id" name="id" type="text" />
+                    </div>
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
-                        <input class="input-field" id="edit-name" name="name" type="text" />
+                        <input class="input-field" id="edit-name" name="nome" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Email *</label>
@@ -186,7 +188,15 @@
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="edit-cancel-button" type="reset">Cancelar</button>
-                        <button class="form-button" id="edit-submit-button " type="submit">Cadastrar</button>
+                        <button class="form-button" id="edit-submit-button " type="submit">Atualizar</button>
+                    </div>
+                </form>
+                <form action="DeletarFuncionarioServlet" method="POST">
+                    <div class="field-wrapper" style="display:none">
+                        <input class="input-field" id="edit-id" name="id" type="text" />
+                    </div>
+                    <div class="field-wrapper">
+                        <button class="form-button" id="delete-submit-button " type="submit">Deletar</button>
                     </div>
                 </form>
             </div>

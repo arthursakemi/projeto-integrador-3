@@ -52,6 +52,22 @@
         <servlet-name>DeletarClienteServlet</servlet-name>
         <servlet-class>servlet.DeletarClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarProdutoServlet</servlet-name>
+        <servlet-class>servlet.EditarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarFuncionarioServlet</servlet-name>
+        <servlet-class>servlet.EditarFuncionarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <servlet-class>servlet.DeletarProdutoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <servlet-class>servlet.DeletarFuncionarioServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
@@ -103,6 +119,22 @@
     <servlet-mapping>
         <servlet-name>DeletarClienteServlet</servlet-name>
         <url-pattern>/DeletarClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarProdutoServlet</servlet-name>
+        <url-pattern>/EditarProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarFuncionarioServlet</servlet-name>
+        <url-pattern>/EditarFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarProdutoServlet</servlet-name>
+        <url-pattern>/DeletarProdutoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletarFuncionarioServlet</servlet-name>
+        <url-pattern>/DeletarFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
