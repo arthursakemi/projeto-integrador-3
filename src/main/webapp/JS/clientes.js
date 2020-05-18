@@ -59,6 +59,11 @@ const closeModal = () => {
     document.getElementById("overlay").style = "display: none";
 };
 
+const deleteClient = (key) => {
+    axios.get(`localhost:8080/projeto-integrador-3/DeleteUnidadeServlet?id=${key}`)
+}
+
 
 document.getElementById("new-customer").addEventListener("click", showModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
+document.getElementById("opti")
