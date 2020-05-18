@@ -96,7 +96,7 @@ public class ProdutoDAO {
         }
         return produtos;
     }
-    
+
     public static boolean alterar(Produto produto) {
         boolean retorno = false;
         Connection conexao = null;
@@ -106,7 +106,7 @@ public class ProdutoDAO {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("UPDATE produtos "
                     + "SET nome = ?, categoria = ?, fabricante = ?, valor = ?, descricao = ?, ativo = ? "
-                    + "WHERE id = ?);",
+                    + "WHERE id = ?;",
                     Statement.RETURN_GENERATED_KEYS);
 
             instrucaoSQL.setString(1, produto.getNome());
@@ -115,7 +115,7 @@ public class ProdutoDAO {
             instrucaoSQL.setDouble(4, produto.getValor());
             instrucaoSQL.setString(5, produto.getDescricao());
             instrucaoSQL.setBoolean(6, produto.isAtivo());
-            instrucaoSQL.setInt(6, produto.getId());
+            instrucaoSQL.setInt(7, produto.getId());
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;
@@ -135,7 +135,7 @@ public class ProdutoDAO {
 
         return retorno;
     }
-    
+
     public static boolean deletar(int id) {
         boolean retorno = false;
         Connection conexao = null;
@@ -145,10 +145,10 @@ public class ProdutoDAO {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("UPDATE produtos "
                     + "SET ativo = false "
-                    + "WHERE id = ?);",
+                    + "WHERE id = ?;",
                     Statement.RETURN_GENERATED_KEYS);
-            
-            instrucaoSQL.setInt(6, id);
+
+            instrucaoSQL.setInt(1, id);
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;

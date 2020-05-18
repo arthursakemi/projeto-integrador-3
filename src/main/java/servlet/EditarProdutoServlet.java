@@ -19,7 +19,7 @@ import model.Produto;
  * @author Marcelo
  */
 public class EditarProdutoServlet extends HttpServlet {
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
@@ -28,22 +28,22 @@ public class EditarProdutoServlet extends HttpServlet {
         String valorString = request.getParameter("valor");
         String descricao = request.getParameter("descricao");
         String idString = request.getParameter("id");
-
+        System.out.println(request.getParameter("id"));
         //Cast valorString to valor double
         double valor = Double.parseDouble(valorString);
         int id = Integer.parseInt(idString);
-        
+
         //int id, String nome, String categoria, String fabricante, String descricao, double valor, boolean ativo
         Produto produto = new Produto(id, nome, categoria, fabricante, descricao, valor, true);
         boolean cadastroDB = dao.ProdutoDAO.alterar(produto);
-        
+
         String url = "";
-        if(cadastroDB) {
+        if (cadastroDB) {
             url = "/ListarProdutoServlet";
         } else {
             url = "/erro.jsp";
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-            dispatcher.forward(request, response);
+        dispatcher.forward(request, response);
     }
 }

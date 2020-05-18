@@ -61,7 +61,7 @@ const showEditModal = (id, nome, email, cpf, cep, cidade, uf, tel, cel, endereco
     document.getElementById("overlay").style = "display:flex";
     document.getElementById("employee-modal").style = "display:none";
     document.getElementById("edit-modal").style = "display: flex";
-    
+
     //fill inputs on edit form
     document.getElementById("edit-id").value = id;
     document.getElementById("edit-name").value = nome;
@@ -78,23 +78,9 @@ const showEditModal = (id, nome, email, cpf, cep, cidade, uf, tel, cel, endereco
     document.getElementById("edit-area").value = area;
     document.getElementById("edit-position").value = cargo;
     document.getElementById("edit-salary").value = salario;
-    
+
     //fill inputs on delete form
     document.getElementById("delete-id").value = id;
-    document.getElementById("delete-name").value = nome;
-    document.getElementById("delete-email").value = email;
-    document.getElementById("delete-cpf").value = cpf;
-    document.getElementById("delete-cep").value = cep;
-    document.getElementById("delete-city").value = cidade;
-    document.getElementById("delete-estate").value = uf;
-    document.getElementById("delete-tel").value = tel;
-    document.getElementById("delete-cel").value = cel;
-    document.getElementById("delete-address").value = endereco;
-    document.getElementById("delete-complement").value = complemento;
-    document.getElementById("edit-unity").value = unidade;
-    document.getElementById("edit-area").value = area;
-    document.getElementById("edit-position").value = cargo;
-    document.getElementById("edit-salary").value = salario;
 };
 
 const closeModal = () => {

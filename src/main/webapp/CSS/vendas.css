@@ -3,8 +3,29 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 10/05/2020, 11:37:12
     Author     : Marcelo
 */
 
+#shop-cart-container{
+    width: 300px;
+    height: 100%;
+}
+
+#sale-search-bar {
+    display: flex;
+    height: 50px;
+    padding: 10px 50px;
+    justify-content: space-between;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sale-search-field {
+    width: 40%;
+    text-align: center;
+}
+
+#sale-search-button {
+    width: 20%;
+}
