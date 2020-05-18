@@ -39,7 +39,7 @@
             <div id="content">
                 <img id="error-gif" src="./images/http-500-animated.gif" alt="animated image of error code" />
                 <h1>Desculpe, ocorreu um erro inesperado.</h1>
-                <p>Se o erro persistir, contate a equipe de suporte</p>
+                <p>Se o erro persistir, contate a equipe de suporte.</p>
             </div>
         </div>
     </body>
