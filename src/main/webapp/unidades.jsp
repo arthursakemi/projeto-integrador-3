@@ -79,9 +79,9 @@
             </div>
             <div class="modal" id="edit-modal" style="display: none">
                 <h1 class="modal-title">Editar Unidade</h1>
-                <form action="" method="POST">
+                <form action="EditarUnidadeServlet" method="POST">
                     <div class="field-wrapper" style="display: none">
-                        <input class="input-field" id="edit-unity-id" name="nome" type="text" />
+                        <input class="input-field" id="edit-unity-id" name="id" type="text" />
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>

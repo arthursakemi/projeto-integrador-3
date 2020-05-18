@@ -101,7 +101,7 @@ public class UnidadesDAO {
         try {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("UPDATE unidades "
-                    + "SET nome = ?, cidade = ?, estado = ?, ativo = ?"
+                    + "SET nome = ?, cidade = ?, uf = ?, ativo = ? "
                     + "WHERE id = ?",
                     Statement.RETURN_GENERATED_KEYS);
 
