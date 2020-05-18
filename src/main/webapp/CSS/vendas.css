@@ -8,9 +8,54 @@ and open the template in the editor.
     Author     : Marcelo
 */
 
-#shop-cart-container{
-    width: 300px;
+#shop-cart-sidebar{
+    width: 350px;
     height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#shop-cart-container{
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 4px 4px 8px black;
+    overflow: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+}
+
+#shop-cart-title{
+    margin-bottom: 10px;
+}
+
+#shop-cart{
+    display: flex;
+    overflow: auto;
+    flex-grow: 1;
+    background-color: darkblue;
+}
+
+#sale-totals{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#cart-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sale-button{
+    height: 40px;
+    width: 100px;
+    margin-top: 20px;
 }
 
 #sale-search-bar {
@@ -22,7 +67,7 @@ and open the template in the editor.
 }
 
 #sale-search-field {
-    width: 40%;
+    width: 60%;
     text-align: center;
 }
 
