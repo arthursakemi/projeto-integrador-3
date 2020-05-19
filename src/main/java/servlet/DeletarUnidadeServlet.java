@@ -23,15 +23,10 @@ public class DeletarUnidadeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String idString = request.getParameter("id");
-        String nome = request.getParameter("nome");
-        String cidade = request.getParameter("cidade");
-        String estado = request.getParameter("estado");
-        
         //Cast to change type
         int id = Integer.parseInt(idString);
         
-        Unidade unidade = new Unidade(id, nome, cidade, estado, true);
-        boolean gravacaoDB = UnidadesDAO.deletar(unidade);
+        boolean gravacaoDB = UnidadesDAO.deletar(id);
         
         String url = "";
         if (gravacaoDB) {

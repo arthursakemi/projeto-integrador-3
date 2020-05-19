@@ -131,7 +131,7 @@ public class UnidadesDAO {
         return retorno;
     }
     
-    public static boolean deletar(Unidade unidade) {
+    public static boolean deletar(int id) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
@@ -143,7 +143,7 @@ public class UnidadesDAO {
                     + "WHERE id = ?;",
                     Statement.RETURN_GENERATED_KEYS);
 
-            instrucaoSQL.setInt(1, unidade.getId());
+            instrucaoSQL.setInt(1, id);
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
 

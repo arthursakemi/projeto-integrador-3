@@ -77,16 +77,6 @@ const showEditModal = (id, nome, email, cpf, cep, cidade, uf, tel, cel, endereco
     
     //fill inputs on delete form
     document.getElementById("delete-id").value = id;
-    document.getElementById("delete-name").value = nome;
-    document.getElementById("delete-email").value = email;
-    document.getElementById("delete-cpf").value = cpf;
-    document.getElementById("delete-cep").value = cep;
-    document.getElementById("delete-city").value = cidade;
-    document.getElementById("delete-estate").value = uf;
-    document.getElementById("delete-tel").value = tel;
-    document.getElementById("delete-cel").value = cel;
-    document.getElementById("delete-address").value = endereco;
-    document.getElementById("delete-complement").value = complemento;
 };
 
 const closeModal = () => {

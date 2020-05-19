@@ -154,7 +154,7 @@ public class ClienteDAO {
         return retorno;
     }
     
-    public static boolean deletar(Cliente cliente) {
+    public static boolean deletar(int id) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
@@ -166,7 +166,7 @@ public class ClienteDAO {
                     + "WHERE id = ?;",
                     Statement.RETURN_GENERATED_KEYS);
 
-            instrucaoSQL.setInt(1, cliente.getId());
+            instrucaoSQL.setInt(1, id);
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;

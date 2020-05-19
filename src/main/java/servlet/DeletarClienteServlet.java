@@ -22,23 +22,12 @@ import model.Cliente;
 public class DeletarClienteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nome = request.getParameter("nome");
-        String email = request.getParameter("email");
-        String cpf = request.getParameter("cpf");
-        String cidade = request.getParameter("cidade");
-        String uf = request.getParameter("uf");
-        String telefone = request.getParameter("telefone");
-        String celular = request.getParameter("celular");
-        String cep = request.getParameter("cep");
-        String endereco = request.getParameter("endereco");
-        String complemento = request.getParameter("complemento");
         String idString = request.getParameter("id");
         
         //Cast to change type
         int id = Integer.parseInt(idString);
         
-        Cliente cliente = new Cliente(id, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, true);
-        boolean gravacaoDB = ClienteDAO.deletar(cliente);
+        boolean gravacaoDB = ClienteDAO.deletar(id);
         
         String url = "";
         if (gravacaoDB) {
