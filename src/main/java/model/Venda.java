@@ -5,7 +5,8 @@
  */
 package model;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -18,7 +19,27 @@ public class Venda {
     private int idUnidade;
     private double valor;
     private Date dataVenda;
+    private List<ProdutoVenda> produtos;
 
+    public Venda(int id, int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, List<ProdutoVenda> produtos) {
+        this.id = id;
+        this.idFuncionario = idFuncionario;
+        this.idCliente = idCliente;
+        this.idUnidade = idUnidade;
+        this.valor = valor;
+        this.dataVenda = dataVenda;
+        this.produtos = produtos;
+    }
+
+    public Venda(int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, List<ProdutoVenda> produtos) {
+        this.idFuncionario = idFuncionario;
+        this.idCliente = idCliente;
+        this.idUnidade = idUnidade;
+        this.valor = valor;
+        this.dataVenda = dataVenda;
+        this.produtos = produtos;
+    }
+    
     public int getId() {
         return id;
     }
@@ -64,23 +85,6 @@ public class Venda {
     }
 
     public void setDataVenda(Date dataVenda) {
-        this.dataVenda = dataVenda;
-    }
-
-    public Venda(int id, int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda) {
-        this.id = id;
-        this.idFuncionario = idFuncionario;
-        this.idCliente = idCliente;
-        this.idUnidade = idUnidade;
-        this.valor = valor;
-        this.dataVenda = dataVenda;
-    }
-
-    public Venda(int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda) {
-        this.idFuncionario = idFuncionario;
-        this.idCliente = idCliente;
-        this.idUnidade = idUnidade;
-        this.valor = valor;
         this.dataVenda = dataVenda;
     }
 }
