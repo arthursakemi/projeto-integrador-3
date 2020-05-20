@@ -62,7 +62,9 @@
                 <h1>Cliente</h1>
                 <div id="shop-cart-container">
                     <h2 id="shop-cart-title">Carrinho</h2>
-                    <div id="shop-cart"></div>
+                    <div id="shop-cart">
+                        
+                    </div>
                     <div id="sale-totals">
                         <span>Total:</span>
                         <span>R$ xxx,xx</span>

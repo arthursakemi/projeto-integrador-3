@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    
     <servlet>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <servlet-class>servlet.CadastroClienteServlet</servlet-class>
@@ -18,8 +17,8 @@
         <servlet-class>servlet.CadastroFuncionarioServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CadastroVendaServlet</servlet-name>
-        <servlet-class>servlet.CadastroVendaServlet</servlet-class>
+        <servlet-name>CadastroProdutoVendaServlet</servlet-name>
+        <servlet-class>servlet.CadastroProdutoVendaServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ListarProdutoServlet</servlet-name>
@@ -90,8 +89,8 @@
         <url-pattern>/CadastroFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CadastroVendaServlet</servlet-name>
-        <url-pattern>/CadastroVendaServlet</url-pattern>
+        <servlet-name>CadastroProdutoVendaServlet</servlet-name>
+        <url-pattern>/CadastroProdutoVendaServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarProdutoServlet</servlet-name>
@@ -145,7 +144,6 @@
         <servlet-name>DeletarFuncionarioServlet</servlet-name>
         <url-pattern>/DeletarFuncionarioServlet</url-pattern>
     </servlet-mapping>
-    
     <session-config>
         <session-timeout>
             30
@@ -153,10 +151,12 @@
     </session-config>
     <error-page>
         <error-code>500</error-code>
-        <location>/erro.jsp</location> <!-- /src/main/webapp/erro.jsp-->
+        <location>/erro.jsp</location>
+        <!-- /src/main/webapp/erro.jsp-->
     </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/notfound.jsp</location> <!-- /src/main/webapp/notfound.jsp-->
+        <location>/notfound.jsp</location>
+        <!-- /src/main/webapp/notfound.jsp-->
     </error-page>
 </web-app>
