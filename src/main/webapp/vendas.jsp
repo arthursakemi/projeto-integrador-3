@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/produtos.css" />
         <link rel="stylesheet" href="./CSS/vendas.css" />
-        <script src="./JS/produtos.js" defer></script>
+        <script src="./JS/vendas.js" defer></script>
         <script src="./JS/base.js" defer></script>
         <title>Home</title>
     </head>
@@ -46,7 +46,7 @@
                 </div>
                 <div id="card-galery">
                     <c:forEach var="c" items="${produtos}" >
-                        <div class="product-card" key="${c.id}" >
+                        <div class="product-card" key="${c.id}" onclick="addItemToCart(`${c.id}`, `${c.nome}`, ${c.valor})">
                             <div class="product-img"></div>
                             <h1 class="product-name">${c.nome}</h1>
                             <div class="card-text">
@@ -62,17 +62,20 @@
                 <h1>Cliente</h1>
                 <div id="shop-cart-container">
                     <h2 id="shop-cart-title">Carrinho</h2>
-                    <div id="shop-cart"></div>
-                    <div id="sale-totals">
-                        <span>Total:</span>
-                        <span>R$ xxx,xx</span>
+                    <div id="shop-cart">
+
                     </div>
-                    <div id="cart-buttons">
-                        <button class="sale-button" id="cancel-button">Cancelar</button>
-                        <button class="sale-button" id="submit-button">Concluir</button>
-                    </div>
+                </div>
+                <div id="sale-totals">
+                    <span>Total:</span>
+                    <span>R$ xxx,xx</span>
+                </div>
+                <div id="cart-buttons">
+                    <button class="sale-button" id="cancel-button" type="reset">Cancelar</button>
+                    <button class="sale-button" id="submit-button">Concluir</button>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

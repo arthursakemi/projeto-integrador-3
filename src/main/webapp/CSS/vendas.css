@@ -37,7 +37,7 @@ and open the template in the editor.
     display: flex;
     overflow: auto;
     flex-grow: 1;
-    background-color: darkblue;
+    flex-direction: column;
 }
 
 #sale-totals{
@@ -73,4 +73,34 @@ and open the template in the editor.
 
 #sale-search-button {
     width: 20%;
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cart-img{
+    width: 60px;
+    height: 60px;
+    background-color: darkgrey;
+}
+
+.item-quantity{
+    width: 30px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px
+}
+
+.item-name{
+    font-size: 15px;
+}
+
+.item-price{
+    font-size: 15px;
+    width: 90px;
 }

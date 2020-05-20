@@ -49,6 +49,7 @@ public class ClienteDAO {
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;
+
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
             retorno = false;
@@ -111,7 +112,7 @@ public class ClienteDAO {
         }
         return clientes;
     }
-    
+
     public static boolean alterar(Cliente cliente) {
         boolean retorno = false;
         Connection conexao = null;
@@ -153,7 +154,7 @@ public class ClienteDAO {
         }
         return retorno;
     }
-    
+
     public static boolean deletar(int id) {
         boolean retorno = false;
         Connection conexao = null;
