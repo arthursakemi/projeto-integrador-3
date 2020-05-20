@@ -5,7 +5,22 @@
  */
 const cart = [];
 
-const createCartItem = (id, name, price) => {
+const createItem = (id, name, quantity, price) => {
+    return {
+        id,
+        name,
+        quantity,
+        price
+    };
+};
+
+const itemExists = (id) => {
+    return cart.filter((item) => item.id == id).length;
+};
+
+
+
+const createCartItem = ({id, name, quantity, price}) => {
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
     cartItem.setAttribute("key", id);
@@ -17,12 +32,12 @@ const createCartItem = (id, name, price) => {
     itemName.className = "item-name";
     itemName.innerHTML = name;
 
-    const quantity = document.createElement("input");
-    quantity.type = "number";
-    quantity.className = "item-quantity";
-    quantity.name = "quantity";
-    quantity.min = "1";
-    quantity.value = "1";
+    const itemQuantity = document.createElement("input");
+    itemQuantity.type = "number";
+    itemQuantity.className = "item-quantity";
+    itemQuantity.name = "quantity";
+    itemQuantity.min = "1";
+    itemQuantity.value = quantity;
 
     const itemPrice = document.createElement("h3");
     itemPrice.className = "item-price";
@@ -30,14 +45,28 @@ const createCartItem = (id, name, price) => {
 
     cartItem.appendChild(cartImg);
     cartItem.appendChild(itemName);
-    cartItem.appendChild(quantity);
+    cartItem.appendChild(itemQuantity);
     cartItem.appendChild(itemPrice);
 
     return cartItem;
 };
 
 const addItemToCart = (id, name, price) => {
-    const cartItem = createCartItem(id, name, price);
-    document.getElementById("shop-cart").appendChild(cartItem);
+    const cartDiv = document.getElementById("shop-cart");
+    if (itemExists(id)) {
+        cart.forEach((item) => {
+            if (item.id == id) {
+                item.quantity++;
+            }
+        });
+    } else {
+        cart.push(createItem(id, name, 1, price));
+    }
+
+    cartDiv.innerHTML = "";
+
+    cart.forEach((item) => {
+        cartDiv.appendChild(createCartItem(item));
+    });
 };
 
