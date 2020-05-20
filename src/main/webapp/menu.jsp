@@ -40,9 +40,9 @@
             </aside>
             <div id="content">
                 <div id="home-background">
-                    <div class="card-text-box">
+                    <a class="card-text-box" href="./ListarProdutoVendaServlet">
                         <p class="card-text">Nova Venda</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
