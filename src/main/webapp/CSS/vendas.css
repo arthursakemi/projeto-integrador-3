@@ -76,10 +76,11 @@ and open the template in the editor.
 }
 
 .cart-item{
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    grid-template-columns: 60px 1fr 30px 90px;
 }
 
 .cart-img{

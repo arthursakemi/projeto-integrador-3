@@ -22,6 +22,7 @@ import utils.GerenciadorConexao;
  * @author Marcelo
  */
 public class VendasDAO {
+
     public static boolean salvar(Venda venda) {
         boolean retorno = false;
         Connection conexao = null;
@@ -35,15 +36,15 @@ public class VendasDAO {
                     + "SET @sale_id = LAST_INSERT_ID(); "
                     + "INSERT INTO",
                     Statement.RETURN_GENERATED_KEYS);
-            
+
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-            
+
             instrucaoSQL.setInt(1, venda.getIdFuncionario());
             instrucaoSQL.setInt(2, venda.getIdCliente());
             instrucaoSQL.setInt(3, venda.getIdUnidade());
             instrucaoSQL.setDouble(4, venda.getValor());
             instrucaoSQL.setString(5, formatter.format(venda.getDataVenda()));
-            
+
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;
         } catch (SQLException | ClassNotFoundException ex) {
@@ -60,8 +61,8 @@ public class VendasDAO {
         }
         return retorno;
     }
-    
+
     public String generateQueryProduto(ArrayList<ProdutoVenda> produtos) {
-        
+        return "";
     }
 }
