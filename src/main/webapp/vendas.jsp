@@ -68,7 +68,7 @@
                 </div>
                 <div id="sale-totals">
                     <span>Total:</span>
-                    <span>R$ xxx,xx</span>
+                    <span id="total-value">R$ 00,00</span>
                 </div>
                 <div id="cart-buttons">
                     <button class="sale-button" id="cancel-button" type="reset">Cancelar</button>
