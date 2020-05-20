@@ -6,12 +6,17 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Venda;
+import model.ProdutoVenda;
 
 /**
  *
@@ -21,20 +26,22 @@ public class CadastroProdutoVendaServlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String qtdProdutosString = request.getParameter("size");
-
+        int qtdProdutos = Integer.parseInt(request.getParameter("size"));
+        ArrayList<ProdutoVenda> produtos = new ArrayList<>();
+        Date now = new Date();
         
-        //Cast variables to the correct type
-        int qtdProdutos = Integer.parseInt(qtdProdutosString);
-        double valor = Double.parseDouble(valorString);
-        
-        //String nome, String categoria, String fabricante, String descricao, double valor, boolean ativo
-        Produto produto = new Produto(nome, categoria, fabricante, valor, descricao, true);
-        boolean cadastroDB = dao.ProdutoDAO.salvar(produto);
+        for(int i = 0; i < qtdProdutos; i++) {
+            int idProduto = Integer.parseInt(request.getParameter("id" + i));
+            int quantidade = Integer.parseInt(request.getParameter("amount" + i));
+            produtos.add(new ProdutoVenda(idProduto, quantidade));//int idProduto, int quantidade
+        }
+        //int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, List<ProdutoVenda> produtos
+        Venda venda = new Venda(3, 1, 2, 100.00, now, produtos);
+        boolean cadastroDB = dao.VendasDAO.salvar(venda);
         
         String url = "";
         if(cadastroDB) {
-            url = "/ListarProdutoServlet";
+            url = "/ListarProdutoVendaServlet";
         } else {
             url = "/erro.jsp";
         }
