@@ -5,8 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -19,10 +19,9 @@ public class Venda {
     private int idUnidade;
     private double valor;
     private Date dataVenda;
-    private List<ProdutoVenda> produtos;
-
-    public Venda(int id, int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, List<ProdutoVenda> produtos) {
-        this.id = id;
+    private ArrayList<ProdutoVenda> produtos;
+    
+    public Venda(int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, ArrayList<ProdutoVenda> produtos) {
         this.idFuncionario = idFuncionario;
         this.idCliente = idCliente;
         this.idUnidade = idUnidade;
@@ -31,7 +30,8 @@ public class Venda {
         this.produtos = produtos;
     }
 
-    public Venda(int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, List<ProdutoVenda> produtos) {
+    public Venda(int id, int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, ArrayList<ProdutoVenda> produtos) {
+        this.id = id;
         this.idFuncionario = idFuncionario;
         this.idCliente = idCliente;
         this.idUnidade = idUnidade;
@@ -86,5 +86,13 @@ public class Venda {
 
     public void setDataVenda(Date dataVenda) {
         this.dataVenda = dataVenda;
+    }
+
+    public ArrayList<ProdutoVenda> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(ArrayList<ProdutoVenda> produtos) {
+        this.produtos = produtos;
     }
 }
