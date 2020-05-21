@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 21/05/2020, 18:09:53
+    Author     : Marcelo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -34,3 +41,4 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+
