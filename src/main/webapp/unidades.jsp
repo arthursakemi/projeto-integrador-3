@@ -62,15 +62,15 @@
                 <form action="CadastroUnidadeServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
-                        <input class="input-field" id="unity-name" name="nome" type="text" />
+                        <input class="input-field" id="unity-name" name="nome" type="text" maxlength="30"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-city">Cidade: *</label>
-                        <input class="input-field" id="unity-city" name="cidade" type="text" />
+                        <input class="input-field" id="unity-city" name="cidade" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">UF: *</label>
-                        <input class="input-field" id="unity-estate" name="estado" type="text" />
+                        <input class="input-field" id="unity-estate" name="estado" type="text" maxlength="2"/>
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="cancel-button" type="reset">Cancelar </button>
@@ -86,15 +86,15 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
-                        <input class="input-field" id="edit-unity-name" name="nome" type="text" />
+                        <input class="input-field" id="edit-unity-name" name="nome" type="text" maxlength="30"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="edit-unity-city">Cidade: *</label>
-                        <input class="input-field" id="edit-unity-city" name="cidade" type="text" />
+                        <input class="input-field" id="edit-unity-city" name="cidade" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="edit-unity-estate">UF: *</label>
-                        <input class="input-field" id="edit-unity-estate" name="estado" type="text" />
+                        <input class="input-field" id="edit-unity-estate" name="estado" type="text" maxlength="2"/>
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="edit-cancel-button" type="reset">Cancelar </button>

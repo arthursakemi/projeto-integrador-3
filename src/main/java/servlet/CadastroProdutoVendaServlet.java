@@ -25,6 +25,10 @@ public class CadastroProdutoVendaServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int qtdProdutos = Integer.parseInt(request.getParameter("size"));
+        int employeeId = Integer.parseInt(request.getParameter("employeeId"));
+        int clientId = Integer.parseInt(request.getParameter("clientId"));
+        int unityId = Integer.parseInt(request.getParameter("unityId"));
+        double total = Double.parseDouble(request.getParameter("total"));
         ArrayList<ProdutoVenda> produtos = new ArrayList<>();
         Date now = new Date();
         
@@ -34,7 +38,7 @@ public class CadastroProdutoVendaServlet extends HttpServlet{
             produtos.add(new ProdutoVenda(idProduto, quantidade));//int idProduto, int quantidade
         }
         //int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, List<ProdutoVenda> produtos
-        Venda venda = new Venda(3, 1, 2, 100.00, now, produtos);
+        Venda venda = new Venda(employeeId, clientId, unityId, total, now, produtos);
         boolean cadastroDB = dao.VendasDAO.salvar(venda);
         
         String url = "";
