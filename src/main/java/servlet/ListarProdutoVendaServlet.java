@@ -5,6 +5,7 @@
  */
 package servlet;
 
+import dao.ClienteDAO;
 import dao.ProdutoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cliente;
 import model.Produto;
 
 /**
@@ -29,6 +31,9 @@ public class ListarProdutoVendaServlet extends HttpServlet {
 
         List<Produto> produtos = ProdutoDAO.listarProdutos();
         request.setAttribute("produtos", produtos);
+
+        List<Cliente> clientes = ClienteDAO.listarClientes();
+        request.setAttribute("clientes", clientes);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/vendas.jsp");
         dispatcher.forward(request, response);

@@ -107,7 +107,11 @@
                     </div>
                     <div class="field-wrapper">
                         <label>Unidade: *</label>
-                        <input class="input-field" id="unity" name="unidade" type="number" maxlength="4"/>
+                        <select class="input-field" id="unity" name="unidade" maxlength="4">
+                            <c:forEach var="c" items="${unidades}">
+                                <option value='${c.id}'>${c.nome}</option>
+                            </c:forEach>
+                        </select>
                     </div>
                     <div class="field-wrapper">
                         <label>Area: *</label>
