@@ -23,6 +23,16 @@ public class RelatorioVenda {
     private String celCliente;
     private double total;
 
+    public RelatorioVenda(int id, String nomeUnidade, String nomeVendedor, String dataVenda, String nomeCliente, String cpfCliente, String celCliente, double total) {
+        this.id = id;
+        this.nomeUnidade = nomeUnidade;
+        this.nomeVendedor = nomeVendedor;
+        this.dataVenda = dataVenda;
+        this.nomeCliente = nomeCliente;
+        this.cpfCliente = cpfCliente;
+        this.celCliente = celCliente;
+        this.total = total;
+    }
     private List<RelatorioProduto> produtos;
 
     public RelatorioVenda(int id, String nomeUnidade, String nomeVendedor, String dataVenda, String nomeCliente, String cpfCliente, String celCliente, double total, List<RelatorioProduto> produtos) {

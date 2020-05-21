@@ -37,7 +37,7 @@ and open the template in the editor.
     width: 20%;
 }
 
-#sales-table {
+#clients-table {
     width: 100%;
     flex-grow: 1;
     display: flex;
@@ -46,7 +46,7 @@ and open the template in the editor.
     overflow: auto;
 }
 
-.sale-row {
+.client-row {
     border-top: 1px solid darkgrey;
     border-bottom: 1px solid darkgrey;
     margin: 5px 0;

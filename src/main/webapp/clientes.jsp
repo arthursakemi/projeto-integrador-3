@@ -40,7 +40,7 @@
                 <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                 <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
-                <a class="button" href="./relatorios.jsp">Relatorios</a>
+                <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
             </aside>
             <div id="content">
                 <div id="search-bar">
@@ -48,9 +48,9 @@
                     <input id="search-field" type="text" placeholder="buscar..." />
                     <button id="search-button">Buscar</button>
                 </div>
-                <div id="sales-table">
+                <div id="clients-table">
                     <c:forEach var="c" items="${clientes}">
-                        <div class="sale-row" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`)">
+                        <div class="client-row" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`)">
                             <span>${c.nome}</span>
                             <span>${c.cidade} - ${c.uf}</span>
                             <span>${c.cpf}</span>

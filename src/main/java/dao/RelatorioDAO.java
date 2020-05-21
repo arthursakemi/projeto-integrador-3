@@ -13,8 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Produto;
-import model.ProdutoVenda;
 import model.RelatorioProduto;
 import model.RelatorioVenda;
 import utils.GerenciadorConexao;
@@ -29,7 +27,6 @@ public class RelatorioDAO {
         List<RelatorioVenda> vendas = new ArrayList<>();
         Connection conexao;
         PreparedStatement vendaStmt = null;
-        PreparedStatement produtosStmt = null;
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
@@ -41,17 +38,15 @@ public class RelatorioDAO {
 
             while (vendasRs.next()) {
                 int id = vendasRs.getInt("id");
-                String nomeUnidade = vendasRs.getString("nome");
-                String nomeVendedor = vendasRs.getString("categoria");
-                String dataVenda = vendasRs.getString("fabricante");
-                String nomeCliente = vendasRs.getString("descricao");
-                String cpfCliente = vendasRs.getString("valor");
-                String celCliente = vendasRs.getString("ativo");
+                String nomeUnidade = vendasRs.getString("unidade");
+                String nomeVendedor = vendasRs.getString("vendedor");
+                String dataVenda = vendasRs.getString("Data");
+                String nomeCliente = vendasRs.getString("cliente");
+                String cpfCliente = vendasRs.getString("cpf");
+                String celCliente = vendasRs.getString("celular");
                 double total = vendasRs.getDouble("total");
 
-                List<RelatorioProduto> produtos = listarProdutosVenda(id);
-
-                vendas.add(new RelatorioVenda(id, nomeUnidade, nomeVendedor, dataVenda, nomeCliente, cpfCliente, celCliente, total, produtos));
+                vendas.add(new RelatorioVenda(id, nomeUnidade, nomeVendedor, dataVenda, nomeCliente, cpfCliente, celCliente, total));
             }
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(UnidadesDAO.class.getName()).log(Level.SEVERE, null, ex);
