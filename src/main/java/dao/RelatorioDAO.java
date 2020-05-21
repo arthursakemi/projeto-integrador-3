@@ -62,7 +62,7 @@ public class RelatorioDAO {
         return vendas;
     }
 
-    public static List<RelatorioProduto> listarProdutosVenda(int id) {
+    public static List<RelatorioProduto> listarProdutosVenda() {
         List<RelatorioProduto> produtos = new ArrayList<>();
         Connection conexao;
         PreparedStatement produtosStmt = null;
@@ -70,10 +70,8 @@ public class RelatorioDAO {
         try {
             conexao = GerenciadorConexao.abrirConexao();
             produtosStmt = conexao.prepareStatement("SELECT produtos.nome, venda_produto.quantidade, (venda_produto.quantidade*produtos.valor) AS subtotal FROM venda_produto "
-                    + "INNER JOIN produtos ON venda_produto.id_produto = produtos.id "
-                    + "WHERE venda_produto.id_venda = ?; ");
+                    + "INNER JOIN produtos ON venda_produto.id_produto = produtos.id " );
 
-            produtosStmt.setInt(1, id);
             ResultSet produtosRs = produtosStmt.executeQuery();
 
             while (produtosRs.next()) {

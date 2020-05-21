@@ -5,8 +5,6 @@
  */
 package servlet;
 
-import dao.ClienteDAO;
-import dao.ProdutoDAO;
 import dao.RelatorioDAO;
 import java.io.IOException;
 import java.util.List;
@@ -15,8 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Cliente;
-import model.Produto;
+import model.RelatorioProduto;
 import model.RelatorioVenda;
 
 /**
@@ -31,6 +28,9 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
 
         List<RelatorioVenda> vendas = RelatorioDAO.listarVendas();
         request.setAttribute("vendas", vendas);
+        
+        List<RelatorioProduto> produtosVenda = RelatorioDAO.listarProdutosVenda();
+        request.setAttribute("produtosVenda", produtosVenda);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/relatorios.jsp");
         dispatcher.forward(request, response);

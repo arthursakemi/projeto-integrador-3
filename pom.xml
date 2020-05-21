@@ -22,14 +22,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.6</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -43,13 +38,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.20</version>
         </dependency>
-
         <dependency>
             <groupId>io.github.cdimascio</groupId>
-            <artifactId>java-dotenv</artifactId>
+            <artifactId>java-dotenv</artifactId> <!--Professor, se chegou aqui, saiba que gostariamos de usar para as conexoes do banco mas tivemos problema. Gostariamos de ajuda-->
             <version>5.1.4</version>
         </dependency>
-
     </dependencies>
 
 
