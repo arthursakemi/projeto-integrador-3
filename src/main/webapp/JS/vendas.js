@@ -29,8 +29,6 @@ const getTotal = (items) => {
 const createCartItem = ({id, name, quantity, price}) => {
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
-    cartItem.setAttribute("key", id);
-    cartItem.setAttribute("quantity", quantity);
     cartItem.onclick = removeItemFromCart;
 
     const cartImg = document.createElement("div");
@@ -96,4 +94,17 @@ const clearCart = () => {
     cart = [];
 
     updateCartHTML();
-}
+};
+
+const createSaleParams = (employeeId, clientId, unityId) => {
+    const total = getTotal(cart).toFixed(2);
+    let params = `?size=${cart.length}&employeeId=${employeeId}&clientId=${clientId}&unityId=${unityId}&total=${total}`;
+    let i = 1;
+    cart.forEach((item) => {
+        params += `&id${i}=${item.id}&amount${i}=${item.quantity}`;
+        i++;
+    });
+    console.log(params);
+    return params;
+};
+
