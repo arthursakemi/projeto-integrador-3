@@ -12,8 +12,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/funcionarios.css" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./JS/funcionarios.js" defer></script>
         <script src="./JS/base.js" defer></script>
+        <script src="./JS/consultaCEP.js" defer></script>
         <title>Home</title>
     </head>
     <body>
@@ -77,7 +79,7 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8"/>
+                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(document.getElementById('cep').value)"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>
@@ -89,11 +91,11 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Telefone: </label>
-                        <input class="input-field" id="tel" name="telefone" type="number" maxlength="10" placeholder="1155554444"/>
+                        <input class="input-field" id="tel" name="telefone" type="number" maxlength="10" placeholder="telefone"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Celular: *</label>
-                        <input class="input-field" id="cel" name="celular" type="number" maxlength="11" placeholder="11955554444"/>
+                        <input class="input-field" id="cel" name="celular" type="number" maxlength="11" placeholder="celular"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Endereço: *</label>
@@ -117,7 +119,7 @@
                     </div>
                     <div class="field-wrapper">
                         <label>Salario: *</label>
-                        <input class="input-field" id="salary" name="salario" type="number" maxlength="7" placeholder="1500.00"/>
+                        <input class="input-field" id="salary" name="salario" type="number" maxlength="7" placeholder="salario"/>
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="cancel-button" type="reset">Cancelar</button>

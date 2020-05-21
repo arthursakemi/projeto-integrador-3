@@ -16,6 +16,7 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./JS/clientes.js" defer></script>
         <script src="./JS/base.js" defer></script>
+        <script src="./JS/consultaCEP.js" defer></script>
         <title>Clientes - TableTop</title>
     </head>
     <body>
@@ -79,14 +80,14 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8"/>
+                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(document.getElementById('cep').value)"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>
                         <input class="input-field" id="city" name="cidade" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">
-                        <label for="unity-estate">Estado: *</label>
+                        <label for="estate">Estado: *</label>
                         <input class="input-field" id="estate" name="uf" type="text" maxlength="2"/>
                     </div>
                     <div class="field-wrapper">
@@ -102,7 +103,7 @@
                         <input class="input-field" id="address" name="endereco" type="text" maxlength="100"/>
                     </div>
                     <div class="field-wrapper">
-                        <label for="unity-estate">Complemento: *</label>
+                        <label for="unity-estate">Complemento:</label>
                         <input class="input-field" id="complement" name="complemento" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">

@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./CSS/estoque.css" />
         <script src="./JS/estoque.js" defer></script>
         <script src="./JS/base.js" defer></script>
+
         <title>Estoque - TableTop</title>
     </head>
     <body>
