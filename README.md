@@ -14,6 +14,7 @@ Seguindo tal temática, nosso grupo, optou por definir que o tema do comércio �
 - HTML5
 - CSS3
 - Javascript
+- MySQL
 
 ## Contributors
 <a href="https://github.com/arthursakemi/projeto-integrador-3/graphs/contributors">
