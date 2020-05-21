@@ -66,43 +66,43 @@
                 <form action="CadastroClienteServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
-                        <input class="input-field" id="name" name="name" type="text" />
+                        <input class="input-field" id="name" name="name" type="text" maxlength="50"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Email *</label>
-                        <input class="input-field" id="email" name="email" type="text" />
+                        <input class="input-field" id="email" name="email" type="email" maxlength="50"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="cpf">CPF: *</label>
-                        <input class="input-field" id="cpf" name="cpf" type="text" />
+                        <input class="input-field" id="cpf" name="cpf" type="number" placeholder="Apenas números" maxlength="11"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="cep" name="cep" type="text" />
+                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>
-                        <input class="input-field" id="city" name="cidade" type="text" />
+                        <input class="input-field" id="city" name="cidade" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Estado: *</label>
-                        <input class="input-field" id="estate" name="uf" type="text" />
+                        <input class="input-field" id="estate" name="uf" type="text" maxlength="2"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Telefone: </label>
-                        <input class="input-field" id="tel" name="telefone" type="text" />
+                        <input class="input-field" id="tel" name="telefone" type="number" placeholder="Apenas números" maxlength="10"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Celular: *</label>
-                        <input class="input-field" id="cel" name="celular" type="text" />
+                        <input class="input-field" id="cel" name="celular" type="number" placeholder="Apenas números" maxlength=11/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Endereço: *</label>
-                        <input class="input-field" id="address" name="endereco" type="text" />
+                        <input class="input-field" id="address" name="endereco" type="text" maxlength="100"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Complemento: *</label>
-                        <input class="input-field" id="complement" name="complemento" type="text" />
+                        <input class="input-field" id="complement" name="complemento" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
@@ -110,7 +110,7 @@
                     </div>
                 </form>
             </div>
-
+            <!-- modal de edição -->
             <div class="modal" id="edit-modal">
                 <h1 class="modal-title">Editar Cliente</h1>
                 <form action="EditarClienteServlet" method="POST">
@@ -119,43 +119,43 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
-                        <input class="input-field" id="edit-name" name="nome" type="text" />
+                        <input class="input-field" id="edit-name" name="nome" type="text" maxlength="50"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Email *</label>
-                        <input class="input-field" id="edit-email" name="email" type="text" />
+                        <input class="input-field" id="edit-email" name="email" type="email" maxlength="50" />
                     </div>
                     <div class="field-wrapper">
                         <label for="cpf">CPF: *</label>
-                        <input class="input-field" id="edit-cpf" name="cpf" type="text" />
+                        <input class="input-field" id="edit-cpf" name="cpf" type="number" placeholder="Apenas números" maxlength="11" />
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="edit-cep" name="cep" type="text" />
+                        <input class="input-field" id="edit-cep" name="cep" type="number" maxlength="8"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>
-                        <input class="input-field" id="edit-city" name="cidade" type="text" />
+                        <input class="input-field" id="edit-city" name="cidade" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Estado: *</label>
-                        <input class="input-field" id="edit-estate" name="uf" type="text" />
+                        <input class="input-field" id="edit-estate" name="uf" type="text" maxlength="2"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Telefone: </label>
-                        <input class="input-field" id="edit-tel" name="telefone" type="text" />
+                        <input class="input-field" id="edit-tel" name="telefone" type="number" maxlength="10"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Celular: *</label>
-                        <input class="input-field" id="edit-cel" name="celular" type="text" />
+                        <input class="input-field" id="edit-cel" name="celular" type="number" maxlength="11"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Endereço: *</label>
-                        <input class="input-field" id="edit-address" name="endereco" type="text" />
+                        <input class="input-field" id="edit-address" name="endereco" type="text" maxlength="100"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-estate">Complemento: *</label>
-                        <input class="input-field" id="edit-complement" name="complemento" type="text" />
+                        <input class="input-field" id="edit-complement" name="complemento" type="text" maxlength="20"/>
                     </div>
                     <div class="field-wrapper">
                         <button class="form-button" id="edit-cancel-button" type="reset">Cancelar</button>

@@ -62,23 +62,23 @@
                     <form action="CadastroProdutoServlet" method="POST">
                         <div class="field-wrapper">
                             <label>Nome: *</label>
-                            <input class="input-field" id="name" name="nome" type="text" />
+                            <input class="input-field" id="name" name="nome" type="text" maxlength="30"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Categoria *</label>
-                            <input class="input-field" id="category" name="categoria" type="text" />
+                            <input class="input-field" id="category" name="categoria" type="text" maxlength="20"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Fabricante *</label>
-                            <input class="input-field" id="manufacturer" name="fabricante" type="text" />
+                            <input class="input-field" id="manufacturer" name="fabricante" type="text" maxlength="30"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Descrição *</label>
-                            <input class="input-field" id="description" name="descricao" type="text" />
+                            <input class="input-field" id="description" name="descricao" type="text" maxlength="255"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Valor *</label>
-                            <input class="input-field" id="price" name="valor" type="text" />
+                            <input class="input-field" id="price" name="valor" type="number" maxlength="7"/>
                         </div>
                         <div class="field-wrapper">
                             <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
@@ -95,23 +95,23 @@
                         </div>
                         <div class="field-wrapper">
                             <label>Nome: *</label>
-                            <input class="input-field" id="edit-name" name="nome" type="text" />
+                            <input class="input-field" id="edit-name" name="nome" type="text" maxlength="30"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Categoria *</label>
-                            <input class="input-field" id="edit-category" name="categoria" type="text" />
+                            <input class="input-field" id="edit-category" name="categoria" type="text" maxlength="20"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Fabricante *</label>
-                            <input class="input-field" id="edit-manufacturer" name="fabricante" type="text" />
+                            <input class="input-field" id="edit-manufacturer" name="fabricante" type="text" maxlength="30"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Descrição *</label>
-                            <input class="input-field" id="edit-description" name="descricao" type="text" />
+                            <input class="input-field" id="edit-description" name="descricao" type="text" maxlength="255"/>
                         </div>
                         <div class="field-wrapper">
                             <label>Valor *</label>
-                            <input class="input-field" id="edit-price" name="valor" type="text" />
+                            <input class="input-field" id="edit-price" name="valor" type="number" maxlength="7"/>
                         </div>
                         <div class="field-wrapper">
                             <button class="form-button" id="edit-cancel-button" type="reset">Cancelar</button>

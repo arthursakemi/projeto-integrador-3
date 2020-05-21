@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./CSS/base-style.css" />
         <link rel="stylesheet" href="./CSS/produtos.css" />
         <link rel="stylesheet" href="./CSS/vendas.css" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="./JS/vendas.js" defer></script>
         <script src="./JS/base.js" defer></script>
         <title>Home</title>
