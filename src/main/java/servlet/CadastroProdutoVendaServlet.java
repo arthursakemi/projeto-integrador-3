@@ -8,6 +8,7 @@ package servlet;
 import java.io.IOException;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.HashSet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -43,6 +44,7 @@ public class CadastroProdutoVendaServlet extends HttpServlet {
 
         String url = "";
         if (cadastroDB) {
+
             url = "/ListarProdutoVendaServlet";
         } else {
             url = "/erro.jsp";
