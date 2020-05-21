@@ -79,7 +79,7 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(document.getElementById('cep').value)"/>
+                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(this.value)"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>
@@ -107,7 +107,11 @@
                     </div>
                     <div class="field-wrapper">
                         <label>Unidade: *</label>
-                        <input class="input-field" id="unity" name="unidade" type="number" maxlength="4"/>
+                        <select class="input-field" id="unity" name="unidade" maxlength="4">
+                            <c:forEach var="c" items="${unidades}">
+                                <option value='${c.id}'>${c.nome}</option>
+                            </c:forEach>
+                        </select>
                     </div>
                     <div class="field-wrapper">
                         <label>Area: *</label>
@@ -148,7 +152,7 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="edit-cep" name="cep" type="number" maxlength="8"/>
+                        <input class="input-field" id="edit-cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(this.value)"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>

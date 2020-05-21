@@ -61,7 +61,12 @@
 
             </div>
             <div id="shop-cart-sidebar">
-                <h1>Cliente</h1>
+                <select class="input-field" id="cliente-input" name="cliente" maxlength="4" placeholder="Selecione um Cliente">
+                    <option value="0">Selecione um Cliente</option>
+                    <c:forEach var="c" items="${clientes}">
+                        <option value='${c.id}'>${c.nome}</option>
+                    </c:forEach>
+                </select>
                 <div id="shop-cart-container">
                     <h2 id="shop-cart-title">Carrinho</h2>
                     <div id="shop-cart">
@@ -74,7 +79,7 @@
                 </div>
                 <div id="cart-buttons">
                     <button class="sale-button" id="cancel-button" type="button" onclick="clearCart()">Cancelar</button>
-                    <button class="sale-button" id="submit-button" type="button" onclick="executeSale(3, 1, 2)">Concluir</button>
+                    <button class="sale-button" id="submit-button" type="button" onclick="executeSale(3, document.getElementById('cliente-input').value, 2)">Concluir</button>
                 </div>
             </div>
         </div>
