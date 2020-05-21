@@ -30,10 +30,11 @@
         </header>
         <div id="body">
             <aside id="menu">
-                <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
+                <a class="button" href="./ListarEstoqueServlet">Estoque</a>
                 <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
                 <a class="button" href="./ListarUnidadesServlet">Unidades</a>
+                <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
                 <a class="button" href="./relatorios.jsp">Relatorios</a>
             </aside>

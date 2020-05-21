@@ -10,10 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="./CSS/base-style.css" />
-        <link rel="stylesheet" href="./CSS/produtos.css" />
-        <script src="./JS/produtos.js" defer></script>
+        <link rel="stylesheet" href="./CSS/estoque.css" />
+        <script src="./JS/estoque.js" defer></script>
         <script src="./JS/base.js" defer></script>
-        <title>Produtos - TableTop</title>
+        <title>Estoque - TableTop</title>
     </head>
     <body>
         <header id="header">

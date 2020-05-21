@@ -72,6 +72,10 @@
         <servlet-name>DeletarFuncionarioServlet</servlet-name>
         <servlet-class>servlet.DeletarFuncionarioServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarEstoqueServlet</servlet-name>
+        <servlet-class>servlet.ListarEstoqueServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>DeletarFuncionarioServlet</servlet-name>
         <url-pattern>/DeletarFuncionarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarEstoqueServlet</servlet-name>
+        <url-pattern>/ListarEstoqueServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
