@@ -73,7 +73,7 @@
                 </div>
                 <div id="cart-buttons">
                     <button class="sale-button" id="cancel-button" type="button" onclick="clearCart()">Cancelar</button>
-                    <button class="sale-button" id="submit-button" type="button" onclick="createSaleParams(3, 1, 2)">Concluir</button>
+                    <button class="sale-button" id="submit-button" type="button" onclick="executeSale(3, 1, 2)">Concluir</button>
                 </div>
             </div>
         </div>

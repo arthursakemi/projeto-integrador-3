@@ -108,3 +108,10 @@ const createSaleParams = (employeeId, clientId, unityId) => {
     return params;
 };
 
+const executeSale = (employeeId, clientId, unityId) => {
+    const params = createSaleParams(employeeId, clientId, unityId);
+
+    axios.post(`./CadastroProdutoVendaServlet${params}`)
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error));
+};

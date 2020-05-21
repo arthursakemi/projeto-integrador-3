@@ -30,12 +30,13 @@ public class VendasDAO {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("START TRANSACTION; "
                     + "INSERT INTO vendas (id_funcionario, id_cliente, id_unidade, valor, data_venda) "
-                    + "VALUES(?, ?, ?, ?, ?); "
+                    + "VALUES (?, ?, ?, ?, ?); "
                     + "SET @sale_id = LAST_INSERT_ID(); "
                     + generateQueryProduto(venda.getProdutos())
                     + "COMMIT; ",
                     Statement.RETURN_GENERATED_KEYS);
 
+            System.out.println(generateQueryProduto(venda.getProdutos()));
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
             instrucaoSQL.setInt(1, venda.getIdFuncionario());
@@ -60,15 +61,15 @@ public class VendasDAO {
         }
         return retorno;
     }
-    
+
     public static String generateQueryProduto(ArrayList<ProdutoVenda> produtos) {
         String queryFinal = "";
-        
-        for(int i = 0; i < produtos.size(); i++){
+
+        for (int i = 0; i < produtos.size(); i++) {
             //Sabemos da possibilidade de SQL Injection, mas foi o que deu para o momento.
             queryFinal += "INSERT INTO venda_produto (id_venda, id_produto, quantidade) VALUES (@sale_id, " + produtos.get(i).getIdProduto() + ", " + produtos.get(i).getQuantidade() + "); ";
         }
-        
+
         return queryFinal;
     }
 }

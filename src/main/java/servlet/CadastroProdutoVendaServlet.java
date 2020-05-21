@@ -20,8 +20,8 @@ import model.ProdutoVenda;
  *
  * @author Marcelo
  */
-public class CadastroProdutoVendaServlet extends HttpServlet{
-    
+public class CadastroProdutoVendaServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int qtdProdutos = Integer.parseInt(request.getParameter("size"));
@@ -31,8 +31,8 @@ public class CadastroProdutoVendaServlet extends HttpServlet{
         double total = Double.parseDouble(request.getParameter("total"));
         ArrayList<ProdutoVenda> produtos = new ArrayList<>();
         Date now = new Date();
-        
-        for(int i = 0; i < qtdProdutos; i++) {
+
+        for (int i = 1; i <= qtdProdutos; i++) {
             int idProduto = Integer.parseInt(request.getParameter("id" + i));
             int quantidade = Integer.parseInt(request.getParameter("amount" + i));
             produtos.add(new ProdutoVenda(idProduto, quantidade));//int idProduto, int quantidade
@@ -40,14 +40,14 @@ public class CadastroProdutoVendaServlet extends HttpServlet{
         //int idFuncionario, int idCliente, int idUnidade, double valor, Date dataVenda, List<ProdutoVenda> produtos
         Venda venda = new Venda(employeeId, clientId, unityId, total, now, produtos);
         boolean cadastroDB = dao.VendasDAO.salvar(venda);
-        
+
         String url = "";
-        if(cadastroDB) {
+        if (cadastroDB) {
             url = "/ListarProdutoVendaServlet";
         } else {
             url = "/erro.jsp";
         }
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-            dispatcher.forward(request, response);
+        dispatcher.forward(request, response);
     }
 }
