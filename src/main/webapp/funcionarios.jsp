@@ -79,7 +79,7 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(document.getElementById('cep').value)"/>
+                        <input class="input-field" id="cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(this.value)"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="field-wrapper">
                         <label for="cep">CEP: *</label>
-                        <input class="input-field" id="edit-cep" name="cep" type="number" maxlength="8"/>
+                        <input class="input-field" id="edit-cep" name="cep" type="number" maxlength="8" onfocusout="consultaCep(this.value)"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="city">Cidade: *</label>
