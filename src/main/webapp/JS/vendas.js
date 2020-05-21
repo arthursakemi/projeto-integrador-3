@@ -30,6 +30,7 @@ const createCartItem = ({id, name, quantity, price}) => {
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
     cartItem.setAttribute("key", id);
+    cartItem.setAttribute("quantity", quantity);
     cartItem.onclick = removeItemFromCart;
 
     const cartImg = document.createElement("div");
@@ -90,3 +91,9 @@ const removeItemFromCart = (e) => {
     updateCartHTML();
     console.log(cart);
 };
+
+const clearCart = () => {
+    cart = [];
+
+    updateCartHTML();
+}

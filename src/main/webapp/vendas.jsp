@@ -72,8 +72,8 @@
                     <span id="total-value">R$ 00,00</span>
                 </div>
                 <div id="cart-buttons">
-                    <button class="sale-button" id="cancel-button" type="reset">Cancelar</button>
-                    <button class="sale-button" id="submit-button">Concluir</button>
+                    <button class="sale-button" id="cancel-button" type="button" onclick="clearCart()">Cancelar</button>
+                    <button class="sale-button" id="submit-button" type="button" conclick="">Concluir</button>
                 </div>
             </div>
         </div>
