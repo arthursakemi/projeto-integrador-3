@@ -41,12 +41,17 @@
             </aside>
             <div id="content">
                 <div id="search-bar">
-                    <button id="new-customer">+ Cadastrar Cliente</button>
+                    <select class="input-field" id="unity" name="unidade" onchange="unityFilter(this.value)">
+                        <option></option>
+                        <c:forEach var="c" items="${unidades}">
+                            <option value='${c.nome}'>${c.nome}</option>
+                        </c:forEach>
+                    </select>
                     <input id="search-field" type="text" placeholder="buscar..." />
                     <button id="search-button">Buscar</button>
                 </div>
                 <div id="sales-table">
-                    <div class="sale-row" >
+                    <div id="sale-head" >
                         <span>Cliente</span>
                         <span>Unidade</span>
                         <span>CPF</span>
@@ -54,18 +59,64 @@
                         <span>Total</span>
                         <div class="options"></div>
                     </div>
-                    <c:forEach var="c" items="${vendas}">
-                        <div class="sale-row" >
-                            <span>${c.nomeCliente}</span>
-                            <span>${c.nomeUnidade}</span>
-                            <span>${c.cpfCliente}</span>
-                            <span>${c.celCliente}</span>
-                            <span>${c.total}</span>
-                            <div class="options"></div>
-                        </div>
-                    </c:forEach>
+                    <div id="table-body">
+                        <c:forEach var="c" items="${vendas}">
+                            <div class="sale-row" unity="${c.nomeUnidade}">
+                                <span>${c.nomeCliente}</span>
+                                <span>${c.nomeUnidade}</span>
+                                <span>${c.cpfCliente}</span>
+                                <span>${c.celCliente}</span>
+                                <span>${c.total}</span>
+                                <div class="options"></div>
+                            </div>
+                        </c:forEach>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div id="overlay">
+            <div class="modal" id="synthetic-modal">
+                <h1 id="modal-title">Relatório de Vendas</h1>
+                <div id="modal-header">
+                    <h3>Unidade:</h3>
+                    <span>Matriz</span>
+                    <h3>Vendas:</h3>
+                    <span>20</span>
+                </div>
+                <div id="sales-list">
+                    <div id="modal-list-header">
+                        <span>ID</span>
+                        <span>Data</span>
+                        <span>Valor</span>
+                    </div>
+                    <div class="modal-row">
+                        <span>Venda X</span>
+                        <span>21/05/2020</span>
+                        <span>R$ 200,00</span>
+                    </div>
+                    <div class="modal-row">
+                        <span>Venda X</span>
+                        <span>21/05/2020</span>
+                        <span>R$ 200,00</span>
+                    </div>
+                    <div class="modal-row">
+                        <span>Venda X</span>
+                        <span>21/05/2020</span>
+                        <span>R$ 200,00</span>
+                    </div>
+                    <div class="modal-row">
+                        <span>Venda X</span>
+                        <span>21/05/2020</span>
+                        <span>R$ 200,00</span>
+                    </div>
+                </div>
+                <div id="total">
+                    <h3>Total:</h3>
+                    <span>R$ 50000,00</span>
+                </div>
+            </div>
+
         </div>
     </body>
 </html>
