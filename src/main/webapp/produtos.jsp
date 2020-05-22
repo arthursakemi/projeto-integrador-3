@@ -50,7 +50,6 @@
                             <div class="product-img"></div>
                             <h1 class="product-name">${c.nome}</h1>
                             <div class="card-text">
-                                <span class="quantity">Qt: 10</span>
                                 <span class="price">R$ ${c.valor}</span>
                             </div>
                         </div>
