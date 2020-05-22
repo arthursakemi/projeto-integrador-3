@@ -41,14 +41,18 @@
             </aside>
             <div id="content">
                 <div id="search-bar">
-                    <select class="input-field" id="unity" name="unidade" onchange="unityFilter(this.value)">
-                        <option></option>
+                    <select class="search-field" id="unity" name="unidade" onchange="saleFilter('unity', this.value)">
+                        <option value="">Filtro de Unidade</option>
                         <c:forEach var="c" items="${unidades}">
                             <option value='${c.nome}'>${c.nome}</option>
                         </c:forEach>
                     </select>
-                    <input id="search-field" type="text" placeholder="buscar..." />
-                    <button id="search-button">Buscar</button>
+                    <select class="search-field" id="unity" name="unidade" onchange="saleFilter('customer', this.value)">
+                        <option value="">Filtro de Clientes</option>
+                        <c:forEach var="c" items="${clientes}">
+                            <option value='${c.nome}'>${c.nome}</option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <div id="sales-table">
                     <div id="sale-head" >
@@ -61,7 +65,7 @@
                     </div>
                     <div id="table-body">
                         <c:forEach var="c" items="${vendas}">
-                            <div class="sale-row" unity="${c.nomeUnidade}">
+                            <div class="sale-row" unity="${c.nomeUnidade}" customer="${c.nomeCliente}" total=${c.total}>
                                 <span>${c.nomeCliente}</span>
                                 <span>${c.nomeUnidade}</span>
                                 <span>${c.cpfCliente}</span>
@@ -71,6 +75,9 @@
                             </div>
                         </c:forEach>
                     </div>
+                </div>
+                <div id="total-container">
+                    <h1 id="sales-total">Total: R$ 2000.00</h1>
                 </div>
             </div>
         </div>

@@ -5,18 +5,28 @@
  */
 const salesList = Array.from(document.getElementsByClassName("sale-row"));
 
-const updateSalesTotal = () => {
+const updateTotal = (sales) => {
+    let total = 0;
 
-};
+    sales.forEach((item) => total += parseFloat(item.getAttribute("total")));
+    console.log(total);
 
-const unityFilter = (unity) => {
+    document.getElementById("sales-total").innerHTML = `Total: R$ ${total.toFixed(2)}`;
+}
+
+const saleFilter = (parameter, value) => {
     const salesTable = document.getElementById("table-body");
     salesTable.innerHTML = "";
 
-    if (unity) {
-        const filteredList = salesList.filter((element) => element.getAttribute("unity") == unity);
+    if (value) {
+        const filteredList = salesList.filter((element) => element.getAttribute(parameter) == value);
         filteredList.forEach((element) => salesTable.appendChild(element));
+
+        updateTotal(filteredList);
     } else {
         salesList.forEach((element) => salesTable.appendChild(element));
+        updateTotal(salesList)
     }
 };
+
+updateTotal(salesList);

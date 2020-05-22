@@ -20,7 +20,7 @@ and open the template in the editor.
     display: flex;
     height: 50px;
     padding: 10px 50px;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -28,9 +28,10 @@ and open the template in the editor.
     width: 20%;
 }
 
-#search-field {
-    width: 40%;
+.search-field {
+    width: 150px;
     text-align: center;
+    margin-right: 20px;
 }
 
 #search-button {
@@ -42,7 +43,7 @@ and open the template in the editor.
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding: 10px 50px;
+    padding: 0 50px;
     overflow: auto;
 }
 
@@ -106,4 +107,12 @@ and open the template in the editor.
     display: flex;
     justify-content: space-between;
     align-content: flex-end;
+}
+
+#total-container{
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    padding: 0 50px;
+    margin-bottom: 20px;
 }

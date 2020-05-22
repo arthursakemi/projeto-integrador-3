@@ -23,9 +23,9 @@ public class GerenciadorConexao {
 
     public static Connection abrirConexao() throws ClassNotFoundException, SQLException {
         String DRIVER = "com.mysql.cj.jdbc.Driver";
-        String USER = "utrqwovgmcfjnxjq";
-        String PASSWORD = "QEkfcMqfA95LwnTD02NM";
-        String URL = "jdbc:mysql://utrqwovgmcfjnxjq:QEkfcMqfA95LwnTD02NM@bhtdf3tusbz6r8ua6rnp-mysql.services.clever-cloud.com:3306/bhtdf3tusbz6r8ua6rnp?useSSL=false";
+        String USER = Env.USER;
+        String PASSWORD = Env.PASSWORD;
+        String URL = Env.URL;
 
         if (CONEXAO == null) {
             try {
