@@ -25,11 +25,17 @@ const addProductToStock = (idProduto, idUnidade, quantidade) => {
     } else {
         closeStockModal();
     }
+
 };
 
 const updateProductStock = (id, idProduto, idUnidade, quantidade) => {
     const uri = generateURI(idProduto, idUnidade, quantidade, id);
-    console.log(uri);
+
+    axios.get(`./EditarEstoqueServlet${uri}`)
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error))
+            .then(closeStockModal());
+
 };
 
 const generateURI = (idProduto, idUnidade, quantidade, id = null) => {
@@ -65,4 +71,7 @@ const submitStockUpdate = (idProduto, idUnidade, quantidade) => {
     } else {
         addProductToStock(idProduto, idUnidade, quantidade);
     }
+
+    window.location.reload();
+    return false;
 };

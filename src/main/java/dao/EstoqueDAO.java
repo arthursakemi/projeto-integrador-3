@@ -69,14 +69,12 @@ public class EstoqueDAO {
         try {
             conexao = GerenciadorConexao.abrirConexao();
             instrucaoSQL = conexao.prepareStatement("UPDATE estoque "
-                    + "SET id_produto = ?, id_unidade = ?, quantidade = ? "
+                    + "SET quantidade = ? "
                     + "WHERE id = ?;",
                     Statement.RETURN_GENERATED_KEYS);
 
-            instrucaoSQL.setInt(1, estoque.getIdProduto());
-            instrucaoSQL.setInt(2, estoque.getIdUnidade());
-            instrucaoSQL.setInt(3, estoque.getQuantidade());
-            instrucaoSQL.setInt(4, estoque.getId());
+            instrucaoSQL.setInt(1, estoque.getQuantidade());
+            instrucaoSQL.setInt(2, estoque.getId());
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
 

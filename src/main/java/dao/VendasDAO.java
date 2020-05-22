@@ -27,6 +27,7 @@ public class VendasDAO {
         Connection conexao = null;
         PreparedStatement vendaStmt = null;
         PreparedStatement produtosStmt = null;
+        PreparedStatement estoqueStmt = null;
         ResultSet rs = null;
         ArrayList<ProdutoVenda> produtos = venda.getProdutos();
 
@@ -63,6 +64,16 @@ public class VendasDAO {
                 produtosStmt.setInt(3, produtos.get(i).getQuantidade());
 
                 produtosStmt.executeUpdate();
+
+                estoqueStmt = conexao.prepareStatement("UPDATE estoque "
+                        + "SET quantidade = quantidade - ? "
+                        + "WHERE id_produto = ? AND id_unidade = ?; ");
+
+                estoqueStmt.setInt(1, produtos.get(i).getQuantidade());
+                estoqueStmt.setInt(2, venda.getIdUnidade());
+                estoqueStmt.setInt(3, produtos.get(i).getIdProduto());
+
+                estoqueStmt.executeUpdate();
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
