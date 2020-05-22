@@ -47,12 +47,13 @@
                     <button id="sale-search-button">Buscar</button>
                 </div>
                 <div id="card-galery">
-                    <c:forEach var="c" items="${produtos}" >
-                        <div class="product-card" key="${c.id}" onclick="addItemToCart(`${c.id}`, `${c.nome}`, ${c.valor})">
+                    <c:forEach var="c" items="${estoque}" >
+                        <div class="product-card stock-card" key="${c.id}" pid="${c.idProduto}" uid="${c.idUnidade}" quantity="${c.quantidade}" onclick="addItemToCart(`${c.id}`, `${c.nomeProduto}`, ${c.valor})">
                             <div class="product-img"></div>
-                            <h1 class="product-name">${c.nome}</h1>
+                            <h1 class="product-name">${c.nomeProduto}</h1>
+                            <h4 class="unidade-txt">${c.nomeUnidade}</h4>
                             <div class="card-text">
-                                <span class="quantity">Qt: 10</span>
+                                <span>Qt. ${c.quantidade}</span>
                                 <span class="price">R$ ${c.valor}</span>
                             </div>
                         </div>
@@ -61,9 +62,15 @@
 
             </div>
             <div id="shop-cart-sidebar">
-                <select class="input-field" id="cliente-input" name="cliente" maxlength="4" placeholder="Selecione um Cliente">
-                    <option value="0">Selecione um Cliente</option>
+                <select class="input-field" id="cliente-input" name="cliente">
+                    <option value="">Selecione um Cliente</option>
                     <c:forEach var="c" items="${clientes}">
+                        <option value='${c.id}'>${c.nome}</option>
+                    </c:forEach>
+                </select>
+                <select class="input-field" id="unidade-input" name="unidade" onchange="unityFilter(this.value)" >
+                    <option value="">Selecione uma Unidade</option>
+                    <c:forEach var="c" items="${unidades}">
                         <option value='${c.id}'>${c.nome}</option>
                     </c:forEach>
                 </select>
@@ -79,7 +86,7 @@
                 </div>
                 <div id="cart-buttons">
                     <button class="sale-button" id="cancel-button" type="button" onclick="clearCart()">Cancelar</button>
-                    <button class="sale-button" id="submit-button" type="button" onclick="executeSale(3, document.getElementById('cliente-input').value, 2)">Concluir</button>
+                    <button class="sale-button" id="submit-button" type="button" onclick="executeSale(3, document.getElementById('cliente-input').value, document.getElementById('unidade-input').value)">Concluir</button>
                 </div>
             </div>
         </div>

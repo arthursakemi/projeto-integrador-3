@@ -5,6 +5,8 @@
  */
 let cart = [];
 
+let estoque = Array.from(document.getElementsByClassName("stock-card"));
+
 const createItem = (id, name, quantity, price) => {
     return {
         id,
@@ -113,5 +115,21 @@ const executeSale = (employeeId, clientId, unityId) => {
 
     axios.post(`./CadastroProdutoVendaServlet${params}`)
             .then((response) => console.log(response))
-            .catch((error) => console.log(error));
+            .catch((error) => console.log(error))
+            .then(() => {
+                clearCart();
+            });
+};
+
+const unityFilter = (unityId) => {
+    const cardGalery = document.getElementById("card-galery");
+    cardGalery.innerHTML = "";
+
+    if (unityId) {
+        const filteredList = estoque.filter((element) => element.getAttribute("uid") == unityId);
+        filteredList.forEach((element) => cardGalery.appendChild(element));
+
+    } else {
+        estoque.forEach((element) => cardGalery.appendChild(element));
+    }
 };

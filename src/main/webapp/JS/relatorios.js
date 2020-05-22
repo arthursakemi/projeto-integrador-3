@@ -12,7 +12,7 @@ const updateTotal = (sales) => {
     console.log(total);
 
     document.getElementById("sales-total").innerHTML = `Total: R$ ${total.toFixed(2)}`;
-}
+};
 
 const saleFilter = (parameter, value) => {
     const salesTable = document.getElementById("table-body");
@@ -25,7 +25,7 @@ const saleFilter = (parameter, value) => {
         updateTotal(filteredList);
     } else {
         salesList.forEach((element) => salesTable.appendChild(element));
-        updateTotal(salesList)
+        updateTotal(salesList);
     }
 };
 

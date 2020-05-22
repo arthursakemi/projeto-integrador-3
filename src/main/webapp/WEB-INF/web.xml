@@ -80,6 +80,10 @@
         <servlet-name>ListarRelatorioServlet</servlet-name>
         <servlet-class>servlet.ListarRelatorioServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastroEstoqueServlet</servlet-name>
+        <servlet-class>servlet.CadastroEstoqueServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <url-pattern>/CadastroClienteServlet</url-pattern>
@@ -159,6 +163,10 @@
     <servlet-mapping>
         <servlet-name>ListarRelatorioServlet</servlet-name>
         <url-pattern>/ListarRelatorioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastroEstoqueServlet</servlet-name>
+        <url-pattern>/CadastroEstoqueServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
