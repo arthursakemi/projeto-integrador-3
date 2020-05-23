@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./CSS/base-style.css" />
-        <link rel="stylesheet" href="./CSS/notfound.css" />
+        <link rel="stylesheet" href="./CSS/sucessoVenda.css" />
         <script src="./JS/base.js" defer></script>
         <title>Venda - TableTop</title>
     </head>
