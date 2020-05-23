@@ -1,10 +1,10 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 window.addEventListener('load', () => {
-    document.getElementById("avatar").src = `https://robohash.org/${randomNumber(1, 100)}`
+    document.getElementById("avatar").src = `https://robohash.org/${randomNumber(1, 100)}?set=set4`
 });
 
 const randomNumber = (min, max) => {
