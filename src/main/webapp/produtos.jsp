@@ -86,7 +86,7 @@
                         </div>
                         <div class="field-wrapper">
                             <label>Valor *</label>
-                            <input class="input-field" id="price" name="valor" type="number" maxlength="7"/>
+                            <input class="input-field" id="price" name="valor" type="number" maxlength="7" step="0.01"/>
                         </div>
                         <div class="field-wrapper">
                             <button class="form-button" id="cancel-button" type="reset">Cancelar</button>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="field-wrapper">
                             <label>Valor *</label>
-                            <input class="input-field" id="edit-price" name="valor" type="number" maxlength="7"/>
+                            <input class="input-field" id="edit-price" name="valor" type="number" maxlength="7" step="0.01"/>
                         </div>
                         <div class="field-wrapper">
                             <button class="form-button" id="edit-cancel-button" type="reset">Cancelar</button>
