@@ -68,7 +68,7 @@
                 <form action="CadastroClienteServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
-                        <input class="input-field" id="name" name="name" type="text" maxlength="50"/>
+                        <input class="input-field" id="nome" name="nome" type="text" maxlength="50"/>
                     </div>
                     <div class="field-wrapper">
                         <label for="unity-name">Email *</label>
