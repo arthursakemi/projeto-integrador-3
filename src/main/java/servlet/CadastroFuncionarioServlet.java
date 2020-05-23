@@ -46,7 +46,7 @@ public class CadastroFuncionarioServlet extends HttpServlet{
         
         String url = "";
         if(cadastroDB) {
-            url = "/funcionarios.jsp";
+            url = "/ListarFuncionarioServlet";
         } else {
             url = "/erro.jsp";
         }
