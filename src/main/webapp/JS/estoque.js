@@ -71,7 +71,4 @@ const submitStockUpdate = (idProduto, idUnidade, quantidade) => {
     } else {
         addProductToStock(idProduto, idUnidade, quantidade);
     }
-
-    window.location.reload();
-    return false;
 };

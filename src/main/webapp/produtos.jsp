@@ -66,7 +66,15 @@
                         </div>
                         <div class="field-wrapper">
                             <label>Categoria *</label>
-                            <input class="input-field" id="category" name="categoria" type="text" maxlength="20"/>
+                            <select class="input-field" id="category" name="categoria">
+                                <option value=""></option>
+                                <option value="Estrategia">Estrategia</option>
+                                <option value="Cartas">Cartas</option>
+                                <option value="Infantil">Infantil</option>
+                                <option value="Logica">Logica</option>
+                                <option value="RPG">RPG</option>
+                                <option value="Cooperativo">Cooperativo</option>
+                            </select>
                         </div>
                         <div class="field-wrapper">
                             <label>Fabricante *</label>
@@ -99,7 +107,15 @@
                         </div>
                         <div class="field-wrapper">
                             <label>Categoria *</label>
-                            <input class="input-field" id="edit-category" name="categoria" type="text" maxlength="20"/>
+                            <select class="input-field" id="edit-category" name="categoria">
+                                <option value=""></option>
+                                <option value="Estrategia">Estrategia</option>
+                                <option value="Cartas">Cartas</option>
+                                <option value="Infantil">Infantil</option>
+                                <option value="Logica">Logica</option>
+                                <option value="RPG">RPG</option>
+                                <option value="Cooperativo">Cooperativo</option>
+                            </select>
                         </div>
                         <div class="field-wrapper">
                             <label>Fabricante *</label>
