@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <filter-class>filtro.AutorizacaoFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutorizacaoFilter</filter-name>
+        <url-pattern>/protegido/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>CadastroClienteServlet</servlet-name>
         <servlet-class>servlet.CadastroClienteServlet</servlet-class>
@@ -88,93 +96,109 @@
         <servlet-name>EditarEstoqueServlet</servlet-name>
         <servlet-class>servlet.EditarEstoqueServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlet.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroClienteServlet</servlet-name>
-        <url-pattern>/CadastroClienteServlet</url-pattern>
+        <url-pattern>/protegido/CadastroClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastroProdutoServlet</servlet-name>
-        <url-pattern>/CadastroProdutoServlet</url-pattern>
+        <url-pattern>/protegido/CadastroProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastroUnidadeServlet</servlet-name>
-        <url-pattern>/CadastroUnidadeServlet</url-pattern>
+        <url-pattern>/protegido/CadastroUnidadeServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastroFuncionarioServlet</servlet-name>
-        <url-pattern>/CadastroFuncionarioServlet</url-pattern>
+        <url-pattern>/protegido/CadastroFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastroProdutoVendaServlet</servlet-name>
-        <url-pattern>/CadastroProdutoVendaServlet</url-pattern>
+        <url-pattern>/protegido/CadastroProdutoVendaServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarProdutoServlet</servlet-name>
-        <url-pattern>/ListarProdutoServlet</url-pattern>
+        <url-pattern>/protegido/ListarProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarUnidadesServlet</servlet-name>
-        <url-pattern>/ListarUnidadesServlet</url-pattern>
+        <url-pattern>/protegido/ListarUnidadesServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarClienteServlet</servlet-name>
-        <url-pattern>/ListarClienteServlet</url-pattern>
+        <url-pattern>/protegido/ListarClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarFuncionarioServlet</servlet-name>
-        <url-pattern>/ListarFuncionarioServlet</url-pattern>
+        <url-pattern>/protegido/ListarFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarProdutoVendaServlet</servlet-name>
-        <url-pattern>/ListarProdutoVendaServlet</url-pattern>
+        <url-pattern>/protegido/ListarProdutoVendaServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditarUnidadeServlet</servlet-name>
-        <url-pattern>/EditarUnidadeServlet</url-pattern>
+        <url-pattern>/protegido/EditarUnidadeServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditarClienteServlet</servlet-name>
-        <url-pattern>/EditarClienteServlet</url-pattern>
+        <url-pattern>/protegido/EditarClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditarProdutoServlet</servlet-name>
-        <url-pattern>/EditarProdutoServlet</url-pattern>
+        <url-pattern>/protegido/EditarProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditarFuncionarioServlet</servlet-name>
-        <url-pattern>/EditarFuncionarioServlet</url-pattern>
+        <url-pattern>/protegido/EditarFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeletarUnidadeServlet</servlet-name>
-        <url-pattern>/DeletarUnidadeServlet</url-pattern>
+        <url-pattern>/protegido/DeletarUnidadeServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeletarClienteServlet</servlet-name>
-        <url-pattern>/DeletarClienteServlet</url-pattern>
+        <url-pattern>/protegido/DeletarClienteServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeletarProdutoServlet</servlet-name>
-        <url-pattern>/DeletarProdutoServlet</url-pattern>
+        <url-pattern>/protegido/DeletarProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeletarFuncionarioServlet</servlet-name>
-        <url-pattern>/DeletarFuncionarioServlet</url-pattern>
+        <url-pattern>/protegido/DeletarFuncionarioServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarEstoqueServlet</servlet-name>
-        <url-pattern>/ListarEstoqueServlet</url-pattern>
+        <url-pattern>/protegido/ListarEstoqueServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListarRelatorioServlet</servlet-name>
-        <url-pattern>/ListarRelatorioServlet</url-pattern>
+        <url-pattern>/protegido/ListarRelatorioServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastroEstoqueServlet</servlet-name>
-        <url-pattern>/CadastroEstoqueServlet</url-pattern>
+        <url-pattern>/protegido/CadastroEstoqueServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditarEstoqueServlet</servlet-name>
-        <url-pattern>/EditarEstoqueServlet</url-pattern>
+        <url-pattern>/protegido/EditarEstoqueServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/protegido/LogoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -182,7 +206,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>/index.jsp</welcome-file>
+        <welcome-file>protegido/menu.jsp</welcome-file>
     </welcome-file-list>
     <error-page>
         <error-code>500</error-code>
