@@ -34,7 +34,7 @@ public class ListarFuncionarioServlet extends HttpServlet {
         List<Unidade> unidades = UnidadesDAO.listarUnidades();
         request.setAttribute("unidades", unidades);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/funcionarios.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/funcionarios.jsp");
         dispatcher.forward(request, response);
     }
 

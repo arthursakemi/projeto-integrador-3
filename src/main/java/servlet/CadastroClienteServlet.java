@@ -38,7 +38,7 @@ public class CadastroClienteServlet extends HttpServlet {
         String url = "";
         if (gravacaoDB) {
             request.setAttribute("cadastroOK", true);
-            url = "/ListarClienteServlet";
+            url = "/protegido/ListarClienteServlet";
         } else {
             url = "/erro.jsp";
         }

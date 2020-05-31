@@ -32,7 +32,7 @@ public class DeletarProdutoServlet extends HttpServlet {
         String url = "";
         if (gravacaoDB) {
             request.setAttribute("cadastroOK", true);
-            url = "/ListarProdutoServlet";
+            url = "/protegido/ListarProdutoServlet";
         } else {
             url = "/erro.jsp";
         }

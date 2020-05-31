@@ -39,7 +39,7 @@ public class ListarEstoqueServlet extends HttpServlet {
         List<Unidade> unidades = UnidadesDAO.listarUnidades();
         request.setAttribute("unidades", unidades);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/estoque.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/estoque.jsp");
         dispatcher.forward(request, response);
     }
 

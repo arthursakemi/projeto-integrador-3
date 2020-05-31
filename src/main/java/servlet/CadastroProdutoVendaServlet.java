@@ -45,7 +45,7 @@ public class CadastroProdutoVendaServlet extends HttpServlet {
         String url = "";
         if (cadastroDB) {
             request.setAttribute("cadastroOK", true);
-            url = "/sucessoVenda.jsp";
+            url = "/protegido/sucessoVenda.jsp";
         } else {
             url = "/erro.jsp";
         }

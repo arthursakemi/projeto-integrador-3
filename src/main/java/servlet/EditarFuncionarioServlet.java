@@ -51,7 +51,7 @@ public class EditarFuncionarioServlet extends HttpServlet {
         String url = "";
         if (gravacaoDB) {
             request.setAttribute("cadastroOK", true);
-            url = "/ListarFuncionarioServlet";
+            url = "/protegido/ListarFuncionarioServlet";
         } else {
             url = "/erro.jsp";
         }

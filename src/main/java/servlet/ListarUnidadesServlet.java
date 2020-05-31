@@ -29,7 +29,7 @@ public class ListarUnidadesServlet extends HttpServlet {
         List<Unidade> unidades = UnidadesDAO.listarUnidades();
         request.setAttribute("unidades", unidades);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/unidades.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/protegido/unidades.jsp");
         dispatcher.forward(request, response);
 
     }
