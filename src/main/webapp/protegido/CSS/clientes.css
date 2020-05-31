@@ -37,7 +37,7 @@ and open the template in the editor.
     width: 20%;
 }
 
-#clients-table {
+.client-table{
     width: 100%;
     flex-grow: 1;
     display: flex;
@@ -46,7 +46,7 @@ and open the template in the editor.
     overflow: auto;
 }
 
-.client-row {
+.client-row, .client-table-head {
     border-top: 1px solid darkgrey;
     border-bottom: 1px solid darkgrey;
     margin: 5px 0;
@@ -54,12 +54,13 @@ and open the template in the editor.
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 20px;
     cursor: pointer;
+    align-items: center;
 }
 
 .options {
     background-color: darkgrey;
     width: 100%;
-    height: 100%;
+    height: 20px;
 }
 
 .modal {

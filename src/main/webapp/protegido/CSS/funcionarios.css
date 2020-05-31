@@ -46,7 +46,7 @@ and open the template in the editor.
     overflow: auto;
 }
 
-.employee-row {
+.employee-row, #employee-table-head {
     border-top: 1px solid darkgrey;
     border-bottom: 1px solid darkgrey;
     margin: 5px 0;
@@ -59,7 +59,7 @@ and open the template in the editor.
 .options {
     background-color: darkgrey;
     width: 100%;
-    height: 100%;
+    height: 20px;
 }
 
 .modal {
