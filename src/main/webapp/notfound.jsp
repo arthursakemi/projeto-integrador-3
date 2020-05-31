@@ -17,26 +17,28 @@
     </head>
     <body>
         <header id="header">
-            <a id="logo-container" href="./menu.jsp">
+            <a id="logo-container" href="./protegido/menu.jsp">
                 <img id="logo" src="./images/ten-sided-dice-hi.png" alt="logotipo tabletop" />
             </a>
             <div id="title-container">
                 <img id="title" src="./images/title.svg" />
             </div>
             <div id="user-container">
-                <p id="username">username</p>
-                <img id="avatar" alt="profile picture" />
+                <p id="username">${sessionScope.usuario.usuario}</p>
+                <img id="avatar" src="./images/avatar.svg" alt="profile picture" />
             </div>
         </header>
         <div id="body">
             <aside id="menu">
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
                 <a class="button" href="./ListarEstoqueServlet">Estoque</a>
-                <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
-                <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                 <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
-                <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                <c:if test="${sessionScope.usuario.isAdmin}">
+                    <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
+                    <a class="button" href="./ListarUnidadesServlet">Unidades</a>
+                    <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                </c:if>
             </aside>
             <div id="content">
                 <img id="error-gif" src="./images/dino-google-error-animated.gif" alt="animated image of error code" />
