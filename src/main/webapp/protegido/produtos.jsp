@@ -18,25 +18,27 @@
     <body>
         <header id="header">
             <a id="logo-container" href="./menu.jsp">
-                <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
+                <img id="logo" src="../images/ten-sided-dice-hi.png" alt="" />
             </a>
             <div id="title-container">
-                <img id="title" src="./images/title.svg" />
+                <img id="title" src="../images/title.svg" />
             </div>
             <div id="user-container">
-                <p id="username">username</p>
-                <img id="avatar" src="./images/avatar.svg" alt="" />
+                <p id="username">${sessionScope.usuario.usuario}</p>
+                <img id="avatar" src="./images/avatar.svg" alt="profile picture" />
             </div>
         </header>
         <div id="body">
             <aside id="menu">
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
                 <a class="button" href="./ListarEstoqueServlet">Estoque</a>
-                <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
-                <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                 <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
-                <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                <c:if test="${sessionScope.usuario.isAdmin}">
+                    <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
+                    <a class="button" href="./ListarUnidadesServlet">Unidades</a>
+                    <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                </c:if>
             </aside>
             <div id="content">
                 <div id="search-bar">
@@ -59,7 +61,7 @@
             <div id="overlay">
                 <div class="modal" id="product-modal">
                     <h1 class="modal-title">Cadastro de Produtos</h1>
-                    <form action="CadastroProdutoServlet" method="POST">
+                    <form action="./CadastroProdutoServlet" method="POST">
                         <div class="field-wrapper">
                             <label>Nome: *</label>
                             <input class="input-field" id="name" name="nome" type="text" maxlength="30"/>
@@ -97,7 +99,7 @@
 
                 <div class="modal" id="edit-product-modal">
                     <h1 class="modal-title">Editar Produto</h1>
-                    <form action="EditarProdutoServlet" method="POST">
+                    <form action="./EditarProdutoServlet" method="POST">
                         <div class="field-wrapper" style="display:none">
                             <input class="input-field" id="edit-id" name="id" type="text" />
                         </div>
@@ -134,7 +136,7 @@
                             <button class="form-button" id="edit-submit-button " type="submit">Atualizar</button>
                         </div>
                     </form>
-                    <form action="DeletarProdutoServlet" method="POST">
+                    <form action="./DeletarProdutoServlet" method="POST">
                         <div class="field-wrapper" style="display:none">
                             <input class="input-field" id="delete-id" name="id" type="text" />
                         </div>

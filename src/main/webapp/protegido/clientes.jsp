@@ -22,25 +22,27 @@
     <body>
         <header id="header">
             <a id="logo-container" href="./menu.jsp">
-                <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
+                <img id="logo" src="../images/ten-sided-dice-hi.png" alt="" />
             </a>
             <div id="title-container">
-                <img id="title" src="./images/title.svg" />
+                <img id="title" src="../images/title.svg" />
             </div>
             <div id="user-container">
                 <p id="username">username</p>
-                <img id="avatar" src="./images/avatar.svg" alt="" />
+                <img id="avatar" src="../images/avatar.svg" alt="" />
             </div>
         </header>
         <div id="body">
             <aside id="menu">
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
                 <a class="button" href="./ListarEstoqueServlet">Estoque</a>
-                <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
-                <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                 <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
-                <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                <c:if test="${sessionScope.usuario.isAdmin}">
+                    <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
+                    <a class="button" href="./ListarUnidadesServlet">Unidades</a>
+                    <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                </c:if>
             </aside>
             <div id="content">
                 <div id="search-bar">
@@ -65,7 +67,7 @@
         <div id="overlay">
             <div class="modal" id="customer-modal">
                 <h1 class="modal-title">Cadastro de Cliente</h1>
-                <form action="CadastroClienteServlet" method="POST">
+                <form action="./CadastroClienteServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="customer-name">Nome: *</label>
                         <input class="input-field" id="nome" name="nome" type="text" maxlength="50"/>
@@ -115,7 +117,7 @@
             <!-- modal de edição -->
             <div class="modal" id="edit-modal">
                 <h1 class="modal-title">Editar Cliente</h1>
-                <form action="EditarClienteServlet" method="POST">
+                <form action="./EditarClienteServlet" method="POST">
                     <div class="field-wrapper" style="display:none">
                         <input class="input-field" id="edit-id" name="id" type="text" />
                     </div>
@@ -165,7 +167,7 @@
                     </div>
                 </form>
                 <!--Form created to submit data of the object to be deleted (updated to ativo false)-->
-                <form action="DeletarClienteServlet" method="POST">
+                <form action="./DeletarClienteServlet" method="POST">
                     <div class="field-wrapper" style="display:none">
                         <input class="input-field" id="delete-id" name="id" type="text" />
                     </div>

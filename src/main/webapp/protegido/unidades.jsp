@@ -20,25 +20,27 @@
     <body>
         <header id="header">
             <a id="logo-container" href="./menu.jsp">
-                <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
+                <img id="logo" src="../images/ten-sided-dice-hi.png" alt="" />
             </a>
             <div id="title-container">
-                <img id="title" src="./images/title.svg" />
+                <img id="title" src="../images/title.svg" />
             </div>
             <div id="user-container">
-                <p id="username">username</p>
-                <img id="avatar" src="./images/avatar.svg" alt="" />
+                <p id="username">${sessionScope.usuario.usuario}</p>
+                <img id="avatar" src="./images/avatar.svg" alt="profile picture" />
             </div>
         </header>
         <div id="body">
             <aside id="menu">
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
                 <a class="button" href="./ListarEstoqueServlet">Estoque</a>
-                <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
-                <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                 <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
-                <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                <c:if test="${sessionScope.usuario.isAdmin}">
+                    <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
+                    <a class="button" href="./ListarUnidadesServlet">Unidades</a>
+                    <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                </c:if>
             </aside>
             <div id="content">
                 <div id="search-bar">
@@ -60,7 +62,7 @@
         <div id="overlay">
             <div class="modal" id="unity-modal">
                 <h1 class="modal-title">Cadastro de Unidade</h1>
-                <form action="CadastroUnidadeServlet" method="POST">
+                <form action="./CadastroUnidadeServlet" method="POST">
                     <div class="field-wrapper">
                         <label for="unity-name">Nome: *</label>
                         <input class="input-field" id="unity-name" name="nome" type="text" maxlength="30"/>
@@ -81,7 +83,7 @@
             </div>
             <div class="modal" id="edit-modal" style="display: none">
                 <h1 class="modal-title">Editar Unidade</h1>
-                <form action="EditarUnidadeServlet" method="POST">
+                <form action="./EditarUnidadeServlet" method="POST">
                     <div class="field-wrapper" style="display: none">
                         <input class="input-field" id="edit-unity-id" name="id" type="text" />
                     </div>
@@ -102,7 +104,7 @@
                         <button class="form-button" id="edit-submit-button " type="submit">Salvar</button>
                     </div>
                 </form>
-                <form action="DeletarUnidadeServlet" method="POST">
+                <form action="./DeletarUnidadeServlet" method="POST">
                     <div class="field-wrapper" style="display: none">
                         <input class="input-field" id="delete-unity-id" name="id" type="text" />
                     </div>

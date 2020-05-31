@@ -3,7 +3,7 @@
     Created on : 09/05/2020, 22:17:57
     Author     : Marcelo
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,25 +19,27 @@
     <body>
         <header id="header">
             <a id="logo-container" href="./menu.jsp">
-                <img id="logo" src="./images/ten-sided-dice-hi.png" alt="" />
+                <img id="logo" src="../images/ten-sided-dice-hi.png" alt="" />
             </a>
             <div id="title-container">
-                <img id="title" src="./images/title.svg" />
+                <img id="title" src="../images/title.svg" />
             </div>
             <div id="user-container">
-                <p id="username">username</p>
-                <img id="avatar" src="./images/avatar.svg" alt="" />
+                <p id="username">${sessionScope.usuario.usuario}</p>
+                <img id="avatar" src="./images/avatar.svg" alt="profile picture" />
             </div>
         </header>
         <div id="body">
             <aside id="menu">
                 <a class="button" href="./ListarClienteServlet">Clientes</a>
                 <a class="button" href="./ListarEstoqueServlet">Estoque</a>
-                <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
-                <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                 <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
-                <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                <c:if test="${sessionScope.usuario.isAdmin}">
+                    <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
+                    <a class="button" href="./ListarUnidadesServlet">Unidades</a>
+                    <a class="button" href="./ListarRelatorioServlet">Relatorios</a>
+                </c:if>
             </aside>
             <div id="content">
                 <div id="home-background">
