@@ -28,7 +28,7 @@ public class AutorizacaoFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        
+
         // 1) Verifica se usuario já está logado
         HttpSession session = httpRequest.getSession();
         if (session.getAttribute("usuario") == null) {
@@ -36,10 +36,10 @@ public class AutorizacaoFilter implements Filter {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/index.jsp");
             return;
         }
-        
+
         // 2) Usuario esta logado -> Verifica se tem papel necessario para acesso
         Credencial usuario = (Credencial) session.getAttribute("usuario");
-        
+
         if (verificarAcesso(usuario, httpRequest)) {
             // Usuario tem permissao de acesso -> Requisição pode seguir para servlet
             chain.doFilter(request, response);
@@ -57,7 +57,7 @@ public class AutorizacaoFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {
     }
-    
+
     private boolean verificarAcesso(Credencial usuario, HttpServletRequest httpRequest) {
         String urlAcessada = httpRequest.getRequestURI();
         if (urlAcessada.contains("/protegido/admin/")) {
@@ -65,11 +65,11 @@ public class AutorizacaoFilter implements Filter {
                 return true;
             }
         } else {
-             if (urlAcessada.contains("/protegido/")) {
-                 return true;
-             }
+            if (urlAcessada.contains("/protegido/")) {
+                return true;
+            }
         }
-            
+
         return false;
     }
 
