@@ -29,7 +29,6 @@
                     <p id="username">${sessionScope.usuario.usuario}</p>
                     <a href="./LogoutServlet">sair</a>
                 </div>
-
                 <img id="avatar" src="./images/avatar.svg" alt="profile picture" />
             </div>
         </header>
