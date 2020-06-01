@@ -4,51 +4,37 @@
  * and open the template in the editor.
  */
 
+const funcionarios = Array.from(document.getElementsByClassName("employee-row"));
 
-const createEmployeeRow = ({ firstName, lastName, cpf, city, uf, cel }) => {
-    const EmployeeRowDiv = document.createElement("div");
-    EmployeeRowDiv.setAttribute("class", "client-row");
+const clearFilters = () => {
+    document.getElementById("search-field").value = "";
+    refreshEmployeeTable(funcionarios);
+}
 
-    const employeeNameSpan = document.createElement("span");
-    employeeNameSpan.setAttribute("class", "employee-name");
-    employeeNameSpan.innerHTML = `${firstName} ${lastName}`;
+const filterEmployeeList = (filter) => {
+    if (filter) {
+        const filteredList = funcionarios.filter((funcionario) => {
+            const nameFilter = funcionario.getAttribute("nome").toLowerCase().includes(filter.toLowerCase());
+            const cpfFilter = funcionario.getAttribute("cpf").toLowerCase().includes(filter.toLowerCase());
 
-    const citySpan = document.createElement("span");
-    citySpan.setAttribute("class", "city");
-    citySpan.innerHTML = `${city} - ${uf}`;
+            return nameFilter || cpfFilter;
+        });
 
-    const cpfSpan = document.createElement("span");
-    cpfSpan.setAttribute("class", "cpf");
-    cpfSpan.innerHTML = cpf;
+        refreshEmployeeTable(filteredList);
 
-    const celSpan = document.createElement("span");
-    celSpan.setAttribute("class", "cel");
-    celSpan.innerHTML = cel;
-
-    const optionsDiv = document.createElement("div");
-    optionsDiv.setAttribute("class", "options");
-
-    EmployeeRowDiv.appendChild(employeeNameSpan);
-    EmployeeRowDiv.appendChild(citySpan);
-    EmployeeRowDiv.appendChild(cpfSpan);
-    EmployeeRowDiv.appendChild(celSpan);
-    EmployeeRowDiv.appendChild(optionsDiv);
-
-    return EmployeeRowDiv;
+    } else {
+        refreshEmployeeTable(funcionarios);
+    }
 };
 
-const addEmployeeRow = (employee) => {
-    const employeeTable = document.getElementById("employee-table");
-    employeeTable.appendChild(createEmployeeRow(employee));
-};
+const refreshEmployeeTable = (employeeList) => {
+    const employeeTable = document.getElementById("employee-table-body");
 
-const employee = {
-    firstName: "Marcelo",
-    lastName: "Braga",
-    city: "São Paulo",
-    uf: "SP",
-    cpf: "222.222.222-22",
-    cel: "(11)92222-2222",
+    employeeTable.innerHTML = "";
+
+    employeeList.forEach((employee) => {
+        employeeTable.appendChild(employee);
+    });
 };
 
 const showCreateModal = () => {
@@ -92,3 +78,4 @@ const closeModal = () => {
 document.getElementById("new-employee").addEventListener("click", showCreateModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
 document.getElementById("edit-cancel-button").addEventListener("click", closeModal);
+document.getElementById("clear-button").addEventListener("click", clearFilters);

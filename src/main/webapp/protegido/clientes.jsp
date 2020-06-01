@@ -47,8 +47,8 @@
             <div id="content">
                 <div id="search-bar">
                     <button id="new-customer">+ Cadastrar Cliente</button>
-                    <input id="search-field" type="text" placeholder="buscar..." />
-                    <button id="search-button">Buscar</button>
+                    <input id="search-field" type="text" placeholder="buscar..." oninput="filterClientList(this.value)"/>
+                    <button id="clear-button">Limpar Filtro</button>
                 </div>
                 <div class="client-table">
                     <div class="client-table-head">
@@ -60,7 +60,7 @@
                     </div>
                     <div id="clients-table-body">
                         <c:forEach var="c" items="${clientes}">
-                            <div class="client-row" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`)">
+                            <div class="client-row" nome=`${c.nome}` cpf=`${c.cpf}` onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`)">
                                 <span>${c.nome}</span>
                                 <span>${c.cidade} - ${c.uf}</span>
                                 <span>${c.cpf}</span>
