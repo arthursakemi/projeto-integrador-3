@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : index
     Created on : 21/05/2020, 18:09:53
     Author     : Marcelo
@@ -35,7 +35,7 @@ and open the template in the editor.
                     <h1 id="login-title">Login</h1>
                     <input class="login-input" type="text" placeholder="usuário" name="usuario"/>
                     <input class="login-input" type="password" placeholder="senha" name="senha"/>
-                    <input type="submit" id="login-button" value="Login"></input>
+                    <input id="login-button" type="submit" value="Login"></input>
                     <h2 style="color: red"><c:out value="${msgErro}"/></h2>
                 </form>
             </div>
