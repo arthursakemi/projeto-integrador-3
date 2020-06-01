@@ -45,12 +45,12 @@
             <div id="content">
                 <div id="search-bar">
                     <button id="new-unity">+ Cadastrar Unidade</button>
-                    <input id="search-field" type="text" placeholder="buscar..." />
-                    <button id="search-button">Buscar</button>
+                    <input id="search-field" type="text" placeholder="buscar..." oninput="filterUnitytList(this.value)"/>
+                    <button id="clear-button">Limpar Filtro</button>
                 </div>
                 <div id="card-galery">
                     <c:forEach var="c" items="${unidades}">
-                        <div class="unity-card" key="${c.id}" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.cidade}`, `${c.estado}`)">
+                        <div class="unity-card" key="${c.id}" nome=`${c.nome}` cidade=`${c.cidade}` estado=`${c.estado}` onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.cidade}`, `${c.estado}`)">
                             <div class="unity-img"></div>
                             <h1 class="unity-name">Unidade ${c.nome}</h1>
                             <span class="unity-location">Localização - ${c.cidade}-${c.estado}</span>

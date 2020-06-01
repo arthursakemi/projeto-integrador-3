@@ -5,34 +5,39 @@
  */
 
 
-const createUnityCard = (unity) => {
-    const unityCard = document.createElement("card");
-    unityCard.setAttribute("class", "unity-card");
+const unidades = Array.from(document.getElementsByClassName("unity-card"));
 
-    const unityImg = document.createElement("div");
-    unityImg.setAttribute("class", "unity-img");
-
-    const unityName = document.createElement("h1");
-    unityName.setAttribute("class", "unity-name");
-    unityName.innerHTML = `Unidade - ${unity.name}`;
-
-    const cardText = document.createElement("div");
-    cardText.setAttribute("class", "card-text");
-
-    const location = document.createElement("span");
-    location.setAttribute("class", "unity-location");
-    location.innerHTML = `Localização - ${unity.location}`;
-
-    unityCard.appendChild(unityImg);
-    unityCard.appendChild(unityName);
-    unityCard.appendChild(location);
-
-    return unityCard;
+const clearFilters = () => {
+    console.log("clear")
+    document.getElementById("search-field").value = "";
+    refreshUnityTable(unidades);
 };
 
-const addUnityCard = (unity) => {
-    const card = document.getElementById("card-galery");
-    card.appendChild(createUnityCard(unity));
+const filterUnitytList = (filter) => {
+    if (filter) {
+        const filteredList = unidades.filter((unidade) => {
+            const nameFilter = unidade.getAttribute("nome").toLowerCase().includes(filter.toLowerCase());
+            const cityFilter = unidade.getAttribute("cidade").toLowerCase().includes(filter.toLowerCase());
+            const estateFilter = unidade.getAttribute("estado").toLowerCase().includes(filter.toLowerCase());
+
+            return nameFilter || cityFilter || estateFilter;
+        });
+
+        refreshUnityTable(filteredList);
+
+    } else {
+        refreshUnityTable(unidades);
+    }
+};
+
+const refreshUnityTable = (unityList) => {
+    const unityGalery = document.getElementById("card-galery");
+
+    unityGalery.innerHTML = "";
+
+    unityList.forEach((unity) => {
+        unityGalery.appendChild(unity);
+    });
 };
 
 const showCreateModal = () => {
@@ -54,11 +59,11 @@ const showEditModal = (id, nome, cidade, estado) => {
     document.getElementById("edit-unity-name").value = nome;
     document.getElementById("edit-unity-city").value = cidade;
     document.getElementById("edit-unity-estate").value = estado;
-    
+
     document.getElementById("delete-unity-id").value = id;
-}
+};
 
 document.getElementById("new-unity").addEventListener("click", showCreateModal);
 document.getElementById("cancel-button").addEventListener("click", closeModal);
 document.getElementById("edit-cancel-button").addEventListener("click", closeModal);
-
+document.getElementById("clear-button").addEventListener("click", clearFilters);
