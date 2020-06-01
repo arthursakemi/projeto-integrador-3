@@ -45,8 +45,7 @@ public class Credencial {
     
     public boolean validarSenha(String senha) {
         BCrypt.Result result = BCrypt.verifyer().verify(senha.toCharArray(), this.getSenha());
-        //return result.verified;
-        return true;
+        return result.verified;
     }
 
     public int getId() {

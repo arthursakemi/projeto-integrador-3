@@ -22,6 +22,6 @@ public class LogoutServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
         sessao.invalidate();
-        response.sendRedirect(request.getContextPath() + "index.jsp");
+        response.sendRedirect(request.getContextPath() + "/index.jsp");
     }
 }

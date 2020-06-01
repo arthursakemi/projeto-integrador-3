@@ -43,7 +43,7 @@
             <div id="content">
                 <div id="search-bar">
                     <button id="new-product">+ Cadastrar Produto</button>
-                    <input id="search-field" type="text" placeholder="buscar..." oninput="filterProductList(this.value)"/>
+                    <input id="search-field" type="text" placeholder="Buscar por nome ou categoria do produto..." oninput="filterProductList(this.value)"/>
                     <button id="clear-button">Limpar Filtros</button>
                 </div>
                 <div id="card-galery">
