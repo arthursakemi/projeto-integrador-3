@@ -22,7 +22,6 @@ import model.Credencial;
  * @author Marcelo
  */
 public class AutorizacaoFilter implements Filter {
-
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
@@ -49,14 +48,6 @@ public class AutorizacaoFilter implements Filter {
         }
 
     }
-
-    @Override
-    public void destroy() {
-    }
-
-    @Override
-    public void init(FilterConfig filterConfig) {
-    }
     
     private boolean verificarAcesso(Credencial usuario, HttpServletRequest httpRequest) {
         String urlAcessada = httpRequest.getRequestURI();
@@ -69,8 +60,14 @@ public class AutorizacaoFilter implements Filter {
                  return true;
              }
         }
-            
         return false;
     }
 
+    @Override
+    public void destroy() {
+    }
+
+    @Override
+    public void init(FilterConfig filterConfig) {
+    }
 }

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Credencial;
 import model.Funcionario;
 import utils.GerenciadorConexao;
 
@@ -23,10 +24,11 @@ import utils.GerenciadorConexao;
  */
 public class FuncionarioDAO {
 
-    public static boolean salvar(Funcionario funcionario) {
+    public static boolean salvar(Funcionario funcionario, Credencial cred) {
         boolean retorno = false;
         Connection conexao = null;
         PreparedStatement instrucaoSQL = null;
+        ResultSet rs = null;
 
         try {
             conexao = GerenciadorConexao.abrirConexao();
@@ -53,6 +55,13 @@ public class FuncionarioDAO {
 
             int linhasAfetadas = instrucaoSQL.executeUpdate();
             retorno = linhasAfetadas > 0;
+            rs = instrucaoSQL.getGeneratedKeys();
+            rs.next();
+            int funcionarioId = rs.getInt(1); //pegar ID para a proxima operacao
+            //Cadastrar Credencial
+            Credencial credencial = new Credencial(funcionarioId, cred.getUsuario(), cred.getSenha(), cred.isIsAdmin());
+            CredencialDAO.salvar(credencial);
+            
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
             retorno = false;

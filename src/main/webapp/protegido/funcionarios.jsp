@@ -76,6 +76,14 @@
                         <input class="input-field" id="email" name="email" type="email" maxlength="50"/>
                     </div>
                     <div class="field-wrapper">
+                        <label for="unity-name">Usuario *</label>
+                        <input class="input-field" id="user" name="user" type="text" maxlength="50"/>
+                    </div>
+                    <div class="field-wrapper">
+                        <label for="unity-name">Senha *</label>
+                        <input class="input-field" id="password" name="password" type="password" maxlength="50"/>
+                    </div>
+                    <div class="field-wrapper">
                         <label for="cpf">CPF: *</label>
                         <input class="input-field" id="cpf" name="cpf" type="number" maxlength="11"/>
                     </div>

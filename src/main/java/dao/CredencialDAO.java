@@ -9,8 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Credencial;
@@ -22,7 +20,41 @@ import utils.GerenciadorConexao;
  */
 public class CredencialDAO {
     public static boolean salvar(Credencial newCredencial) {
-        return true;
+        boolean retorno = false;
+        Connection conexao = null;
+        PreparedStatement instrucaoSQL = null;
+        ResultSet rs = null;
+
+        try {
+            conexao = GerenciadorConexao.abrirConexao();
+            instrucaoSQL = conexao.prepareStatement("INSERT INTO credenciais "
+                    + "(id_funcionario, usuario, senha, nivel_acesso) "
+                    + "VALUES(?, ?, ?, ?);",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            int accessLevel = newCredencial.isIsAdmin() ? 1 : 0;
+            
+            instrucaoSQL.setInt(1, newCredencial.getId_funcionario());
+            instrucaoSQL.setString(2, newCredencial.getUsuario());
+            instrucaoSQL.setString(3, newCredencial.encodeSenha(newCredencial.getSenha()));
+            instrucaoSQL.setInt(4, accessLevel);
+
+            int linhasAfetadas = instrucaoSQL.executeUpdate();
+            retorno = linhasAfetadas > 0;
+            
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            retorno = false;
+        } finally {
+            try {
+                if (instrucaoSQL != null) {
+                    instrucaoSQL.close();
+                }
+                GerenciadorConexao.fecharConexao();
+            } catch (SQLException ex) {
+            }
+        }
+        return retorno;
     }
 
     public static Credencial getCredencialByUsuario(String usuario) throws ClassNotFoundException {
@@ -38,7 +70,8 @@ public class CredencialDAO {
             if (rs.next()) {
                 String login = rs.getString("usuario");
                 String senha = rs.getString("senha");
-                boolean isAdmin = rs.getString("nivel_acesso").equals("1");
+                int isAdminDB = rs.getInt("nivel_acesso");
+                boolean isAdmin = isAdminDB == 1 ? true : false;
                 cred = new Credencial(login, senha, isAdmin);
             }
             
