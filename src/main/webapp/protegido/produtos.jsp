@@ -43,12 +43,12 @@
             <div id="content">
                 <div id="search-bar">
                     <button id="new-product">+ Cadastrar Produto</button>
-                    <input id="search-field" type="text" placeholder="buscar..." />
-                    <button id="search-button">Buscar</button>
+                    <input id="search-field" type="text" placeholder="buscar..." oninput="filterProductList(this.value)"/>
+                    <button id="clear-button">Limpar Filtros</button>
                 </div>
                 <div id="card-galery">
                     <c:forEach var="c" items="${produtos}" >
-                        <div class="product-card" key="${c.id}" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.categoria}`, `${c.fabricante}`, `${c.descricao}`, `${c.valor}`)">
+                        <div class="product-card" key="${c.id}" nome=`${c.nome}` categoria=`${c.categoria}` onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.categoria}`, `${c.fabricante}`, `${c.descricao}`, `${c.valor}`)">
                             <div class="product-img"></div>
                             <h1 class="product-name">${c.nome}</h1>
                             <div class="card-text">

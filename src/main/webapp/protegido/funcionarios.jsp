@@ -46,19 +46,28 @@
             <div id="content">
                 <div id="search-bar">
                     <button id="new-employee">+ Cadastrar Funcionario</button>
-                    <input id="search-field" type="text" placeholder="buscar..." />
-                    <button id="search-button">Buscar</button>
+                    <input id="search-field" type="text" placeholder="buscar..." oninput="filterEmployeeList(this.value)"/>
+                    <button id="clear-button">Limpar Filtro</button>
                 </div>
                 <div id="employee-table">
-                    <c:forEach var="c" items="${funcionarios}">
-                        <div class="employee-row" key="${c.id}" onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`, `${c.unidade}`, `${c.area}`, `${c.cargo}`, `${c.salario}`)">
-                            <span>${c.nome}</span>
-                            <span>${c.cidade} - ${c.uf}</span>
-                            <span>${c.cpf}</span>
-                            <span>${c.celular}</span>
-                            <div class="options"></div>
-                        </div>
-                    </c:forEach>
+                    <div id="employee-table-head">
+                        <span>Nome</span>
+                        <span>Cidade</span>
+                        <span>CPF</span>
+                        <span>Celular</span>
+                        <div class="options"></div>
+                    </div>
+                    <div id="employee-table-body">
+                        <c:forEach var="c" items="${funcionarios}">
+                            <div class="employee-row" key="${c.id}" nome=`${c.nome}` cpf=`${c.cpf}` onclick="showEditModal(`${c.id}`, `${c.nome}`, `${c.email}`, `${c.cpf}`, `${c.cep}`, `${c.cidade}`, `${c.uf}`, `${c.telefone}`, `${c.celular}`, `${c.endereco}`, `${c.complemento}`, `${c.unidade}`, `${c.area}`, `${c.cargo}`, `${c.salario}`)">
+                                <span>${c.nome}</span>
+                                <span>${c.cidade} - ${c.uf}</span>
+                                <span>${c.cpf}</span>
+                                <span>${c.celular}</span>
+                                <div class="options"></div>
+                            </div>
+                        </c:forEach>
+                    </div>
                 </div>
             </div>
         </div>
