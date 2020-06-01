@@ -39,7 +39,7 @@
                 <a class="button" href="./ListarEstoqueServlet">Estoque</a>
                 <a class="button" href="./ListarProdutoServlet">Produtos</a>
                 <a class="button" href="./ListarProdutoVendaServlet">Vendas</a>
-                <c:if test="${sessionScope.usuario.isAdmin}">
+                <c:if test="${sessionScope.usuario.isIsAdmin()}">
                     <a class="button" href="./ListarFuncionarioServlet">Funcionarios</a>
                     <a class="button" href="./ListarUnidadesServlet">Unidades</a>
                     <a class="button" href="./ListarRelatorioServlet">Relatorios</a>

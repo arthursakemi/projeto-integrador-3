@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Credencial;
 import model.Funcionario;
 
 /**
@@ -32,17 +33,21 @@ public class CadastroFuncionarioServlet extends HttpServlet{
         String complemento = request.getParameter("complemento");
         String unidadeString = request.getParameter("unidade");
         String area = request.getParameter("area");
-        String cargo = request.getParameter("cargo");
+        String cargo = request.getParameter("cargo").toLowerCase();
         String salarioString = request.getParameter("salario");
-        
         double salario = Double.parseDouble(salarioString);
-        
         //Casting unidadeString to int
         int unidade = Integer.parseInt(unidadeString);
         
+        //getting infos to create Credencial obj
+        String usuario = request.getParameter("user");
+        String senha = request.getParameter("password");
+        boolean isAdmin = cargo.equals("admin") || cargo.equals("administrador") || cargo.equals("coordenador");
+        
         //int unidade, String area, String cargo, double salario, String nome, String email, String cpf, String cidade, String uf, String telefone, String celular, String cep, String endereco, String complemento, boolean ativo
         Funcionario funcionario = new Funcionario(unidade, area, cargo, salario, nome, email, cpf, cidade, uf, telefone, celular, cep, endereco, complemento, true);
-        boolean cadastroDB = dao.FuncionarioDAO.salvar(funcionario);
+        Credencial credencial = new Credencial(usuario, senha, isAdmin);
+        boolean cadastroDB = dao.FuncionarioDAO.salvar(funcionario, credencial);
         
         String url = "";
         if(cadastroDB) {

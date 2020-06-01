@@ -18,6 +18,13 @@ public class Credencial {
     private String senha;
     private boolean isAdmin;
 
+    public Credencial(int id_funcionario, String usuario, String senha, boolean isAdmin) {
+        this.id_funcionario = id_funcionario;
+        this.usuario = usuario;
+        this.senha = senha;
+        this.isAdmin = isAdmin;
+    }
+
     public Credencial(String usuario, String senha, boolean isAdmin) {
         this.usuario = usuario;
         this.senha = senha;
@@ -38,8 +45,7 @@ public class Credencial {
     
     public boolean validarSenha(String senha) {
         BCrypt.Result result = BCrypt.verifyer().verify(senha.toCharArray(), this.getSenha());
-        //return result.verified;
-        return true;
+        return result.verified;
     }
 
     public int getId() {
