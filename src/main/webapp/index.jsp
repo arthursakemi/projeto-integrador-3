@@ -35,7 +35,7 @@ and open the template in the editor.
                     <h1 id="login-title">Login</h1>
                     <input class="login-input" type="text" placeholder="usuário" name="usuario"/>
                     <input class="login-input" type="password" placeholder="senha" name="senha"/>
-                    <input type="submit" value="Login"></input>
+                    <input type="submit" id="login-button" value="Login"></input>
                     <h2 style="color: red"><c:out value="${msgErro}"/></h2>
                 </form>
             </div>

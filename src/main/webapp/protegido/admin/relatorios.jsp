@@ -19,17 +19,17 @@
     <body>
         <header id="header">
             <a id="logo-container" href="../menu.jsp">
-                <img id="logo" src="../../images/ten-sided-dice-hi.png" alt="" />
+                <img id="logo" src="../images/ten-sided-dice-hi.png" alt="" />
             </a>
             <div id="title-container">
-                <img id="title" src="../../images/title.svg" />
+                <img id="title" src="../images/title.svg" />
             </div>
             <div id="user-container">
                 <div>
                     <p id="username">${sessionScope.usuario.usuario}</p>
                     <a href="./LogoutServlet">sair</a>
                 </div>
-                <img id="avatar" src="../../images/avatar.svg" alt="" />
+                <img id="avatar" src="../images/avatar.svg" alt="" />
             </div>
         </header>
         <div id="body">
