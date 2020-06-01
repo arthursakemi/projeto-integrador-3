@@ -28,7 +28,10 @@
                 <img id="title" src="../images/title.svg" />
             </div>
             <div id="user-container">
-                <p id="username">username</p>
+                <div>
+                    <p id="username">${sessionScope.usuario.usuario}</p>
+                    <a href="./LogoutServlet">sair</a>
+                </div>
                 <img id="avatar" src="../images/avatar.svg" alt="" />
             </div>
         </header>

@@ -22,33 +22,34 @@ import model.Credencial;
  * @author Marcelo
  */
 public class AutorizacaoFilter implements Filter {
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        
-        // 1) Verifica se usuario já está logado
+
+        // 1) Verifica se usuario jÃ¡ estÃ¡ logado
         HttpSession session = httpRequest.getSession();
         if (session.getAttribute("usuario") == null) {
             // Usuario nao esta logado -> redirecionar para tela de login
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/index.jsp");
             return;
         }
-        
+
         // 2) Usuario esta logado -> Verifica se tem papel necessario para acesso
         Credencial usuario = (Credencial) session.getAttribute("usuario");
-        
+
         if (verificarAcesso(usuario, httpRequest)) {
-            // Usuario tem permissao de acesso -> Requisição pode seguir para servlet
+            // Usuario tem permissao de acesso -> RequisiÃ§Ã£o pode seguir para servlet
             chain.doFilter(request, response);
         } else {
-            // Mostra erro de acesso não autorizado
+            // Mostra erro de acesso nÃ£o autorizado
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/naoAutorizado.jsp");
         }
 
     }
-    
+
     private boolean verificarAcesso(Credencial usuario, HttpServletRequest httpRequest) {
         String urlAcessada = httpRequest.getRequestURI();
         if (urlAcessada.contains("/protegido/admin/")) {
@@ -56,9 +57,9 @@ public class AutorizacaoFilter implements Filter {
                 return true;
             }
         } else {
-             if (urlAcessada.contains("/protegido/")) {
-                 return true;
-             }
+            if (urlAcessada.contains("/protegido/")) {
+                return true;
+            }
         }
         return false;
     }
