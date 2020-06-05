@@ -118,3 +118,9 @@ body {
 #login-button:active {
     box-shadow: none;
 }
+
+#footer {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}

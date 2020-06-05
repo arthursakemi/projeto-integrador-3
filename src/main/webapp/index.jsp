@@ -40,6 +40,9 @@ and open the template in the editor.
                 </form>
             </div>
         </div>
+        <div id="footer">
+            <span>Por: Arthur Sakemi e Marcelo Arthur</span>
+        </div>
     </body>
 </html>
 
